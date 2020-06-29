@@ -97,7 +97,48 @@ ds\ast dA\ast\frac{\text{rate of energy absorbed}}{\text{volume}}=(I\vert_{s}-I\
 
 \end_layout
 
+\begin_layout Part
+OpenFOAM Radiation Models
+\end_layout
+
+\begin_layout Section
+P1 Model
+\end_layout
+
+\begin_layout Subsection
+How to use:
+\end_layout
+
+\begin_layout Subsubsection
+Introduction
+\end_layout
+
 \begin_layout Standard
+The P1 model is part of spherical harmonics model and it does well in optically
+ thick medium 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Modest2013"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Part
+Bibliography
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "My Collection"
+options "bibtotoc,naturemag"
+
+\end_inset
+
 
 \end_layout
 
