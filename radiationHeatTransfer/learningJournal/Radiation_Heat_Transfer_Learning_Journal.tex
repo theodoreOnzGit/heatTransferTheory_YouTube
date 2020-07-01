@@ -2852,15 +2852,23 @@ Since  \( x=\cos  \theta  \) \par
 
 Now things can cancel out really nicely once we substitute back in:\par
 
- \[ \frac{1}{ \Theta  \left(  \theta  \right) }\frac{ \partial ^{2} \Theta  \left(  \theta  \right) }{ \partial  \theta ^{2}}=\sin ^{2} \theta \frac{ \partial ^{2}}{ \partial x^{2}} \Theta  \left( x \right) +\sin  \theta \frac{ \partial  \Theta  \left( x \right) }{ \partial x}\frac{ \partial \sin  \theta }{ \partial x} \] \par
+\[
+\frac{1}{\Theta(\theta)}\frac{\partial^{2}\Theta(\theta)}{\partial\theta^{2}}=\frac{1}{\Theta(\theta)}(\sin^{2}\theta\frac{\partial^{2}\Theta(x)}{\partial x^{2}}+\sin\theta\frac{\partial\Theta(x)}{\partial x}\frac{\text{\ensuremath{\partial\sin\theta}}}{\partial x})
+\]
 
- \[ \frac{1}{ \Theta  \left(  \theta  \right) }\frac{ \partial ^{2} \Theta  \left(  \theta  \right) }{ \partial  \theta ^{2}}=\sin ^{2} \theta \frac{ \partial ^{2}}{ \partial x^{2}} \Theta  \left( x \right) +\sin  \theta \frac{ \partial  \Theta  \left( x \right) }{ \partial x} \left( -\frac{\cos  \theta }{\sin  \theta } \right)  \] \par
+\[
+\frac{1}{\Theta(\theta)}\frac{\partial^{2}\Theta(\theta)}{\partial\theta^{2}}=\frac{1}{\Theta(\theta)}(\sin^{2}\theta\frac{\partial^{2}\Theta(x)}{\partial x^{2}}+\sin\theta\frac{\partial\Theta(x)}{\partial x}\frac{\text{-\ensuremath{\cos}\ensuremath{\theta}}}{\sin\theta})
+\]
 
- \[ \frac{1}{ \Theta  \left(  \theta  \right) }\frac{ \partial ^{2} \Theta  \left(  \theta  \right) }{ \partial  \theta ^{2}}=\sin ^{2} \theta \frac{ \partial ^{2}}{ \partial x^{2}} \Theta  \left( x \right) -\cos  \theta \frac{ \partial  \Theta  \left( x \right) }{ \partial x} \] \par
+\[
+\frac{1}{\Theta(\theta)}\frac{\partial^{2}\Theta(\theta)}{\partial\theta^{2}}=\frac{1}{\Theta(\theta)}(\sin^{2}\theta\frac{\partial^{2}\Theta(x)}{\partial x^{2}}+-\cos\theta\frac{\partial\Theta(x)}{\partial x})
+\]
 
 Converting in terms of x,\par
 
- \[ \frac{1}{ \Theta  \left(  \theta  \right) }\frac{ \partial ^{2} \Theta  \left(  \theta  \right) }{ \partial  \theta ^{2}}= \left( 1-x^{2} \right) \frac{ \partial ^{2}}{ \partial x^{2}} \Theta  \left( x \right) -x\frac{ \partial  \Theta  \left( x \right) }{ \partial x} \] \par
+\[
+\frac{1}{\Theta(\theta)}\frac{\partial^{2}\Theta(\theta)}{\partial\theta^{2}}=\frac{1}{\Theta(\theta)}((1-x^{2})\frac{\partial^{2}\Theta(x)}{\partial x^{2}}+-x\frac{\partial\Theta(x)}{\partial x})
+\]
 
 For the final term, we know:\par
 
@@ -2877,12 +2885,18 @@ Substituting into:\par
  \[ K_{1}+\frac{m^{2}}{1-x^{2}}=\frac{1}{ \Theta  \left(  \theta  \right) }\frac{ \partial ^{2} \Theta  \left(  \theta  \right) }{ \partial  \theta ^{2}}-\frac{x}{ \Theta  \left(  \theta  \right) }\frac{ \partial  \Theta  \left( x \right) }{ \partial x} \] \par
 
 And the other term:\par
+\[
+K_{1}+\frac{m^{2}}{1-x^{2}}=\frac{1-x^{2}}{\Theta(\theta)}\frac{\partial^{2}\Theta(x)}{\partial x^{2}}-\frac{x}{\Theta(\theta)}\frac{\partial\Theta(x)}{\partial x}-\frac{x}{\Theta(\theta)}\frac{\partial\Theta(x)}{\partial x}
+\]
 
- \[ \frac{1}{ \Theta  \left(  \theta  \right) }\frac{ \partial ^{2} \Theta  \left(  \theta  \right) }{ \partial  \theta ^{2}}= \left( 1-x^{2} \right) \frac{ \partial ^{2}}{ \partial x^{2}} \Theta  \left( x \right) -x\frac{ \partial  \Theta  \left( x \right) }{ \partial x} \] \par
+\[
+K_{1}+\frac{m^{2}}{1-x^{2}}=\frac{1-x^{2}}{\Theta(\theta)}\frac{\partial^{2}\Theta(x)}{\partial x^{2}}-\frac{2x}{\Theta(\theta)}\frac{\partial\Theta(x)}{\partial x}
+\]
 
- \[ K_{1}+\frac{m^{2}}{1-x^{2}}= \left( 1-x^{2} \right) \frac{ \partial ^{2}}{ \partial x^{2}} \Theta  \left( x \right) -x\frac{ \partial  \Theta  \left( x \right) }{ \partial x}-\frac{x}{ \Theta  \left(  \theta  \right) }\frac{ \partial  \Theta  \left( x \right) }{ \partial x} \] \par
+\[
+\Theta(\theta)(K_{1}+\frac{m^{2}}{1-x^{2}})=(1-x^{2})\frac{\partial^{2}\Theta(x)}{\partial x^{2}}+-x\frac{\partial\Theta(x)}{\partial x}
+\]
 
- \[ K_{1}+\frac{m^{2}}{1-x^{2}}= \left( 1-x^{2} \right) \frac{ \partial ^{2}}{ \partial x^{2}} \Theta  \left( x \right) -2x\frac{ \partial  \Theta  \left( x \right) }{ \partial x} \] \par
 
 
 \vspace{\baselineskip}

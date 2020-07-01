@@ -257,6 +257,95 @@ I(r,\hat{s})(l=3)=\sum_{m=-3}^{3}I_{3}^{m}(r)Y_{3}^{m}(\hat{s})
 
 \end_layout
 
+\begin_layout Subsection
+Legendre's ODE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{\Theta(\theta)}\frac{\partial^{2}\Theta(\theta)}{\partial\theta^{2}}=\frac{1}{\Theta(\theta)}(\sin^{2}\theta\~\frac{\partial^{2}\Theta(x)}{\partial x^{2}}+\sin\theta\~\frac{\partial\Theta(x)}{\partial x}\frac{\text{\ensuremath{\partial\sin\theta}}}{\partial x})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{\Theta(\theta)}\frac{\partial^{2}\Theta(\theta)}{\partial\theta^{2}}=\frac{1}{\Theta(\theta)}(\sin^{2}\theta\~\frac{\partial^{2}\Theta(x)}{\partial x^{2}}+\sin\theta\~\frac{\partial\Theta(x)}{\partial x}\frac{\text{-\ensuremath{\cos}\theta}}{\sin\theta})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{\Theta(\theta)}\frac{\partial^{2}\Theta(\theta)}{\partial\theta^{2}}=\frac{1}{\Theta(\theta)}(\sin^{2}\theta\~\frac{\partial^{2}\Theta(x)}{\partial x^{2}}+-\cos\theta\~\frac{\partial\Theta(x)}{\partial x})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In terms of x
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{\Theta(\theta)}\frac{\partial^{2}\Theta(\theta)}{\partial\theta^{2}}=\frac{1}{\Theta(\theta)}((1-x^{2})\frac{\partial^{2}\Theta(x)}{\partial x^{2}}+-x\frac{\partial\Theta(x)}{\partial x})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And the other term:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+K_{1}+\frac{m^{2}}{1-x^{2}}=\frac{1-x^{2}}{\Theta(\theta)}\frac{\partial^{2}\Theta(x)}{\partial x^{2}}-\frac{x}{\Theta(\theta)}\frac{\partial\Theta(x)}{\partial x}-\frac{x}{\Theta(\theta)}\frac{\partial\Theta(x)}{\partial x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+K_{1}+\frac{m^{2}}{1-x^{2}}=\frac{1-x^{2}}{\Theta(\theta)}\frac{\partial^{2}\Theta(x)}{\partial x^{2}}-\frac{2x}{\Theta(\theta)}\frac{\partial\Theta(x)}{\partial x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Theta(\theta)(K_{1}+\frac{m^{2}}{1-x^{2}})=(1-x^{2})\frac{\partial^{2}\Theta(x)}{\partial x^{2}}+-x\frac{\partial\Theta(x)}{\partial x}
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 P1 Model
 \end_layout
