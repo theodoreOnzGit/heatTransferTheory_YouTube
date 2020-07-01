@@ -2142,7 +2142,7 @@ Why is it hard? Because of the scattering term and direction dependence.\par
 
 
 \vspace{\baselineskip}
-To dela with this term, we need some approximation methods. \par
+To deal with this term, we need some approximation methods. \par
 
 In summary we have two classes of methods commonly used in numerical solvers:\par
 
@@ -2155,7 +2155,7 @@ In summary we have two classes of methods commonly used in numerical solvers:\pa
 Now what does this discretisation do?\par
 
 \begin{itemize}
-	\item (need to investigate)\par
+	\item convert complicated integro-differential equations into multiple PDEs\par
 
 \end{itemize}
 
@@ -2196,7 +2196,7 @@ Now what can we do about this? The angular dependence is rather annoying?\par
 
 
 \vspace{\baselineskip}
-Here’s an idea, let’s integrate the flux over all angles and try to get a transport equation out of that$ \ldots $ \par
+Here’s an idea, let’s integrate the intesity over all angles and try to get a transport equation out of that$ \ldots $ \par
 
  \[ new quantity \rightarrow  \int _{-1}^{1}I \left(  \tau_{ \lambda } \right)  d \mu  \] \par
 
@@ -2246,8 +2246,6 @@ And bringing the integral in,\par
 
  \[ 2 \pi  \int _{-1}^{1} \mu \frac{ \partial I_{ \lambda } \left(  \tau_{ \lambda } \right) }{ \partial  \tau_{ \lambda }}d \mu =2 \pi  \int _{-1}^{1} \left( 1- \omega _{ \lambda } \right) I_{b \lambda } d \mu +2 \pi  \int _{-1}^{1}\frac{ \omega _{ \lambda }}{2} \int _{-1}^{1}I_{ \lambda } \left(  \tau_{ \lambda }, \mu  \right) ~ \Phi  \left(  \mu , \mu _{i} \right) d \mu _{i}d \mu -I_{0} \] \par
 
- \[ \frac{ \partial I_{0}}{ \partial  \tau_{ \lambda }}=2 \pi  \int _{-1}^{1} \left( 1- \omega _{ \lambda } \right) I_{b \lambda } d \mu +2 \pi  \int _{-1}^{1}\frac{ \omega _{ \lambda }}{2} \int _{-1}^{1}I_{ \lambda } \left(  \tau_{ \lambda }, \mu  \right) ~ \Phi  \left(  \mu , \mu _{i} \right) d \mu _{i}d \mu -I_{0} \] \par
-
 However we note that there is another annoying term: \par
 
  \[ 2 \pi  \int _{-1}^{1} \mu \frac{ \partial I_{ \lambda } \left(  \tau_{ \lambda } \right) }{ \partial  \tau_{ \lambda }}d \mu  \] \par
@@ -2255,6 +2253,12 @@ However we note that there is another annoying term: \par
 We shall call this\par
 
  \[ I_{1}=2 \pi  \int _{-1}^{1} \mu I_{ \lambda } \left(  \tau_{ \lambda } \right) d \mu  \] \par
+
+
+\[
+\frac{\partial I_{1}}{\partial\tau_{\lambda}}=2\pi(\int_{-1}^{1}\mu\frac{\partial}{\partial\tau_{\lambda}}I_{\lambda}(\tau_{\lambda})d\mu)
+\]
+
 
  \( I_{0} \)  and  \( I_{1} \)  are called the zeroth and first moments respectively. This is why the method is known as the $``$moment method$"$ \par
 

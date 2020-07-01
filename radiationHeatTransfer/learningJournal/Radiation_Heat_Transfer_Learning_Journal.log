@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.6.19)  29 JUN 2020 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.6.19)  30 JUN 2020 13:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1830,7 +1830,7 @@ m/m/it/12 ^^Y [][] [] I[]d^^V \OT1/cmr/m/n/12 + 2\OML/cmm/m/it/12 ^^Y [][] [] [
  []
 
 [49] [50]
-Overfull \hbox (32.54543pt too wide) detected at line 2317
+Overfull \hbox (32.54543pt too wide) detected at line 2321
 [][] \OML/cmm/m/it/12 ^^V[]d^^V \OT1/cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 I[]d
 ^^V \OT1/cmr/m/n/12 + [][] [] [][] \OML/cmm/m/it/12 I[] []  []\OT1/cmr/m/n/12 ^
 ^H [] \OML/cmm/m/it/12 d^^V[]d^^V \OMS/cmsy/m/n/12 ^^@ [][] \OML/cmm/m/it/12 I[
@@ -1838,7 +1838,7 @@ Overfull \hbox (32.54543pt too wide) detected at line 2317
  []
 
 
-Overfull \hbox (58.50363pt too wide) detected at line 2321
+Overfull \hbox (58.50363pt too wide) detected at line 2325
 [][] \OML/cmm/m/it/12 ^^V[][]d^^V \OT1/cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 I[
 ]^^Vd^^V \OT1/cmr/m/n/12 + [][] [] [][] \OML/cmm/m/it/12 I[] []  []\OT1/cmr/m/n
 /12 ^^H [] \OML/cmm/m/it/12 d^^V[]^^Vd^^V \OMS/cmsy/m/n/12 ^^@ [][] \OML/cmm/m/
@@ -1846,7 +1846,7 @@ it/12 I[] [] ^^Vd^^V
  []
 
 
-Overfull \hbox (118.38638pt too wide) detected at line 2325
+Overfull \hbox (118.38638pt too wide) detected at line 2329
 \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ^^Y [][] ^^V[][]d^^V \OT1/cmr/m/n/12 = 2\OML/
 cmm/m/it/12 ^^Y [][] [] I[]^^Vd^^V \OT1/cmr/m/n/12 + 2\OML/cmm/m/it/12 ^^Y [][]
  [] [][] I[] []  []\OT1/cmr/m/n/12 ^^H [] \OML/cmm/m/it/12 d^^V[]^^Vd^^V \OMS/c
@@ -1854,7 +1854,7 @@ msy/m/n/12 ^^@ \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ^^Y [][] I[] [] ^^Vd^^V
  []
 
 
-Overfull \hbox (118.38638pt too wide) detected at line 2343
+Overfull \hbox (118.38638pt too wide) detected at line 2347
 \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ^^Y [][] []^^V[]d^^V \OT1/cmr/m/n/12 = 2\OML/
 cmm/m/it/12 ^^Y [][] [] I[]^^Vd^^V \OT1/cmr/m/n/12 + 2\OML/cmm/m/it/12 ^^Y [][]
  [] [][] I[] []  []\OT1/cmr/m/n/12 ^^H [] \OML/cmm/m/it/12 d^^V[]^^Vd^^V \OMS/c
@@ -1862,40 +1862,40 @@ msy/m/n/12 ^^@ \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ^^Y [][] I[] [] ^^Vd^^V
  []
 
 [51] [52] [53] [54] [55] [56] [57]
-Overfull \hbox (53.77402pt too wide) detected at line 2643
+Overfull \hbox (53.77402pt too wide) detected at line 2647
 [] [] \OT1/cmr/m/n/12 : [][] = \OML/cmm/m/it/12 I[] [] [] \OT1/cmr/m/n/12 + \OM
 L/cmm/m/it/12 I[] [] [] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 I[] [] [] \OT1/cmr/m
 /n/12 + [] + \OML/cmm/m/it/12 I[] [] []
  []
 
 [58] [59]
-Overfull \hbox (158.529pt too wide) detected at line 2717
+Overfull \hbox (158.529pt too wide) detected at line 2721
 [][] [] \OT1/cmr/m/n/12 + [][] [] + [][] = \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12
  ![]\OT1/cmr/m/n/12 ^^B [] ^^H [] \OML/cmm/m/it/12 R []
  []
 
 
-Overfull \hbox (80.57954pt too wide) detected at line 2723
+Overfull \hbox (80.57954pt too wide) detected at line 2727
 \OT1/cmr/m/n/12 ^^B [] ^^H [] [][] [] + [][] [] + [][] = \OMS/cmsy/m/n/12 ^^@\O
 ML/cmm/m/it/12 ![]\OT1/cmr/m/n/12 ^^B [] ^^H [] \OML/cmm/m/it/12 R []
  []
 
 
-Overfull \hbox (23.7859pt too wide) detected at line 2741
+Overfull \hbox (23.7859pt too wide) detected at line 2745
 [][] [] \OT1/cmr/m/n/12 + [][] = \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 r[]![] \O
 MS/cmsy/m/n/12 ^^@ [][] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 constant
  []
 
 [60] [61] [62] [63] [64]
 
-LaTeX Warning: Empty bibliography on input line 2912.
+LaTeX Warning: Empty bibliography on input line 2916.
 
 [65]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2913.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2913.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2917.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2917.
  (./Radiation_Heat_Transfer_Learning_Journal.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2913.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2913.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2917.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2917.
 
 Package rerunfilecheck Info: File `Radiation_Heat_Transfer_Learning_Journal.out
 ' has not changed.
@@ -1931,7 +1931,7 @@ ublic/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0
 texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/pu
 blic/cm-super/sfti1000.pfb>
 Output written on Radiation_Heat_Transfer_Learning_Journal.pdf (65 pages, 16178
-24 bytes).
+02 bytes).
 PDF statistics:
  508 PDF objects out of 1000 (max. 8388607)
  392 compressed objects within 4 object streams
