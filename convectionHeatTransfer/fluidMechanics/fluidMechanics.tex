@@ -76,7 +76,7 @@ $$
 
 Inner product
 
-$$\vec{u} \bullet \vec{v} = \vec{u}^T \vec{v}$$
+$$\vec{u} \bullet \vec{v} = (\vec{u}^T \vec{v})^T$$
 
 
 $$ \begin{pmatrix}
@@ -122,11 +122,428 @@ Tensors in LaTeX
 Navier Stokes Equations
 https://www.comsol.com/multiphysics/navier-stokes-equations
 https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations
+
+Github
+https://github.com/theodoreOnzGit/heatTransferTheory_YouTube
 \end{verbatim}
+
+First let's deal with:
+
+$$(\vec{u}\bullet \nabla) \vec{u}$$
+
+\begin{equation}
+\begin{pmatrix}
+\frac{\partial}{\partial x} \\ 
+\frac{\partial}{\partial y} \\
+\frac{\partial}{\partial z} 
+\end{pmatrix} \otimes  \begin{pmatrix}
+u_1 \\
+u_2 \\
+u_3
+\end{pmatrix} 
+= 
+\begin{pmatrix}
+\frac{\partial}{\partial x} \\ 
+\frac{\partial}{\partial y} \\
+\frac{\partial}{\partial z} 
+\end{pmatrix}  \begin{pmatrix}
+u_1 && u_2 && u_3
+\end{pmatrix} 
+\end{equation}
+
+$$
+= \begin{pmatrix}
+\frac{\partial}{\partial x} u_1 && \frac{\partial}{\partial x} u_2 && \frac{\partial}{\partial x} u_3 \\
+\frac{\partial}{\partial y} u_1 && \frac{\partial}{\partial y} u_2 && \frac{\partial}{\partial y} u_3 \\
+\frac{\partial}{\partial z} u_1 && \frac{\partial}{\partial z} u_2 && \frac{\partial}{\partial z} u_3 
+\end{pmatrix}
+$$
+
+Then we do inner product
+
+$$
+\begin{pmatrix}
+u_1 \\
+u_2 \\
+u_3
+\end{pmatrix} \bullet \begin{pmatrix}
+\frac{\partial}{\partial x} u_1 && \frac{\partial}{\partial x} u_2 && \frac{\partial}{\partial x} u_3 \\
+\frac{\partial}{\partial y} u_1 && \frac{\partial}{\partial y} u_2 && \frac{\partial}{\partial y} u_3 \\
+\frac{\partial}{\partial z} u_1 && \frac{\partial}{\partial z} u_2 && \frac{\partial}{\partial z} u_3 
+\end{pmatrix} 
+$$
+
+$$\begin{pmatrix}
+u_1 &&
+u_2 &&
+u_3
+\end{pmatrix} \begin{pmatrix}
+\frac{\partial}{\partial x} u_1 && \frac{\partial}{\partial x} u_2 && \frac{\partial}{\partial x} u_3 \\
+\frac{\partial}{\partial y} u_1 && \frac{\partial}{\partial y} u_2 && \frac{\partial}{\partial y} u_3 \\
+\frac{\partial}{\partial z} u_1 && \frac{\partial}{\partial z} u_2 && \frac{\partial}{\partial z} u_3 
+\end{pmatrix}  $$
+
+$$=\begin{pmatrix}
+u_1 \frac{\partial}{\partial x} u_1 + u_2 \frac{\partial}{\partial y} u_1 + u_3 \frac{\partial}{\partial z} u_1 \\
+u_1 \frac{\partial}{\partial x} u_2 + u_2 \frac{\partial}{\partial y} u_2 + u_3 \frac{\partial}{\partial z} u_2 \\
+u_1 \frac{\partial}{\partial x} u_3 + u_2 \frac{\partial}{\partial y} u_3 + u_3 \frac{\partial}{\partial z} u_3
+\end{pmatrix}
+$$
+
+
+Let's deal with the momentum diffusivity (kinematic viscosity) term:
+
+$$\nabla^2 = (\nabla \bullet \nabla)$$
+
+$$
+\begin{pmatrix}
+\frac{\partial}{\partial x} \\ 
+\frac{\partial}{\partial y} \\
+\frac{\partial}{\partial z} 
+\end{pmatrix} \bullet \begin{pmatrix}
+\frac{\partial}{\partial x} u_1 && \frac{\partial}{\partial x} u_2 && \frac{\partial}{\partial x} u_3 \\
+\frac{\partial}{\partial y} u_1 && \frac{\partial}{\partial y} u_2 && \frac{\partial}{\partial y} u_3 \\
+\frac{\partial}{\partial z} u_1 && \frac{\partial}{\partial z} u_2 && \frac{\partial}{\partial z} u_3 
+\end{pmatrix} 
+$$
+
+$$\begin{pmatrix}
+\frac{\partial}{\partial x} &&
+\frac{\partial}{\partial y} &&
+\frac{\partial}{\partial z} 
+\end{pmatrix} \begin{pmatrix}
+\frac{\partial}{\partial x} u_1 && \frac{\partial}{\partial x} u_2 && \frac{\partial}{\partial x} u_3 \\
+\frac{\partial}{\partial y} u_1 && \frac{\partial}{\partial y} u_2 && \frac{\partial}{\partial y} u_3 \\
+\frac{\partial}{\partial z} u_1 && \frac{\partial}{\partial z} u_2 && \frac{\partial}{\partial z} u_3 
+\end{pmatrix}  $$
+
+$$=\begin{pmatrix}
+\frac{\partial}{\partial x} \frac{\partial}{\partial x} u_1 + \frac{\partial}{\partial y} \frac{\partial}{\partial y} u_1 + \frac{\partial}{\partial z} \frac{\partial}{\partial z} u_1 \\
+\frac{\partial}{\partial x} \frac{\partial}{\partial x} u_2 + \frac{\partial}{\partial y} \frac{\partial}{\partial y} u_2 + \frac{\partial}{\partial z} \frac{\partial}{\partial z} u_2 \\
+\frac{\partial}{\partial x} \frac{\partial}{\partial x} u_3 + \frac{\partial}{\partial y} \frac{\partial}{\partial y} u_3 + \frac{\partial}{\partial z} \frac{\partial}{\partial z} u_3
+\end{pmatrix}
+$$
 
 
 \part{Boundary Layer Equations}
 
+$$\frac{\partial }{\partial t} u + u \frac{\partial}{\partial x} u + v \frac{\partial}{\partial y} u + w \frac{\partial}{\partial z} u - \nu ( \frac{\partial^2}{\partial x^2} u + \frac{\partial^2}{\partial y^2} \ u + \frac{\partial^2}{\partial z^2} u) = - \frac{1}{\rho_0} \frac{\partial P}{\partial x} +g_x$$
+
+$$\frac{\partial }{\partial t} v + u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v + w \frac{\partial}{\partial z} v - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v + \frac{\partial^2}{\partial z^2} v) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+$$\frac{\partial }{\partial t} w + u \frac{\partial}{\partial x} w + v \frac{\partial}{\partial y} w + w \frac{\partial}{\partial z} w - \nu ( \frac{\partial^2}{\partial x^2} w + \frac{\partial^2}{\partial y^2} \ w + \frac{\partial^2}{\partial z^2} w) = - \frac{1}{\rho_0} \frac{\partial P}{\partial z} +g_z$$
+
+Now for 2D what do we do?
+w=0 everywhere and at all times, $g_z=0$
+
+We eliminate z terms from the x and y momentum balance
+
+$$\frac{\partial }{\partial t} u + u \frac{\partial}{\partial x} u + v \frac{\partial}{\partial y} u - \nu ( \frac{\partial^2}{\partial x^2} u + \frac{\partial^2}{\partial y^2} \ u + \frac{\partial^2}{\partial z^2} u) = - \frac{1}{\rho_0} \frac{\partial P}{\partial x} +g_x$$
+
+$$\frac{\partial }{\partial t} v + u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v + \frac{\partial^2}{\partial z^2} v) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+There is no spatial variation in u and v w.r.t z
+We have 2D Navier stokes:
+
+$$\frac{\partial }{\partial t} u + u \frac{\partial}{\partial x} u + v \frac{\partial}{\partial y} u - \nu ( \frac{\partial^2}{\partial x^2} u + \frac{\partial^2}{\partial y^2} \ u ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial x} +g_x$$
+
+$$\frac{\partial }{\partial t} v + u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+continuity equation
+
+$$\frac{\partial }{\partial x} u + \frac{\partial}{\partial y} v + \frac{\partial}{\partial z} w=0$$
+
+$$\frac{\partial }{\partial x} u + \frac{\partial}{\partial y} v =0 $$
+
+\section{nondimensionalisation}
+Order of magnitude
+$$\mathcal{O}$$
+
+Scaling for order magnitude comparison 
+
+$$u^* , y^* =\mathcal{O}(1)$$
+
+
+we define:
+$$u^* = \frac{u}{u_\infty}$$
+$$u = u_\infty u^*$$
+
+$$x^* = \frac{x}{L}$$
+
+$$y^* = \frac{y}{\delta_p}$$
+
+We scale our continutity equation:
+
+$$\frac{\partial }{\partial x^* L} u^* u_\infty + \frac{\partial}{\partial y^* \delta_p} v =0 $$
+
+$$\frac{\partial }{\partial x^* L} u^* u_\infty + \frac{\partial}{\partial y^* \delta_p} v =0 $$
+
+$$ \frac{u_\infty}{L} \frac{\partial }{\partial x^* } u^* + \frac{1}{\delta_p}\frac{\partial}{\partial y^*} v =0 $$
+
+
+$$\frac{\partial }{\partial x^* } u^* + \frac{L}{\delta_p u_\infty}\frac{\partial}{\partial y^*} v =0 $$
+
+$$v^*=\frac{vL}{\delta_p u_\infty}=  \mathcal{O}(1)$$
+
+$$v^* = \frac{v}{\frac{u_\infty \delta_p}{L}}$$
+
+$$\frac{\partial }{\partial x^* } u^* + \frac{\partial}{\partial y^*} v^* =0 $$
+
+Now we move on to the NS equations
+
+so we need to scale time:
+
+x lengthscale = L
+
+x velocityscale = $u_\infty$
+
+timescale = $\frac{L}{u_\infty}$
+
+$$t^* = \frac{t}{\frac{L}{u_\infty}}$$
+
+Let's scale the momentum NS equations 
+
+$$\frac{\partial }{\partial t} u + u \frac{\partial}{\partial x} u + v \frac{\partial}{\partial y} u - \nu ( \frac{\partial^2}{\partial x^2} u + \frac{\partial^2}{\partial y^2} \ u ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial x} +g_x$$
+
+$$\frac{\partial }{\partial t} v + u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+Let's do x momentum equations
+
+$$\frac{\partial }{\partial t} u^* u_\infty + u^* u_\infty \frac{\partial}{\partial x^* L} u^* u_\infty + v \frac{\partial}{\partial y} u^* u_\infty - \nu ( \frac{\partial^2}{\partial x^2} u^* u_\infty + \frac{\partial^2}{\partial y^2} \ u^* u_\infty ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial x} +g_x$$
+
+
+$$\frac{\partial }{\partial t} u^* + u^* \frac{u_\infty}{L} \frac{\partial}{\partial x^* } u^* + v \frac{1}{\delta_p} \frac{\partial}{\partial y^*} u^* - \nu (\frac{1}{L^2} \frac{\partial^2}{\partial (x^*)^2} u^* + \frac{1}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ u^* ) = \frac{1}{u_\infty} ( - \frac{1}{L \rho_0} \frac{\partial P}{\partial x^*} +g_x)$$
+
+$$\frac{u_\infty}{L}\frac{\partial }{\partial t^*} u^* + u^* \frac{u_\infty}{L} \frac{\partial}{\partial x^* } u^* + v \frac{1}{\delta_p} \frac{\partial}{\partial y^*} u^* - \nu (\frac{1}{L^2} \frac{\partial^2}{\partial (x^*)^2} u^* + \frac{1}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ u^* ) = \frac{1}{u_\infty} ( - \frac{1}{L \rho_0} \frac{\partial P}{\partial x^*} +g_x)$$
+
+
+$$\frac{\partial }{\partial t^*} u^* + u^*  \frac{\partial}{\partial x^* } u^* + v^*  \frac{\partial}{\partial y^*} u^* - \frac{\nu}{u_\infty L}  ( \frac{\partial^2}{\partial (x^*)^2} u^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ u^* ) = \frac{L}{u_\infty^2} ( - \frac{1}{L \rho_0} \frac{\partial P}{\partial x^*} +g_x)$$
+
+Reynold's number
+$$Re_L  = \frac{u_\infty L}{\nu}$$
+
+$$\frac{\partial }{\partial t^*} u^* + u^*  \frac{\partial}{\partial x^* } u^* + v^*  \frac{\partial}{\partial y^*} u^* - \frac{1}{Re_L}  ( \frac{\partial^2}{\partial (x^*)^2} u^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ u^* ) = \frac{L}{u_\infty^2} ( - \frac{1}{L \rho_0} \frac{\partial P}{\partial x^*} +g_x)$$
+
+$$\frac{\partial }{\partial t^*} u^* + u^*  \frac{\partial}{\partial x^* } u^* + v^*  \frac{\partial}{\partial y^*} u^* - \frac{1}{Re_L}  ( \frac{\partial^2}{\partial (x^*)^2} u^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ u^* ) =  ( - \frac{1}{L \rho_0}  \frac{L}{u_\infty^2} \frac{\partial P}{\partial x^*} + \frac{L}{u_\infty^2}g_x)$$
+
+Let's scale gravity
+
+$$g_x^* = \frac{g_x}{|g|} = \cos \theta_x = \mathcal{O}(1)$$
+
+
+$$\frac{\partial }{\partial t^*} u^* + u^*  \frac{\partial}{\partial x^* } u^* + v^*  \frac{\partial}{\partial y^*} u^* - \frac{1}{Re_L}  ( \frac{\partial^2}{\partial (x^*)^2} u^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ u^* ) =  ( -  \frac{1}{ \rho_0 u_\infty^2} \frac{\partial P}{\partial x^*} + \frac{L |g|}{u_\infty^2}g_x^* )$$
+
+
+$$\frac{\partial }{\partial t^*} u^* + u^*  \frac{\partial}{\partial x^* } u^* + v^*  \frac{\partial}{\partial y^*} u^* - \frac{1}{Re_L}  ( \frac{\partial^2}{\partial (x^*)^2} u^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ u^* ) =  ( -  \frac{1}{ \rho_0 u_\infty^2} \frac{\partial P}{\partial x^*} + \frac{1}{Fr^2}g_x^* )$$
+
+
+$$P^* = \frac{P}{\rho_0 u_\infty^2}$$
+
+After nondimensionalisation, our x momentum equation becomes:
+
+$$\frac{\partial }{\partial t^*} u^* + u^*  \frac{\partial}{\partial x^* } u^* + v^*  \frac{\partial}{\partial y^*} u^* - \frac{1}{Re_L}  ( \frac{\partial^2}{\partial (x^*)^2} u^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ u^* ) =  ( -  \frac{\partial P^*}{\partial x^*} + \frac{1}{Fr^2}g_x^* )$$
+
+we dimensionalise y momentum eqns
+
+$$\frac{\partial }{\partial t} v + u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+First the x and time terms:
+$$ \frac{u_\infty}{L} \frac{\partial }{\partial t^*} v + u^* \frac{u_\infty}{L} \frac{\partial}{\partial x^*} v + v \frac{\partial}{\partial y} v - \nu (\frac{1}{L^2} \frac{\partial^2}{\partial (x^*)^2} v + \frac{\partial^2}{\partial y^2} \ v ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+Second y coordinate terms:
+$$ \frac{u_\infty}{L} \frac{\partial }{\partial t^*} v + u^* \frac{u_\infty}{L} \frac{\partial}{\partial x^*} v + v \frac{1}{\delta_p} \frac{\partial}{\partial y^*} v - \nu (\frac{1}{L^2} \frac{\partial^2}{\partial (x^*)^2} v + \frac{1}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ v ) = - \frac{1}{\rho_0} \frac{1}{\delta_p} \frac{\partial P}{\partial y^*} +g_y^*|g|$$
+
+divide by $\frac{u_\infty^2}{L^2}$
+
+$$ \frac{L}{u_\infty} \frac{\partial }{\partial t^*} v + u^* \frac{L}{u_\infty} \frac{\partial}{\partial x^*} v + v \frac{L^2}{ u_\infty^2 \delta_p} \frac{\partial}{\partial y^*} v - \nu \frac{L^2}{u_\infty^2} (\frac{1}{L^2} \frac{\partial^2}{\partial (x^*)^2} v + \frac{1}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ v ) =  \frac{L^2}{u_\infty^2}(- \frac{1}{\rho_0} \frac{1}{\delta_p} \frac{\partial P}{\partial y^*} +g_y^* |g|)$$
+
+divide by $\delta_p$
+
+$$ \frac{L }{u_\infty \delta_p} \frac{\partial }{\partial t^*} v + u^* \frac{L }{u_\infty \delta_p} \frac{\partial}{\partial x^*} v + v \frac{L^2}{ u_\infty^2 \delta_p^2} \frac{\partial}{\partial y^*} v - \nu \frac{L^2}{u_\infty^2 \delta_p } (\frac{1}{L^2} \frac{\partial^2}{\partial (x^*)^2} v + \frac{1}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ v ) =  \frac{L^2 }{u_\infty^2 \delta_p}(- \frac{1}{\rho_0} \frac{1}{\delta_p} \frac{\partial P}{\partial y^*} +g_y^* |g|)$$
+
+
+Combining some terms
+$$  \frac{\partial }{\partial t^*} v^* + u^*  \frac{\partial}{\partial x^*} v^* + v^* \frac{\partial}{\partial y^*} v^* - \nu \frac{L}{u_\infty  } (\frac{1}{L^2} \frac{\partial^2}{\partial (x^*)^2} v^* + \frac{1}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ v^* ) =  \frac{L^2 }{u_\infty^2 \delta_p}(- \frac{1}{\rho_0} \frac{1}{\delta_p} \frac{\partial P}{\partial y^*} +g_y^* |g|)$$
+
+Rearranging
+
+$$  \frac{\partial }{\partial t^*} v^* + u^*  \frac{\partial}{\partial x^*} v^* + v^* \frac{\partial}{\partial y^*} v^* -  \frac{\nu}{u_\infty L } ( \frac{\partial^2}{\partial (x^*)^2} v^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ v^* ) =  (- \frac{1}{\rho_0}\frac{L^2 }{u_\infty^2 \delta_p} \frac{1}{\delta_p} \frac{\partial P}{\partial y^*} +g_y^* |g|\frac{L^2 }{u_\infty^2 \delta_p})$$
+
+nondimensionalisng pressure and including the Fr
+
+$$  \frac{\partial }{\partial t^*} v^* + u^*  \frac{\partial}{\partial x^*} v^* + v^* \frac{\partial}{\partial y^*} v^* -  \frac{\nu}{u_\infty L } ( \frac{\partial^2}{\partial (x^*)^2} v^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ v^* ) =  (- \frac{L^2 }{\delta_p^2} \frac{\partial P^*}{\partial y^*} +g_y^*\frac{1}{Fr^2}\frac{L }{ \delta_p})$$
+
+Include Re
+
+$$  \frac{\partial }{\partial t^*} v^* + u^*  \frac{\partial}{\partial x^*} v^* + v^* \frac{\partial}{\partial y^*} v^* -  \frac{1}{Re_L } ( \frac{\partial^2}{\partial (x^*)^2} v^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ v^* ) =  (- \frac{L^2 }{\delta_p^2} \frac{\partial P^*}{\partial y^*} +g_y^*\frac{1}{Fr^2}\frac{L }{ \delta_p})$$
+
+
+Review: NS nondimensionalised
+
+$$\frac{\partial }{\partial t^*} u^* + u^*  \frac{\partial}{\partial x^* } u^* + v^*  \frac{\partial}{\partial y^*} u^* - \frac{1}{Re_L}  ( \frac{\partial^2}{\partial (x^*)^2} u^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ u^* ) =  ( -  \frac{\partial P^*}{\partial x^*} + \frac{1}{Fr^2}g_x^* )$$
+
+
+$$  \frac{\partial }{\partial t^*} v^* + u^*  \frac{\partial}{\partial x^*} v^* + v^* \frac{\partial}{\partial y^*} v^* -  \frac{1}{Re_L } ( \frac{\partial^2}{\partial (x^*)^2} v^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ v^* ) =  (- \frac{L^2 }{\delta_p^2} \frac{\partial P^*}{\partial y^*} +g_y^*\frac{1}{Fr^2}\frac{L }{ \delta_p})$$
+
+$$\frac{\partial }{\partial x^* } u^* + \frac{\partial}{\partial y^*} v^* =0 $$
+
+\section{How to drop terms?}
+
+$$\frac{\partial }{\partial t^*} u^* + u^*  \frac{\partial}{\partial x^* } u^* + v^*  \frac{\partial}{\partial y^*} u^* - \frac{1}{Re_L}  ( \frac{\partial^2}{\partial (x^*)^2} u^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ u^* ) =  ( -  \frac{\partial P^*}{\partial x^*} + \frac{1}{Fr^2}g_x^* )$$
+
+
+$$  \frac{\partial }{\partial t^*} v^* + u^*  \frac{\partial}{\partial x^*} v^* + v^* \frac{\partial}{\partial y^*} v^* -  \frac{1}{Re_L } ( \frac{\partial^2}{\partial (x^*)^2} v^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ v^* ) =  (- \frac{L^2 }{\delta_p^2} \frac{\partial P^*}{\partial y^*} +g_y^*\frac{1}{Fr^2}\frac{L }{ \delta_p})$$
+
+$$\frac{\partial }{\partial x^* } u^* + \frac{\partial}{\partial y^*} v^* =0 $$
+
+When we want to determine which terms to cancel, we need to know how $Re_L$ compares with $\frac{L^2}{\delta_p^2}$
+
+Assumption:
+
+Creeping flow in y direction
+
+$$Re_\delta = \frac{v_c \delta_p}{\nu} = \mathcal{O}(1)$$
+
+How does $Re_\delta$ compare to $Re_L$
+
+$$v_c = u_\infty \frac{\delta_p}{L}$$
+
+$$Re_\delta = \frac{u_\infty \frac{\delta_p}{L} \delta_p}{\nu} = \mathcal{O}(1)$$
+
+$$Re_\delta = \frac{u_\infty  L}{\nu} \frac{\delta_p^2}{L^2} = \mathcal{O}(1)$$
+
+$$Re_\delta = Re_L \frac{\delta_p^2}{L^2} = \mathcal{O}(1)$$
+
+\subsubsection{x direction momentum eqn}
+
+$$\frac{\partial }{\partial t^*} u^* + u^*  \frac{\partial}{\partial x^* } u^* + v^*  \frac{\partial}{\partial y^*} u^* - \frac{1}{Re_L}  ( \frac{\partial^2}{\partial (x^*)^2} u^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ u^* ) =  ( -  \frac{\partial P^*}{\partial x^*} + \frac{1}{Fr^2}g_x^* )$$
+
+$$\frac{\partial }{\partial t^*} u^* + u^*  \frac{\partial}{\partial x^* } u^* + v^*  \frac{\partial}{\partial y^*} u^* -   \frac{1}{Re_L} \frac{\partial^2}{\partial (x^*)^2} u^* + \frac{1}{Re_L} \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ u^*  =  ( -  \frac{\partial P^*}{\partial x^*} + \frac{1}{Fr^2}g_x^* )$$
+
+$$\frac{\partial }{\partial t^*} u^* + u^*  \frac{\partial}{\partial x^* } u^* + v^*  \frac{\partial}{\partial y^*} u^* -   \frac{1}{Re_L} \frac{\partial^2}{\partial (x^*)^2} u^* + \frac{1}{\mathcal{O}(1)} \frac{\partial^2}{\partial (y^*)^2} \ u^*  =  ( -  \frac{\partial P^*}{\partial x^*} + \frac{1}{Fr^2}g_x^* )$$
+
+How big is $Re_L$?
+
+$$Re_L = \mathcal{O} (\frac{L^2}{\delta_p^2})$$
+
+We assume Fr is big 
+
+$$\frac{\partial }{\partial t^*} u^* + u^*  \frac{\partial}{\partial x^* } u^* + v^*  \frac{\partial}{\partial y^*} u^* -  + \frac{1}{\mathcal{O}(1)} \frac{\partial^2}{\partial (y^*)^2} \ u^*  =  ( -  \frac{\partial P^*}{\partial x^*} )$$
+
+\subsubsection{y direction momentum equation}
+
+$$  \frac{\partial }{\partial t^*} v^* + u^*  \frac{\partial}{\partial x^*} v^* + v^* \frac{\partial}{\partial y^*} v^* -  \frac{1}{Re_L } ( \frac{\partial^2}{\partial (x^*)^2} v^* + \frac{L^2}{\delta_p^2} \frac{\partial^2}{\partial (y^*)^2} \ v^* ) =  (- \frac{L^2 }{\delta_p^2} \frac{\partial P^*}{\partial y^*} +g_y^*\frac{1}{Fr^2}\frac{L }{ \delta_p})$$
+
+
+$$  \frac{\partial }{\partial t^*} v^* + u^*  \frac{\partial}{\partial x^*} v^* + v^* \frac{\partial}{\partial y^*} v^* -   ( \frac{1}{Re_L } \frac{\partial^2}{\partial (x^*)^2} v^* +  \frac{1}{\mathcal{O}(1) } \frac{\partial^2}{\partial (y^*)^2} \ v^* ) =  (- \frac{L^2 }{\delta_p^2} \frac{\partial P^*}{\partial y^*} +g_y^*\frac{1}{Fr^2}\frac{L }{ \delta_p})$$
+
+$$  [\frac{\partial }{\partial t^*} v^* + u^*  \frac{\partial}{\partial x^*} v^* + v^* \frac{\partial}{\partial y^*} v^* ] \frac{1}{Re_L}-   ( \frac{1}{Re_L^2 } \frac{\partial^2}{\partial (x^*)^2} v^* +  \frac{1}{\mathcal{O}(1) Re_L} \frac{\partial^2}{\partial (y^*)^2} \ v^* ) =  \frac{1}{Re_L}(- \frac{L^2 }{\delta_p^2} \frac{\partial P^*}{\partial y^*} +g_y^*\frac{1}{Fr^2}\frac{L }{ \delta_p})$$
+
+$$  [\frac{\partial }{\partial t^*} v^* + u^*  \frac{\partial}{\partial x^*} v^* + v^* \frac{\partial}{\partial y^*} v^* ] \frac{1}{Re_L}-   ( \frac{1}{Re_L^2 } \frac{\partial^2}{\partial (x^*)^2} v^* +  \frac{1}{\mathcal{O}(1) Re_L} \frac{\partial^2}{\partial (y^*)^2} \ v^* )$$
+
+$$ =  (- \frac{L^2 }{\delta_p^2} \frac{1}{Re_L}\frac{\partial P^*}{\partial y^*} +g_y^*\frac{1}{Fr^2}\frac{L }{ \delta_p}\frac{1}{Re_L})$$
+
+Cancelling out...
+
+$$  [\frac{\partial }{\partial t^*} v^* + u^*  \frac{\partial}{\partial x^*} v^* + v^* \frac{\partial}{\partial y^*} v^* ] \frac{1}{Re_L}-   ( \frac{1}{Re_L^2 } \frac{\partial^2}{\partial (x^*)^2} v^* +  \frac{1}{\mathcal{O}(1) Re_L} \frac{\partial^2}{\partial (y^*)^2} \ v^* )$$
+
+$$ =  (- \frac{1}{\mathcal{O}(1)}\frac{\partial P^*}{\partial y^*} +g_y^*\frac{1}{Fr^2}\frac{L^2 }{ \delta_p^2}\frac{1}{Re_L} \frac{\delta_p}{L})$$
+
+
+Simplifying
+
+$$  [\frac{\partial }{\partial t^*} v^* + u^*  \frac{\partial}{\partial x^*} v^* + v^* \frac{\partial}{\partial y^*} v^* ] \frac{1}{Re_L}-   ( \frac{1}{Re_L^2 } \frac{\partial^2}{\partial (x^*)^2} v^* +  \frac{1}{\mathcal{O}(1) Re_L} \frac{\partial^2}{\partial (y^*)^2} \ v^* )$$
+
+$$ =  \frac{1}{\mathcal{O}(1)} (-\frac{\partial P^*}{\partial y^*} +g_y^*\frac{1}{Fr^2}\frac{\delta_p}{L})$$
+
+For large $Re_L$
+
+$$0 =  (-\frac{\partial P^*}{\partial y^*} +g_y^*\frac{1}{Fr^2}\frac{\delta_p}{L})$$
+
+$$g_y^*\frac{1}{Fr^2}\frac{\delta_p}{L} =  \frac{\partial P^*}{\partial y^*} $$
+
+Only if g=0,
+
+$$0 = - \frac{\partial P^*}{\partial y^*} $$
+
+Now we have our BL equations:
+$$0 = - \frac{\partial P^*}{\partial y^*} $$
+
+
+$$\frac{\partial }{\partial t^*} u^* + u^*  \frac{\partial}{\partial x^* } u^* + v^*  \frac{\partial}{\partial y^*} u^* - \frac{1}{\mathcal{O}(1)} \frac{\partial^2}{\partial (y^*)^2} \ u^*  =  ( -  \frac{\partial P^*}{\partial x^*} )$$
+
+redimensionalise to obtain the laminar BL equations:
+$$0 = - \frac{\partial P}{\partial y} $$
+
+$$\frac{\partial }{\partial t} u + u  \frac{\partial}{\partial x } u + v  \frac{\partial}{\partial y} u -  \nu  \frac{\partial^2}{\partial (y)^2} \ u  =  ( -  \frac{\partial P}{\partial x} )$$
+
+$$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0$$
+
+\section{Solutions to the BL equations laminar}
+How to solve?
+\begin{itemize}
+\item 1st Similarity solution
+\item 2nd Von Karman Solution (Integral solution - approximate)
+\item 3rd numerical (CFD)
+\end{itemize}
+
+\subsection{similarity solution (Blasius solution)}
+$$0 = - \frac{\partial P}{\partial y} $$
+
+$$\frac{\partial }{\partial t} u + u  \frac{\partial}{\partial x } u + v  \frac{\partial}{\partial y} u -  \nu  \frac{\partial^2}{\partial (y)^2} \ u  =  ( -  \frac{\partial P}{\partial x} )$$
+
+$$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0$$
+
+Similarity solution $\rightarrow$ combine variables to convert PDE to ODE
+
+Making 2 assumptions before we continue:
+
+1) steady state
+2) no pressure gradient
+
+$$ u  \frac{\partial}{\partial x } u + v  \frac{\partial}{\partial y} u -  \nu  \frac{\partial^2}{\partial y^2} \ u  =  0$$
+
+$$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0$$
+
+How to combine variables to make life easier for us to solve?
+
+introduce the streamfunction ($\psi$):
+
+$$u = \frac{\partial \psi}{\partial y}$$
+$$v = -\frac{\partial \psi}{\partial x}$$
+
+Note: streamfunction only works for 2D fluid flow
+
+Substitute into 2D continuity equation,
+
+$$\frac{\partial}{\partial x} \frac{\partial \psi}{\partial y} - \frac{\partial}{\partial y}  \frac{\partial \psi}{\partial x}= 0$$
+
+Substitute into the 2D x momentum equation
+
+$$ (\frac{\partial \psi}{\partial y})  \frac{\partial}{\partial x } (\frac{\partial \psi}{\partial y}) + (-\frac{\partial \psi}{\partial x})  \frac{\partial}{\partial y} (\frac{\partial \psi}{\partial y}) -  \nu  \frac{\partial^2}{\partial y^2} (\frac{\partial \psi}{\partial y})  =  0$$
+
+
+$$ (\frac{\partial \psi}{\partial y})  \frac{\partial}{\partial x } (\frac{\partial \psi}{\partial y}) - (\frac{\partial \psi}{\partial x})  (\frac{\partial^2 \psi}{\partial y^2}) -  \nu  \frac{\partial^3}{\partial y^3} \psi  =  0$$
+
+We need to compress the number of variables further to 1 indep variable ($\eta$) and 1 dependent variable (f($\eta$))
+
+$$\eta= \eta(x,y)$$
+
+$$f= f(\eta)$$
+
+Before we continue, BCs first!
+
+1 BC in x dir for u
+
+2 BCs in y dir for u 
+
+no slip
+$$u=0 \ at \ y=0$$
+
+1 BC in y direction for v
+
+no slip
+$$v=0 \ at \ y=0$$
 
 \section{Resources Online}
 
