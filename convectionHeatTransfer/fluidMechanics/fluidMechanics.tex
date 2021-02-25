@@ -535,15 +535,335 @@ Before we continue, BCs first!
 
 1 BC in x dir for u
 
+$$x=0 , y\neq 0, u=u_\infty$$
+
 2 BCs in y dir for u 
 
 no slip
 $$u=0 \ at \ y=0$$
-
+$$y \rightarrow \infty;\ u \rightarrow u_\infty$$
 1 BC in y direction for v
 
 no slip
 $$v=0 \ at \ y=0$$
+
+\subsubsection{similarity transform}
+
+How do we start to get these "combo parameters" aka similarity variables?
+
+\begin{verbatim}
+https://ntrs.nasa.gov/citations/20050028493
+\end{verbatim}
+
+Based on Blasius's paper (translated by NACA) it's good to nondimnesionalise to find these similarity variables
+
+$$\psi^* = \frac{\psi}{\psi_0}$$
+
+Let's nondimensionalise the momentum equations:
+
+$$ (\frac{\partial \psi}{\partial y})  \frac{\partial}{\partial x } (\frac{\partial \psi}{\partial y}) - (\frac{\partial \psi}{\partial x})  (\frac{\partial^2 \psi}{\partial y^2}) -  \nu  \frac{\partial^3}{\partial y^3} \psi  =  0$$
+
+$$ \frac{\psi_0^2}{\delta_p^2 L}  (\frac{\partial \psi^*}{\partial y^*})  \frac{\partial}{\partial x^* } (\frac{\partial \psi^*}{\partial y^*}) - \frac{\psi_0^2}{L \delta_p^2} (\frac{\partial \psi^*}{\partial x^*})  (\frac{\partial^2 \psi^*}{\partial (y^*)^2}) -  \frac{\nu \psi_0}{\delta_p^3} \frac{\partial^3}{\partial (y^*)^3} \psi^*  =  0$$
+
+
+$$  (\frac{\partial \psi^*}{\partial y^*})  \frac{\partial}{\partial x^* } (\frac{\partial \psi^*}{\partial y^*}) - (\frac{\partial \psi^*}{\partial x^*})  (\frac{\partial^2 \psi^*}{\partial (y^*)^2}) -  \frac{\nu \psi_0}{\delta_p^3} \frac{\delta_p^2 L}{\psi_0^2} \frac{\partial^3}{\partial (y^*)^3} \psi^*  =  0$$
+
+$$  (\frac{\partial \psi^*}{\partial y^*})  \frac{\partial}{\partial x^* } (\frac{\partial \psi^*}{\partial y^*}) - (\frac{\partial \psi^*}{\partial x^*})  (\frac{\partial^2 \psi^*}{\partial (y^*)^2}) -  \frac{\nu }{\delta_p} \frac{ L}{\psi_0} \frac{\partial^3}{\partial (y^*)^3} \psi^*  =  0$$
+
+dimensionless group:
+
+$$\frac{\nu L }{\delta_p \psi_0} = \mathcal{O}(1)$$
+
+We want the equations to be nondimensionalised exactly.
+
+If we want the equations looks like:
+
+$$  (\frac{\partial \psi^*}{\partial y^*})  \frac{\partial}{\partial x^* } (\frac{\partial \psi^*}{\partial y^*}) - (\frac{\partial \psi^*}{\partial x^*})  (\frac{\partial^2 \psi^*}{\partial (y^*)^2}) - \frac{\partial^3}{\partial (y^*)^3} \psi^*  =  0$$
+
+$$\frac{\nu L }{\delta_p \psi_0} = 1$$
+
+$$\psi_0 = \frac{\nu L}{\delta_p}$$
+
+Otherwise:
+
+$$\psi_0 = \mathcal{O}(1) \frac{\nu L}{\delta_p} $$
+
+How do we get rid of dependent variables $\delta_p$?
+
+$$Re_\delta = \frac{v_c \delta_p}{\nu}=\mathcal{O}(1)$$
+
+$$Re_\delta = \frac{u_\infty L}{\nu} \frac{\delta_p^2}{L^2} = \mathcal{O}(1)$$
+
+From continutity equation 
+
+$$v_c = \frac{u_\infty \delta_p}{L}$$
+
+(not too helpful)
+
+What's helpful is to use the physics of the BL ie creeping flow in BL
+
+The other assumption: 
+
+$$Re_\delta = 1$$
+
+$$Re_\delta = \frac{u_\infty }{\nu L}\delta_p^2$$
+
+$$\delta_p  = \sqrt{Re_\delta} \sqrt{\frac{\nu L}{u_\infty}}$$
+
+Substitute back:
+
+$$\psi_0 = \frac{\nu L}{\delta_p}=\frac{\nu L}{\sqrt{Re_\delta} \sqrt{\frac{\nu L}{u_\infty}}} $$
+
+$$\psi_0 =\frac{\nu L}{ \sqrt{\frac{\nu L}{u_\infty}}} \frac{1}{\sqrt{Re_\delta}} $$
+
+
+$$\psi_0 = \sqrt{u_\infty L \nu} \frac{1}{\sqrt{Re_\delta}} $$
+
+Let's see our nondimensionalised streamfunction:
+
+$$\psi^* = \frac{\psi}{\psi_0} = \sqrt{Re_\delta} \frac{\psi}{\sqrt{u_\infty L \nu }} $$
+
+If $Re_\delta=1$
+
+$$\psi^* = \frac{\psi}{\psi_0} = \frac{\psi}{\sqrt{u_\infty L \nu }} $$
+
+What about our independent variable? We need to combine the x and y coordinate variables
+
+we'll use 
+
+
+$$Re_\delta = \frac{u_\infty }{\nu L}\delta_p^2$$
+
+$$\delta_p  = \sqrt{Re_\delta} \sqrt{\frac{\nu L}{u_\infty}}$$
+
+If we want x and y explicitly, 
+
+$$x = x^* L$$
+
+$$y=y^* \delta_p$$
+
+$$ \frac{y}{y^*} = \sqrt{Re_\delta} \sqrt{\frac{\nu \frac{x}{x^*}}{u_\infty}}$$
+
+$$ y = \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}} \sqrt{\frac{\nu x}{u_\infty}}$$
+
+$$ y = \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}} \sqrt{\frac{\nu x}{u_\infty}}$$
+
+$$y \sqrt{\frac{u_\infty}{\nu x}} = \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}} = \mathcal{O}(1)$$
+
+And we have dimensionless stream function
+
+$$\psi^* = \frac{\psi}{\psi_0} = \frac{\psi}{\sqrt{u_\infty L \nu }} $$
+
+
+$$\psi^* = \frac{\psi}{\sqrt{u_\infty \frac{x}{x^*} \nu }} $$
+$$\psi^* = \sqrt{x^*}\frac{\psi}{\sqrt{u_\infty x \nu }} $$
+
+If $Re_{\delta} \neq 1$
+
+$$\psi^* = \frac{\psi}{\psi_0} = \sqrt{Re_\delta} \frac{\psi}{\sqrt{u_\infty L \nu }} $$
+
+$$\psi^* = \frac{\psi}{\psi_0} = \sqrt{Re_\delta x^*} \frac{\psi}{\sqrt{u_\infty x \nu }} $$
+
+
+from Blasius's paper:
+$$\eta = \frac{1}{2} \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}} = \frac{1}{2}y \sqrt{\frac{u_\infty}{\nu x}} $$
+
+$$f(\eta) = \frac{\psi^*}{\sqrt{x^* Re_\delta}} = \frac{\psi}{\sqrt{u_\infty x \nu}}$$
+
+We start transforming variables
+
+$$  (\frac{\partial \psi^*}{\partial y^*})  \frac{\partial}{\partial x^* } (\frac{\partial \psi^*}{\partial y^*}) - (\frac{\partial \psi^*}{\partial x^*})  (\frac{\partial^2 \psi^*}{\partial (y^*)^2}) - \frac{\partial^3}{\partial (y^*)^3} \psi^*  =  0$$
+
+
+Use chain rule
+
+$$ \frac{\partial \psi^* }{\partial y^*} = \frac{\partial f}{\partial \eta} \frac{\partial \psi^*}{\partial f} \frac{\partial \eta}{\partial y^*} $$
+
+$$\frac{\partial f(\eta)}{\partial \psi^*}  = \frac{1}{\sqrt{x^* Re_\delta}} \frac{\partial}{\partial \psi^*} \psi^*  = \frac{1}{\sqrt{x^* Re_\delta}}$$
+
+[CORRECTION:]
+
+$$\psi^* = f(\eta) \sqrt{x^*} \sqrt{Re_\delta}$$
+
+So that:
+
+$$\frac{\partial \psi^* }{\partial y^*} =\frac{\partial}{\partial y^*} f(\eta) \sqrt{x^*} \sqrt{Re_\delta} $$
+
+Assume $Re_\delta$ is constant with respect to both x and y,
+$$\frac{\partial \psi^* }{\partial y^*} = \sqrt{x^*} \sqrt{Re_\delta} \frac{\partial}{\partial y^*} f(\eta)  $$
+
+
+$$\frac{\partial \psi^* }{\partial y^*} = \sqrt{x^*} \sqrt{Re_\delta} \frac{\partial \eta}{\partial y^*} \frac{\partial}{\partial \eta} f(\eta) = \sqrt{x^*} \sqrt{Re_\delta} \frac{\partial \eta}{\partial y^*} f' $$
+[END OF CORRECTION]
+$$\frac{\partial}{\partial y^*} \eta =  \frac{\partial}{\partial y^*} \frac{1}{2} \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}} = \frac{\eta}{y^*}$$
+
+$$ \frac{\partial \psi^* }{\partial y^*} = \frac{\partial f}{\partial \eta} \sqrt{x^* Re_\delta}  \frac{\eta}{y^*} = f' \sqrt{x^* Re_\delta}  \frac{\eta}{y^*}$$
+
+
+substitute:
+$$\eta = \frac{1}{2} \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}}  $$
+
+$$ \frac{\partial \psi^* }{\partial y^*} = \frac{\partial f}{\partial \eta} \sqrt{x^* Re_\delta}  \frac{\eta}{y^*} = f' \sqrt{x^* Re_\delta}  \frac{1}{y^*} \frac{1}{2} \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}} = f' \frac{Re_\delta}{2}$$
+
+So this becomes:
+
+$$  (f' \frac{Re_\delta}{2})  \frac{\partial}{\partial x^* } (f' \frac{Re_\delta}{2}) - (\frac{\partial \psi^*}{\partial x^*})  (\frac{\partial }{\partial (y^*)} f' \frac{Re_\delta}{2}) - \frac{\partial^2}{\partial (y^*)^2} f' \frac{Re_\delta}{2}  =  0$$
+
+$$  (f' \frac{Re_\delta}{2})  \frac{\partial}{\partial x^* } (f' ) - (\frac{\partial \psi^*}{\partial x^*})  (\frac{\partial }{\partial (y^*)} f' ) - \frac{\partial^2}{\partial (y^*)^2} f'  =  0$$
+
+
+
+Now for higher order derivatives, note that:
+
+$$\frac{\partial}{\partial y^*} (\frac{\eta}{y^*}) = \frac{y^* \frac{\partial \eta}{\partial y^*} - \eta \frac{\partial y^*}{\partial y^*}}{(y^*)^2}$$
+
+
+note that
+$$\frac{\partial}{\partial y^*} \eta =  \frac{\eta}{y^*}$$
+
+$$\frac{\partial}{\partial y^*} (\frac{\eta}{y^*}) = \frac{y^* \frac{\eta}{y^*} - \eta }{(y^*)^2} = 0$$
+
+What does this tell us?
+
+$$\frac{\eta}{y^*}$$
+
+is constant with respect to $y^*$
+
+
+$$\frac{\partial}{\partial y^*} f' = \frac{\partial \eta}{\partial y^*}f'' = \frac{\eta}{y^*}f''$$
+
+Then we have
+
+$$\frac{\partial^2}{\partial (y^*)^2} f' = \frac{\partial}{\partial (y^*)}(\frac{\partial \eta}{\partial y^*} \frac{\partial}{\partial \eta} f') = \frac{\partial}{\partial (y^*)}(\frac{\partial \eta}{\partial y^*} f'') $$
+
+$$= \frac{\eta^2}{(y^*)^2} \frac{\partial}{\partial \eta} f'' = \frac{\eta^2}{(y^*)^2}f'''$$
+
+We can substitute our expressions back:
+
+
+$$  (f' \frac{Re_\delta}{2})  \frac{\partial}{\partial x^* } (f' ) - (\frac{\partial \psi^*}{\partial x^*})  (\frac{\partial }{\partial (y^*)} f' ) - \frac{\partial^2}{\partial (y^*)^2} f'  =  0$$
+
+
+$$  (f' \frac{Re_\delta}{2})  \frac{\partial}{\partial x^* } (f' ) - (\frac{\partial \psi^*}{\partial x^*})  \frac{\eta}{y^*}f'' - \frac{\eta^2}{(y^*)^2}f'''  =  0$$
+
+Now let's deal with the $x^*$ terms
+
+$$\frac{\partial}{\partial x^*} = \frac{\partial \eta}{\partial x^*}\frac{\partial}{\partial \eta}$$
+
+$$\eta = \frac{1}{2} \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}}  $$
+
+$$ \frac{\partial}{\partial x^*} \eta =  \frac{\partial}{\partial x^*}\frac{1}{2} \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}}  $$
+
+$$ = \frac{1}{2} \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}} \frac{-1}{2x^*} = \frac{\eta}{-2x^*} $$
+
+$$  (f' \frac{Re_\delta}{2}) \frac{\eta}{-2x^*} (f'' ) - (\frac{\partial \psi^*}{\partial x^*})  \frac{\eta}{y^*}f'' - \frac{\eta^2}{(y^*)^2}f'''  =  0$$
+
+Now for the derivative:
+
+$$\psi^* = f(\eta) \sqrt{x^*} \sqrt{Re_\delta}$$
+
+$$\frac{\partial \psi^*}{\partial x^*} = \frac{\partial }{\partial x^*} f(\eta) \sqrt{x^*} \sqrt{Re_\delta}$$
+
+$$\frac{\partial \psi^*}{\partial x^*} = \sqrt{Re_\delta}[ \sqrt{x^*} \frac{\partial }{\partial x^*} f(\eta)  + f(\eta)\frac{\partial }{\partial x^*}  \sqrt{x^*} ]$$
+
+$$\frac{\partial \psi^*}{\partial x^*} = \sqrt{Re_\delta}[ \sqrt{x^*} \frac{-\eta}{2 x^*} f'  + f(\eta) \frac{1}{2\sqrt{x^*}} ]$$
+
+
+$$  (f' \frac{Re_\delta}{2}) \frac{\eta}{-2x^*} (f'' ) - (\sqrt{Re_\delta}[ \sqrt{x^*} \frac{-\eta}{2 x^*} f'  + f(\eta) \frac{1}{2\sqrt{x^*}}])  \frac{\eta}{y^*}f'' - \frac{\eta^2}{(y^*)^2}f'''  =  0$$
+
+Let's substitute
+
+$$\frac{\eta}{y^*} = \frac{1}{2} \frac{\sqrt{Re_\delta}}{\sqrt{x^*}}$$
+
+
+$$  (f' \frac{Re_\delta}{2}) \frac{\eta}{-2x^*} (f'' ) - (\sqrt{Re_\delta}[ \sqrt{x^*} \frac{-\eta}{2 x^*} f'  + f(\eta) \frac{1}{2\sqrt{x^*}}])  \frac{1}{2} \frac{\sqrt{Re_\delta}}{\sqrt{x^*}}f'' - (\frac{1}{2} \frac{\sqrt{Re_\delta}}{\sqrt{x^*}})^2f'''  =  0$$
+
+$$  (f' \frac{Re_\delta}{2}) \frac{\eta}{-2x^*} (f'' ) - (\sqrt{Re_\delta}[ \sqrt{x^*} \frac{-\eta}{2 x^*} f'  + f(\eta) \frac{1}{2\sqrt{x^*}}])  \frac{1}{2} \frac{\sqrt{Re_\delta}}{\sqrt{x^*}}f'' - (\frac{1}{4} \frac{Re_\delta}{x^*})f'''  =  0$$
+
+$$  (f' \frac{Re_\delta}{2}) \frac{\eta}{-2x^*} (f'' ) - (Re_\delta[  \frac{-\eta}{2 x^*} f'  + f(\eta) \frac{1}{2x^*}])  \frac{1}{2} f'' - (\frac{1}{4} \frac{Re_\delta}{x^*})f'''  =  0$$
+
+$$  -(f' \frac{Re_\delta}{2}) \frac{\eta}{2x^*} (f'' ) - [ \frac{Re_\delta}{2} f'' \frac{-\eta}{2 x^*} f'  + Re_\delta\frac{1}{2} f''f(\eta) \frac{1}{2x^*}]   - (\frac{1}{4} \frac{Re_\delta}{x^*})f'''  =  0$$
+
+
+$$ - [ Re_\delta\frac{1}{2} f''f(\eta) \frac{1}{2x^*}]   - (\frac{1}{4} \frac{Re_\delta}{x^*})f'''  =  0$$
+
+$$f''f+f'''=0$$
+
+And we're done!
+
+Now to transform the BCs:
+
+$$u=0\ at\ y=0$$
+$$v=0\ at\ y=0$$
+$$u \rightarrow u_\infty \ at \ y\rightarrow \infty$$
+
+$$\eta = \frac{1}{2} \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}} = \frac{1}{2}y \sqrt{\frac{u_\infty}{\nu x}} $$
+
+$$f(\eta) = \frac{\psi^*}{\sqrt{x^* Re_\delta}} = \frac{\psi}{\sqrt{u_\infty x \nu}}$$
+
+$$u=0\ at\ \eta=0$$
+$$v=0\ at\ \eta=0$$
+$$u \rightarrow u_\infty \ at \ \eta \rightarrow \infty$$
+
+$$u=\frac{\partial \psi}{\partial y}= \frac{\partial}{\partial y} f(\eta) \sqrt{u_\infty x \nu}$$
+
+$$u =\sqrt{u_\infty x \nu} \frac{\partial \eta}{\partial y} \frac{\partial}{\partial \eta} f(\eta)= \sqrt{u_\infty x \nu}  \frac{1}{2} \sqrt{\frac{u_\infty}{\nu x}} f'$$
+
+$$u = \frac{u_\infty}{2} f'$$
+
+$$u = u_\infty \rightarrow f'=2$$
+
+
+
+$$v= - \frac{\partial \psi}{\partial x}$$
+
+$$v= - \frac{\partial}{\partial x} f(\eta) \sqrt{u_\infty x \nu}$$
+$$v= -[f(\eta)\frac{\partial}{\partial x}  \sqrt{u_\infty x \nu}+  \sqrt{u_\infty x \nu} \frac{\partial}{\partial x} f(\eta)]$$
+
+$$v= -[f(\eta)\frac{\partial}{\partial x}  \sqrt{u_\infty x \nu}+  \sqrt{u_\infty x \nu} \frac{\partial \eta}{\partial x} \frac{\partial}{\partial \eta} f(\eta)]$$
+
+some steps later...
+
+$$v= -\frac{1}{2} \sqrt{\frac{\nu u_\infty}{x}}(\eta f' -f)$$
+
+$$f'=0\ at\ \eta=0$$
+$$f=0\ at\ \eta=0$$
+$$f' =2 \ at \ \eta\rightarrow \infty$$
+$$f''f+f'''=0$$
+
+\subsubsection{how to solve Blasius's equation}
+
+$$f'=0\ at\ \eta=0$$
+$$f=0\ at\ \eta=0$$
+$$f' =2 \ at \ \eta\rightarrow \infty$$
+$$f''f+f'''=0$$
+
+\paragraph{Series solution (aka Frobenius method)}
+
+\begin{verbatim}
+https://mathworld.wolfram.com/FrobeniusMethod.html
+http://naca.central.cranfield.ac.uk/reports/1950/naca-tm-1256.pdf
+\end{verbatim}
+
+Assumes:
+
+$$f=\sum_{n=0}^\infty a_n \eta^n$$
+
+$$f'=\sum_{n=0}^\infty a_{n+1} (n+1) \eta^n$$
+
+$$f''=\sum_{n=0}^\infty a_{n+2} (n+1)(n+2) \eta^n$$
+
+$$f'''=\sum_{n=0}^\infty a_{n+3} (n+1)(n+2)(n+3) \eta^n$$
+
+\paragraph{Runge Kutta Methods}
+numerical methods...
+\begin{verbatim}
+https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods 
+https://projects.exeter.ac.uk/fluidflow/Courses/FluidDynamics3211-2/BoundaryLayers/rkLecturese4.html
+
+https://www.researchgate.net/publication/259772650_Numerical_Approximations_of_Blasius_Boundary_Layer_Equation
+\end{verbatim}
+
 
 \section{Resources Online}
 
