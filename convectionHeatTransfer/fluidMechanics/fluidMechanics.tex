@@ -864,6 +864,109 @@ https://projects.exeter.ac.uk/fluidflow/Courses/FluidDynamics3211-2/BoundaryLaye
 https://www.researchgate.net/publication/259772650_Numerical_Approximations_of_Blasius_Boundary_Layer_Equation
 \end{verbatim}
 
+\subsection{Integral Solution by Theodore Von Karman}
+
+We are interested in $\tau_x$ which is wall shear stress for x direction
+
+we perform force balance on the BL in x dir. We look at the diagram and see the trapezium
+
+% template for graphics
+
+\begin{figure}[H]
+\centering
+
+\includegraphics[width=\textwidth]{vonkarman BL.png}
+\caption{vonkarman BL}
+\label{H and Pb scattering}
+
+\end{figure}
+
+$$\sum F_x = top + bottom + left + right $$
+
+
+In equilibrium
+$$\sum F_x = net \ outflow \ of \ momentum \ in \ CV + accumulation\ term$$
+
+$$accumulation\ term = 0 $$
+
+
+$$bottom =  \tau_x l_z \Delta x$$
+
+$$left = (P \delta_p l_z)|_x$$
+
+$$right = (P \delta_p l_z)|_{x+\Delta x}$$
+
+$$top = \frac{P|_x + P|_{x+\Delta x}}{2} (\delta_{x+\Delta x} - \delta_{x}) l_z $$
+
+
+let's take a look at net outflow of momentum:
+
+left side outflows:
+
+$$-\int \rho u^2 dA |_{x} = - l_z \int_0^{\delta_p} \rho u^2 dy |_x$$
+
+right side outflow:
+
+$$\int \rho u^2 dA |_{x+\Delta x} =  l_z \int_0^{\delta_p} \rho u^2 dy |_{x+\Delta x} $$
+
+Top side outflow:
+
+$$- \dot{m}_{top} u_\infty $$
+
+Now we need an expression for $\dot{m}_{top}$
+
+$$\dot{m}_{top} = \dot{m}_{right} - \dot{m}_{left}$$
+
+$$\dot{m}_{top} = l_z \int_0^{\delta_p |_{x+\Delta x}} \rho u |_{x+ \Delta x}dy -  l_z \int_0^{\delta_p |_{x}} \rho u |_{x}dy$$
+
+total momentum outlflow
+
+$$net \ outflow \ of  \ momentum = - l_z \int_0^{\delta_p} \rho u^2 dy |_x +  l_z \int_0^{\delta_p} \rho u^2 dy |_{x+\Delta x} - \dot{m}_{top} u_\infty  $$
+
+$$net \ outflow \ of  \ momentum = - l_z \int_0^{\delta_p} \rho u^2 dy |_x +  l_z \int_0^{\delta_p} \rho u^2 dy |_{x+\Delta x} $$
+
+$$ - ( l_z \int_0^{\delta_p |_{x+\Delta x}} \rho u |_{x+ \Delta x}dy -  l_z \int_0^{\delta_p |_{x}} \rho u |_{x}dy) u_\infty  $$
+
+Sum of forces:
+
+$$\sum F_x = \tau_x l_z \Delta x + (P \delta_p l_z)|_x +  (P \delta_p l_z)|_{x+\Delta x} + \frac{P|_x + P|_{x+\Delta x}}{2} (\delta_{x+\Delta x} - \delta_{x}) $$
+
+Equating both:
+
+$$\tau_x l_z \Delta x + (P \delta_p l_z)|_x +  (P \delta_p l_z)|_{x+\Delta x} + \frac{P|_x + P|_{x+\Delta x}}{2} (\delta_{x+\Delta x} - \delta_{x}) l_z= $$
+
+$$= - l_z \int_0^{\delta_p} \rho u^2 dy |_x +  l_z \int_0^{\delta_p} \rho u^2 dy |_{x+\Delta x} $$
+
+$$ - ( l_z \int_0^{\delta_p |_{x+\Delta x}} \rho u |_{x+ \Delta x}dy -  l_z \int_0^{\delta_p |_{x}} \rho u |_{x}dy) u_\infty  $$
+
+Cancel out $l_z$
+
+$$\tau_x \Delta x + (P \delta_p )|_x +  (P \delta_p )|_{x+\Delta x} + \frac{P|_x + P|_{x+\Delta x}}{2} (\delta_{x+\Delta x} - \delta_{x}) = $$
+
+$$= - \int_0^{\delta_p} \rho u^2 dy |_x +   \int_0^{\delta_p} \rho u^2 dy |_{x+\Delta x} $$
+
+$$ - (  \int_0^{\delta_p |_{x+\Delta x}} \rho u |_{x+ \Delta x}dy -  \int_0^{\delta_p |_{x}} \rho u |_{x}dy) u_\infty  $$
+
+Divide by $\Delta x$ limit $\Delta x \rightarrow 0 $
+
+
+$$\tau_x   + \frac{(P \delta_p )|_x +  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{P|_x + P|_{x+\Delta x}}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x}) = $$
+
+$$=  \frac{- \int_0^{\delta_p} \rho u^2 dy |_x +   \int_0^{\delta_p} \rho u^2 dy |_{x+\Delta x}}{\Delta x}  $$
+
+$$ - \frac{1}{\Delta x} (  \int_0^{\delta_p |_{x+\Delta x}} \rho u |_{x+ \Delta x}dy -  \int_0^{\delta_p |_{x}} \rho u |_{x}dy) u_\infty  $$
+
+Take limits first:
+
+$$ \lim_{x \rightarrow 0} [\tau_x   + \frac{(P \delta_p )|_x +  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{P|_x + P|_{x+\Delta x}}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x})] = $$
+
+$$=  \lim_{x \rightarrow 0}[ \frac{- \int_0^{\delta_p} \rho u^2 dy |_x +   \int_0^{\delta_p} \rho u^2 dy |_{x+\Delta x}}{\Delta x}  $$
+
+$$ - \frac{1}{\Delta x} (  \int_0^{\delta_p |_{x+\Delta x}} \rho u |_{x+ \Delta x}dy -  \int_0^{\delta_p |_{x}} \rho u |_{x}dy) u_\infty]   $$
+
+$$ \lim_{x \rightarrow 0} [\tau_x   + \frac{(P \delta_p )|_x +  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{P|_x + P|_{x+\Delta x}}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x})] = $$
+
+$$=  \frac{\partial }{\partial x} \int_0^{\delta_p} \rho u^2 dy    - \frac{\partial }{\partial x} (u_\infty \int_0^{\delta_p } \rho u dy )   $$
 
 \section{Resources Online}
 

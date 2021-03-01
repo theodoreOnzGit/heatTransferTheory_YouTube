@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.9)  24 FEB 2021 16:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.9)  26 FEB 2021 11:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -847,26 +847,39 @@ Overfull \hbox (272.35565pt too wide) in paragraph at lines 865--865
 cal_Approximations_of_Blasius_Boundary_Layer_Equation[] 
  []
 
+<vonkarman BL.png, id=82, 462.528pt x 260.172pt>
+File: vonkarman BL.png Graphic file (type png)
+<use vonkarman BL.png>
+Package pdftex.def Info: vonkarman BL.png  used on input line 878.
+(pdftex.def)             Requested size: 360.0pt x 202.50854pt.
+[21] [22 <./vonkarman BL.png>]
+Overfull \hbox (0.76382pt too wide) detected at line 924
+\OML/cmm/m/it/10.95 net outflow of momentum \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/
+10.95 ^^@\OML/cmm/m/it/10.95 l[] [][] ^^Zu[]dy\OMS/cmsy/m/n/10.95 j[] \OT1/cmr/
+m/n/10.95 + \OML/cmm/m/it/10.95 l[] [][] ^^Zu[]dy\OMS/cmsy/m/n/10.95 j[] ^^@ []
+\OML/cmm/m/it/10.95 u[]
+ []
 
-Overfull \hbox (48.15683pt too wide) in paragraph at lines 874--874
+[23] [24]
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 977--977
 []\OT1/cmtt/m/n/10.95 http://web.mit.edu/fluids-modules/www/highspeed_flows/ver
 2/bl_Chap2.pdf[] 
  []
 
 
-Overfull \hbox (19.41339pt too wide) in paragraph at lines 874--874
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 977--977
 []\OT1/cmtt/m/n/10.95 https://community.dur.ac.uk/suzanne.fielding/teaching/BLT
 /sec3.pdf[] 
  []
 
-[21] [22] (./fluidMechanics.aux)
+[25] (./fluidMechanics.aux)
 Package logreq Info: Writing requests to 'fluidMechanics.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 12466 strings out of 479383
- 252860 string characters out of 5875831
- 1053223 words of memory out of 5000000
- 29455 multiletter control sequences out of 15000+600000
+ 12476 strings out of 479383
+ 253027 string characters out of 5875831
+ 1053232 words of memory out of 5000000
+ 29463 multiletter control sequences out of 15000+600000
  412032 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,7n,76p,747b,4805s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -884,10 +897,10 @@ s/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><
 pe1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on fluidMechanics.pdf (22 pages, 227775 bytes).
+Output written on fluidMechanics.pdf (25 pages, 308309 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 99 compressed objects within 1 object stream
+ 152 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
