@@ -890,11 +890,11 @@ $$\sum F_x = net \ outflow \ of \ momentum \ in \ CV + accumulation\ term$$
 $$accumulation\ term = 0 $$
 
 
-$$bottom =  \tau_x l_z \Delta x$$
+$$bottom = - \tau_x l_z \Delta x$$
 
 $$left = (P \delta_p l_z)|_x$$
 
-$$right = (P \delta_p l_z)|_{x+\Delta x}$$
+$$right = -(P \delta_p l_z)|_{x+\Delta x}$$
 
 $$top = \frac{P|_x + P|_{x+\Delta x}}{2} (\delta_{x+\Delta x} - \delta_{x}) l_z $$
 
@@ -929,11 +929,11 @@ $$ - ( l_z \int_0^{\delta_p |_{x+\Delta x}} \rho u |_{x+ \Delta x}dy -  l_z \int
 
 Sum of forces:
 
-$$\sum F_x = \tau_x l_z \Delta x + (P \delta_p l_z)|_x +  (P \delta_p l_z)|_{x+\Delta x} + \frac{P|_x + P|_{x+\Delta x}}{2} (\delta_{x+\Delta x} - \delta_{x}) $$
+$$\sum F_x = -\tau_x l_z \Delta x + (P \delta_p l_z)|_x - (P \delta_p l_z)|_{x+\Delta x} + \frac{P|_x + P|_{x+\Delta x}}{2} (\delta_{x+\Delta x} - \delta_{x}) $$
 
 Equating both:
 
-$$\tau_x l_z \Delta x + (P \delta_p l_z)|_x +  (P \delta_p l_z)|_{x+\Delta x} + \frac{P|_x + P|_{x+\Delta x}}{2} (\delta_{x+\Delta x} - \delta_{x}) l_z= $$
+$$-\tau_x l_z \Delta x + (P \delta_p l_z)|_x -  (P \delta_p l_z)|_{x+\Delta x} + \frac{P|_x + P|_{x+\Delta x}}{2} (\delta_{x+\Delta x} - \delta_{x}) l_z= $$
 
 $$= - l_z \int_0^{\delta_p} \rho u^2 dy |_x +  l_z \int_0^{\delta_p} \rho u^2 dy |_{x+\Delta x} $$
 
@@ -941,7 +941,7 @@ $$ - ( l_z \int_0^{\delta_p |_{x+\Delta x}} \rho u |_{x+ \Delta x}dy -  l_z \int
 
 Cancel out $l_z$
 
-$$\tau_x \Delta x + (P \delta_p )|_x +  (P \delta_p )|_{x+\Delta x} + \frac{P|_x + P|_{x+\Delta x}}{2} (\delta_{x+\Delta x} - \delta_{x}) = $$
+$$-\tau_x \Delta x + (P \delta_p )|_x -  (P \delta_p )|_{x+\Delta x} + \frac{P|_x + P|_{x+\Delta x}}{2} (\delta_{x+\Delta x} - \delta_{x}) = $$
 
 $$= - \int_0^{\delta_p} \rho u^2 dy |_x +   \int_0^{\delta_p} \rho u^2 dy |_{x+\Delta x} $$
 
@@ -950,7 +950,7 @@ $$ - (  \int_0^{\delta_p |_{x+\Delta x}} \rho u |_{x+ \Delta x}dy -  \int_0^{\de
 Divide by $\Delta x$ limit $\Delta x \rightarrow 0 $
 
 
-$$\tau_x   + \frac{(P \delta_p )|_x +  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{P|_x + P|_{x+\Delta x}}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x}) = $$
+$$-\tau_x   + \frac{(P \delta_p )|_x -  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{P|_x + P|_{x+\Delta x}}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x}) = $$
 
 $$=  \frac{- \int_0^{\delta_p} \rho u^2 dy |_x +   \int_0^{\delta_p} \rho u^2 dy |_{x+\Delta x}}{\Delta x}  $$
 
@@ -958,15 +958,182 @@ $$ - \frac{1}{\Delta x} (  \int_0^{\delta_p |_{x+\Delta x}} \rho u |_{x+ \Delta 
 
 Take limits first:
 
-$$ \lim_{x \rightarrow 0} [\tau_x   + \frac{(P \delta_p )|_x +  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{P|_x + P|_{x+\Delta x}}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x})] = $$
+$$ \lim_{\Delta x \rightarrow 0} [-\tau_x   + \frac{(P \delta_p )|_x -  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{P|_x + P|_{x+\Delta x}}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x})] = $$
 
 $$=  \lim_{x \rightarrow 0}[ \frac{- \int_0^{\delta_p} \rho u^2 dy |_x +   \int_0^{\delta_p} \rho u^2 dy |_{x+\Delta x}}{\Delta x}  $$
 
 $$ - \frac{1}{\Delta x} (  \int_0^{\delta_p |_{x+\Delta x}} \rho u |_{x+ \Delta x}dy -  \int_0^{\delta_p |_{x}} \rho u |_{x}dy) u_\infty]   $$
 
-$$ \lim_{x \rightarrow 0} [\tau_x   + \frac{(P \delta_p )|_x +  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{P|_x + P|_{x+\Delta x}}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x})] = $$
+$$ \lim_{\Delta x \rightarrow 0} [-\tau_x   + \frac{(P \delta_p )|_x -  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{P|_x + P|_{x+\Delta x}}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x})] = $$
 
 $$=  \frac{\partial }{\partial x} \int_0^{\delta_p} \rho u^2 dy    - \frac{\partial }{\partial x} (u_\infty \int_0^{\delta_p } \rho u dy )   $$
+
+[careless mistake here! last term on the right hand side (RHS)]
+
+$$ \lim_{\Delta x \rightarrow 0} [-\tau_x   + \frac{(P \delta_p )|_x -  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{P|_x + P|_{x+\Delta x}}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x})] = $$
+
+$$=  \frac{\partial }{\partial x} \int_0^{\delta_p} \rho u^2 dy    - u_\infty \frac{\partial }{\partial x} ( \int_0^{\delta_p } \rho u dy )   $$
+
+Left hand side...
+
+$$ -\tau_x   +  \lim_{\Delta x \rightarrow 0} [\frac{(P \delta_p )|_x -  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{P|_x + P|_{x+\Delta x}}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x})] = $$
+
+$$=  \frac{\partial }{\partial x} \int_0^{\delta_p} \rho u^2 dy    - u_\infty  \frac{\partial }{\partial x} (\int_0^{\delta_p } \rho u dy )   $$
+
+look in the terms inside the limit:
+
+$$\lim_{\Delta x \rightarrow 0} [\frac{(P \delta_p )|_x -  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{P|_x + P|_{x+\Delta x}}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x})] $$
+
+
+$$=\lim_{\Delta x \rightarrow 0} [\frac{(P \delta_p )|_x -  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{2P|_x + P|_{x+\Delta x} - P|_x}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x})] $$
+
+$$=\lim_{\Delta x \rightarrow 0} [\frac{(P \delta_p )|_x -  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{ P|_{x+\Delta x} - P|_x}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x}) + P|_x \frac{1}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x})] $$
+
+
+$$= P \frac{\partial \delta_p}{\partial x} + \lim_{\Delta x \rightarrow 0} [\frac{(P \delta_p )|_x -  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{ P|_{x+\Delta x} - P|_x}{\Delta x} (\delta_p|_{x+\Delta x} - \delta_p|_{x})] $$
+
+$$= P \frac{\partial \delta_p}{\partial x} + \lim_{\Delta x \rightarrow 0} [\frac{(P \delta_p )|_x -  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{ P|_{x+\Delta x} - P|_x}{\Delta x} (\delta_p|_{x+\Delta x} ) - \frac{1}{2}\delta_p|_{x} \frac{ P|_{x+\Delta x} - P|_x }{\Delta x}  ] $$
+
+$$= P \frac{\partial \delta_p}{\partial x} + \lim_{\Delta x \rightarrow 0} [\frac{(P \delta_p )|_x -  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{ \delta_p|_{x+\Delta x} P|_{x+\Delta x} - \delta_p|_{x+\Delta x} P|_x}{\Delta x} - \frac{1}{2} \frac{\delta_p|_{x} P|_{x+\Delta x} -\delta_p|_{x} P|_x }{\Delta x}  ] $$
+
+$$= P \frac{\partial \delta_p}{\partial x} + \lim_{\Delta x \rightarrow 0} [\frac{(P \delta_p )|_x -  (P \delta_p )|_{x+\Delta x}}{\Delta x}  + \frac{1}{2} \frac{ (\delta_p P)_{x+\Delta x} - \delta_p|_{x+\Delta x} P|_x}{\Delta x} - \frac{1}{2} \frac{\delta_p|_{x} P|_{x+\Delta x} -(\delta_p P)|_x }{\Delta x}  ] $$
+
+$$= P \frac{\partial \delta_p}{\partial x} + \lim_{\Delta x \rightarrow 0} [ \frac{( 1.5 P \delta_p )|_x -  0.5 (P \delta_p )|_{x+\Delta x}}{\Delta x}  - \frac{1}{2} \frac{ \delta_p|_{x+\Delta x} P|_x}{\Delta x} - \frac{1}{2} \frac{\delta_p|_{x} P|_{x+\Delta x}}{\Delta x}  ] $$
+
+$$= P \frac{\partial \delta_p}{\partial x} + \lim_{\Delta x \rightarrow 0} [ \frac{(P \delta_p)|_x + (0.5 P \delta_p )|_x -  0.5 (P \delta_p )|_{x+\Delta x}}{\Delta x}  - \frac{1}{2} \frac{ \delta_p|_{x+\Delta x} P|_x}{\Delta x} - \frac{1}{2} \frac{\delta_p|_{x} P|_{x+\Delta x}}{\Delta x}  ] $$
+
+$$= P \frac{\partial \delta_p}{\partial x} -0.5 \frac{\partial P\delta_p}{\partial x} + \lim_{\Delta x \rightarrow 0} [ \frac{(P \delta_p)|_x}{\Delta x}  - \frac{1}{2} \frac{ \delta_p|_{x+\Delta x} P|_x}{\Delta x} - \frac{1}{2} \frac{\delta_p|_{x} P|_{x+\Delta x}}{\Delta x}  ] $$
+
+
+$$= P \frac{\partial \delta_p}{\partial x} - 0.5 \frac{\partial P\delta_p}{\partial x} + \lim_{\Delta x \rightarrow 0} [ \frac{(P \delta_p)|_x}{\Delta x}  - \frac{1}{2} \frac{ \delta_p|_{x+\Delta x} P|_x - \delta_p |_x P|_x + \delta_p |_x P_x }{\Delta x} - \frac{1}{2} \frac{\delta_p|_{x} P|_{x+\Delta x}}{\Delta x}  ] $$
+
+
+$$= P \frac{\partial \delta_p}{\partial x} -0.5 \frac{\partial P\delta_p}{\partial x} + \lim_{\Delta x \rightarrow 0} [ \frac{0.5(P \delta_p)|_x}{\Delta x}  - \frac{1}{2} \frac{ \delta_p|_{x+\Delta x} P|_x - \delta_p |_x P|_x}{\Delta x} - \frac{1}{2} \frac{\delta_p|_{x} P|_{x+\Delta x}}{\Delta x}  ] $$
+
+$$= P \frac{\partial \delta_p}{\partial x} -0.5 \frac{\partial P\delta_p}{\partial x} - 0.5 P \frac{\partial \delta_p}{\partial x} + \lim_{\Delta x \rightarrow 0} [  - \frac{1}{2} \frac{\delta_p|_{x} P|_{x+\Delta x} - \delta_p |_x P|_x}{\Delta x}  ] $$
+
+$$= P \frac{\partial \delta_p}{\partial x} -0.5 \frac{\partial P\delta_p}{\partial x} - 0.5 P \frac{\partial \delta_p}{\partial x}  -  0.5 \delta_p \frac{\partial P}{\partial x}$$
+
+$$=P \frac{\partial \delta_p}{\partial x} - 0.5 P \frac{\partial \delta_p}{\partial x}  - 0.5\delta_p \frac{\partial P}{\partial x} - 0.5 P \frac{\partial \delta_p}{\partial x}  -  0.5 \delta_p \frac{\partial P}{\partial x}$$
+
+$$=  - 0.5\delta_p \frac{\partial P}{\partial x} -  0.5 \delta_p \frac{\partial P}{\partial x}$$
+
+$$=  -  \delta_p \frac{\partial P}{\partial x}$$
+
+Substitute back in...
+$$ -\tau_x -  \delta_p \frac{\partial P}{\partial x} =  \frac{\partial }{\partial x} \int_0^{\delta_p} \rho u^2 dy    - u_\infty  \frac{\partial }{\partial x} (\int_0^{\delta_p } \rho u dy )   $$
+
+$$ -  \delta_p \frac{\partial P}{\partial x} = \tau_x + \frac{\partial }{\partial x} \int_0^{\delta_p} \rho u^2 dy    - u_\infty \frac{\partial }{\partial x} ( \int_0^{\delta_p } \rho u dy )   $$
+
+Only assumption is that
+
+$$u_\infty = constant \ w.r.t \ y$$
+
+Bernoulli's equation
+
+[careless mistake here...]
+
+I wrote
+$$\frac{\partial P}{\partial x} = \rho u_\infty \frac{\partial u_\infty}{\partial x}$$
+
+When it's actually
+$$-\frac{\partial P}{\partial x} = \rho u_\infty \frac{\partial u_\infty}{\partial x}$$
+
+we can assume this holds with or without flat plate...
+
+Substitute back in:
+
+$$ \delta_p \rho u_\infty \frac{\partial u_\infty}{\partial x} = \tau_x + \frac{\partial }{\partial x} \int_0^{\delta_p} \rho u^2 dy    -u_\infty \frac{\partial }{\partial x} ( \int_0^{\delta_p } \rho u dy )   $$
+
+constant density fluid:
+
+$$ \delta_p  u_\infty \frac{\partial u_\infty}{\partial x} =  \frac{\tau_x}{\rho} + \frac{\partial }{\partial x} \int_0^{\delta_p}  u^2 dy    -u_\infty \frac{\partial }{\partial x} ( \int_0^{\delta_p } u dy )   $$
+
+We'll need to tidy all this up:
+
+2 tricks to use to tidy up equation
+
+$$\frac{\partial}{\partial x} u_\infty^2 \delta_p =  \delta_p  u_\infty \frac{\partial u_\infty}{\partial x} + u_\infty \frac{\partial \delta_p u_\infty}{\partial x} $$
+
+$$\delta_p = \int_0^{\delta_p} 1 dy  = \int_0^{\delta_p} dy$$
+
+$$\frac{\partial}{\partial x} u_\infty^2  \int_0^{\delta_p} dy =  \int_0^{\delta_p} dy  u_\infty \frac{\partial u_\infty}{\partial x} + u_\infty \frac{\partial \int_0^{\delta_p} dy u_\infty}{\partial x} $$
+
+$$ \delta_p  u_\infty \frac{\partial u_\infty}{\partial x}  = \frac{\partial}{\partial x} u_\infty^2  \delta_p -u_\infty \frac{\partial \delta_p u_\infty}{\partial x} $$
+
+substitute back in:
+
+$$  \frac{\partial}{\partial x} u_\infty^2  \delta_p  -u_\infty \frac{\partial \delta_p  u_\infty}{\partial x}= \frac{\tau_x}{\rho} + \frac{\partial }{\partial x} \int_0^{\delta_p}  u^2 dy    - u_\infty\frac{\partial }{\partial x} ( \int_0^{\delta_p } u dy )   $$
+
+
+
+
+[continue from here... note careless mistake]
+
+1. Partial derivative wrong for mass balance 
+2. I think i said you can swap derivatives and integrals freely, do not do that. Leibniz's rule applied rather carelessly (don't carelessly swap integrals, leave it as $\delta_p$ first)
+3. Bernoulli's equation sign is wrong
+
+$$ \frac{\partial}{\partial x} u_\infty^2  \delta_p  -u_\infty \frac{\partial \delta_p  u_\infty}{\partial x}= \frac{\tau_x}{\rho} + \frac{\partial }{\partial x} \int_0^{\delta_p}  u^2 dy    - u_\infty\frac{\partial }{\partial x} ( \int_0^{\delta_p } u dy )   $$
+
+
+Combine terms:
+
+$$  \frac{\partial}{\partial x} [u_\infty^2  \delta_p - \int_0^{\delta_p}  u^2 dy  ]  +u_\infty \frac{\partial }{\partial x} [ \int_0^{\delta_p } u dy -\delta_p  u_\infty ] = \frac{\tau_x}{\rho}  $$
+
+Replace $\delta_p$ with: 
+$$\delta_p = \int_0^{\delta_p} 1 dy  = \int_0^{\delta_p} dy$$
+Assume 
+
+$$\frac{\partial}{\partial y } U_\infty = 0$$
+
+$$ \frac{\partial}{\partial x} [ \int_0^{\delta_p}u_\infty^2  dy - \int_0^{\delta_p} u^2 dy  ]  +u_\infty \frac{\partial }{\partial x} [-\int_0^{\delta_p } u_\infty dy + \int_0^{\delta_p } u dy ] = \frac{\tau_x}{\rho}  $$
+
+
+$$ \frac{\partial}{\partial x}   \int_0^{\delta_p} (u_\infty^2 - u^2) dy  + u_\infty \frac{\partial }{\partial x} \int_0^{\delta_p} (u -  u_\infty )dy = \frac{\tau_x}{\rho}  $$
+
+
+get a $a^2-b^2 = (a+b)(a-b)$ expansion
+
+
+$$ \frac{\partial}{\partial x}   \int_0^{\delta_p} ( u_\infty - u) (u+u_\infty) dy + u_\infty \frac{\partial }{\partial x} \int_0^{\delta_p} (u -  u_\infty )dy = \frac{\tau_x}{\rho}  $$
+
+separate out first integral
+
+$$  \frac{\partial}{\partial x}   \int_0^{\delta_p} ( u_\infty - u) u dy  + \frac{\partial}{\partial x}   \int_0^{\delta_p} ( u_\infty - u) u_\infty dy + u_\infty \frac{\partial }{\partial x} \int_0^{\delta_p} (u -  u_\infty )dy = \frac{\tau_x}{\rho}  $$
+
+Notice the last integral, it is the odd one out in terms of derivatives, let's change it using product rule
+
+$$ u_\infty \frac{\partial }{\partial x} \int_0^{\delta_p} (u -  u_\infty )dy $$
+$$= \frac{\partial }{\partial x}[u_\infty \int_0^{\delta_p} (u -  u_\infty )dy] -( \frac{\partial u_\infty}{\partial x}) \int_0^{\delta_p} (u -  u_\infty )dy$$
+
+We can substitute this back in:
+
+$$  \frac{\partial}{\partial x}   \int_0^{\delta_p} ( u_\infty - u) u dy  + \frac{\partial}{\partial x}   \int_0^{\delta_p} ( u_\infty - u) u_\infty dy  +\frac{\partial }{\partial x}[u_\infty \int_0^{\delta_p} (u -  u_\infty )dy]] $$
+
+$$-( \frac{\partial u_\infty}{\partial x}) \int_0^{\delta_p} (u - u_\infty )dy = \frac{\tau_x}{\rho}  $$
+
+Now we can bring the $u_\infty$ into the dy integral
+
+$$  \frac{\partial}{\partial x}   \int_0^{\delta_p} ( u_\infty - u) u dy  + \frac{\partial}{\partial x}   \int_0^{\delta_p} ( u_\infty - u) u_\infty dy  +\frac{\partial }{\partial x}[\int_0^{\delta_p} u_\infty (u -  u_\infty )dy]] $$
+
+$$-( \frac{\partial u_\infty}{\partial x}) \int_0^{\delta_p} (u - u_\infty )dy = \frac{\tau_x}{\rho}  $$
+
+
+Terms inside cancel each other out...
+
+$$  \frac{\partial}{\partial x}   \int_0^{\delta_p} ( u_\infty - u) u dy  + \frac{\partial}{\partial x}   \int_0^{\delta_p} ( u_\infty - u) u_\infty dy  -\frac{\partial }{\partial x}[\int_0^{\delta_p} u_\infty ( u_\infty - u)dy]] $$
+
+$$-( \frac{\partial u_\infty}{\partial x}) \int_0^{\delta_p} (u - u_\infty )dy = \frac{\tau_x}{\rho}  $$
+
+bring minus sign in,
+
+
+$$  \frac{\partial}{\partial x}   \int_0^{\delta_p} ( u_\infty - u) u dy +( \frac{\partial u_\infty}{\partial x}) \int_0^{\delta_p} ( u_\infty - u )dy = \frac{\tau_x}{\rho}  $$
+
+Final form of Von Karman equation:
+
+$$ \frac{\tau_x}{\rho} = ( \frac{\partial u_\infty}{\partial x}) \int_0^{\delta_p} ( u_\infty - u ) \ dy  + \frac{\partial}{\partial x}   \int_0^{\delta_p} u( u_\infty - u) \ dy $$
 
 \section{Resources Online}
 
@@ -974,6 +1141,9 @@ $$=  \frac{\partial }{\partial x} \int_0^{\delta_p} \rho u^2 dy    - \frac{\part
 \begin{verbatim}
 http://web.mit.edu/fluids-modules/www/highspeed_flows/ver2/bl_Chap2.pdf
 https://community.dur.ac.uk/suzanne.fielding/teaching/BLT/sec3.pdf
+
+for Von Karman
+https://nptel.ac.in/content/storage2/courses/112104118/lecture-29/29-3_momentum.htm
 \end{verbatim}
 
 \part{Github Repo}
