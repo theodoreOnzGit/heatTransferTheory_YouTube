@@ -1135,6 +1135,264 @@ Final form of Von Karman equation:
 
 $$ \frac{\tau_x}{\rho} = ( \frac{\partial u_\infty}{\partial x}) \int_0^{\delta_p} ( u_\infty - u ) \ dy  + \frac{\partial}{\partial x}   \int_0^{\delta_p} u( u_\infty - u) \ dy $$
 
+\section{Solutions to BL for Von Karman}
+
+Pohlhausen solution:
+
+$$u = a + b y + c y^2 + d y^3$$
+
+Consider boundary conditions
+
+no slip:
+
+$$u = 0 \ at \  y=0$$
+This implies a=0
+
+$$u = b y + c y^2 + d y^3$$
+
+$$y \rightarrow \infty \  u = u_\infty$$
+
+$$y \rightarrow \delta_p \  u \rightarrow u_\infty$$
+
+approximation:
+$$y = \delta_p \  u =  u_\infty$$
+
+\begin{equation}
+u_\infty = b \delta_p + c \delta_p^2 + d \delta_p^3
+\end{equation}
+
+exact:
+$$y = \delta_p \  u = 0.99 u_\infty$$
+
+
+inviscid flow near $\delta_p$ and shear stress is 0 there
+
+$$\frac{\partial u}{\partial y} = 0 \ at \ y = \delta_p$$
+$$\frac{\partial u}{\partial y} = b + 2c y + 3d y^2$$
+\begin{equation}
+0 = b + 2c \delta_p + 3d \delta_p^2
+\end{equation}
+
+Last BC:
+
+$$\frac{\partial^2 u}{\partial y^2} = 0 \ at \ y = 0$$
+
+in other words
+
+$$\frac{ \partial \tau_x}{\partial y}= 0$$
+
+$$\frac{\partial^2 u}{\partial y^2} = 2c + 6d y$$
+
+$$0 = 2c $$
+
+$$c=0$$
+
+2 equations left:
+
+$$0 = b + 3d \delta_p^2$$
+$$u_\infty = b \delta_p + d \delta_p^3$$
+
+$$b = -3d \delta_p^2$$
+
+
+$$u_\infty = -3 d\delta_p^3 + d \delta_p^3$$
+
+$$u_\infty = -2d\delta_p^3 $$
+
+\begin{equation}
+d= - \frac{u_\infty}{2\delta_p^3}
+\end{equation}
+
+$$b= -3 \delta_p^2 (- \frac{u_\infty}{2\delta_p^3}) $$
+
+\begin{equation}
+b = \frac{3}{2 \delta_p} u_\infty
+\end{equation}
+
+Pohlhausen velocity profile
+
+$$u = \frac{3}{2 \delta_p} u_\infty y  - \frac{u_\infty}{2\delta_p^3} y^3  $$
+
+if we wanted to include the 0.99 $u_\infty$
+
+$$u = 0.99 (\frac{3}{2 \delta_p} u_\infty y  - \frac{u_\infty}{2\delta_p^3} y^3 ) $$
+
+substitute back in von karman equation
+
+$$ \frac{\tau_x}{\rho} = ( \frac{\partial u_\infty}{\partial x}) \int_0^{\delta_p} ( u_\infty - u ) \ dy  + \frac{\partial}{\partial x}   \int_0^{\delta_p} u( u_\infty - u) \ dy $$
+
+under constant freestream velocity:
+
+$$ \frac{\tau_x}{\rho} =  \frac{\partial}{\partial x}   \int_0^{\delta_p} u( u_\infty - u) \ dy $$
+
+$$ \frac{\tau_x}{\rho} =  \frac{\partial}{\partial x}   \int_0^{\delta_p} (\frac{3}{2 \delta_p} u_\infty y  - \frac{u_\infty}{2\delta_p^3} y^3)( u_\infty - (\frac{3}{2 \delta_p} u_\infty y  - \frac{u_\infty}{2\delta_p^3} y^3)) \ dy $$
+
+note that $\delta_p$ only changes with x, not y
+
+$$ \frac{\tau_x}{\rho} =  \frac{\partial}{\partial x}   (\frac{3}{2 \delta_p} u_\infty \frac{\delta_p^2}{2}  - \frac{u_\infty}{2\delta_p^3} \frac{\delta_p^4}{4})( u_\infty \delta_p - (\frac{3}{2 \delta_p} u_\infty \frac{\delta_p^2}{2} - \frac{u_\infty}{2\delta_p^3} \frac{\delta_p^4}{4}))  $$
+
+$$ \frac{\tau_x}{\rho} =  \frac{\partial}{\partial x}   (\frac{3}{2 \delta_p} u_\infty \frac{\delta_p^2}{2}  - \frac{u_\infty}{2\delta_p^3} \frac{\delta_p^4}{4})( u_\infty \delta_p - \frac{3}{2 \delta_p} u_\infty \frac{\delta_p^2}{2} + \frac{u_\infty}{2\delta_p^3} \frac{\delta_p^4}{4})  $$
+
+
+$$ \frac{\tau_x}{\rho} =  \frac{\partial}{\partial x}   ( u_\infty \delta_p (\frac{3}{2 \delta_p} u_\infty \frac{\delta_p^2}{2}  - \frac{u_\infty}{2\delta_p^3} \frac{\delta_p^4}{4}) - \frac{3}{2 \delta_p} u_\infty \frac{\delta_p^2}{2} (\frac{3}{2 \delta_p} u_\infty \frac{\delta_p^2}{2}  - \frac{u_\infty}{2\delta_p^3} \frac{\delta_p^4}{4})+ \frac{u_\infty}{2\delta_p^3} \frac{\delta_p^4}{4}(\frac{3}{2 \delta_p} u_\infty \frac{\delta_p^2}{2}  - \frac{u_\infty}{2\delta_p^3} \frac{\delta_p^4}{4}))  $$
+
+
+$$ \frac{\tau_x}{\rho} =  \frac{\partial}{\partial x}   ( (\frac{3}{2 \delta_p} u_\infty^2 \frac{\delta_p^3}{2} - \frac{u_\infty^2}{2\delta_p^3} \frac{\delta_p^5}{4}) $$
+
+
+$$ - \frac{3}{2 \delta_p} u_\infty \frac{\delta_p^2}{2} (\frac{3}{2 \delta_p} u_\infty \frac{\delta_p^2}{2}  - \frac{u_\infty}{2\delta_p^3} \frac{\delta_p^4}{4})+ \frac{u_\infty}{2\delta_p^3} \frac{\delta_p^4}{4}(\frac{3}{2 \delta_p} u_\infty \frac{\delta_p^2}{2}  - \frac{u_\infty}{2\delta_p^3} \frac{\delta_p^4}{4}))  $$
+
+(not very efficient...)
+
+The more efficient method:
+
+$$ \frac{\tau_x}{\rho} =  \frac{\partial}{\partial x}   \int_0^{\delta_p} (\frac{3}{2} u_\infty \frac{y}{\delta_p}  - \frac{u_\infty}{2} (\frac{y}{\delta_p} )^3)( u_\infty - (\frac{3}{2} u_\infty (\frac{y}{\delta_p} )  - \frac{u_\infty}{2} (\frac{y}{\delta_p} )^3)) \ dy $$
+
+$$ \frac{\tau_x}{\rho} =  u_\infty^2 \frac{\partial}{\partial x}   \int_0^{\delta_p} (\frac{3}{2} \frac{y}{\delta_p}  - \frac{1}{2} (\frac{y}{\delta_p} )^3)( 1 - (\frac{3}{2} (\frac{y}{\delta_p} )  - \frac{1}{2} (\frac{y}{\delta_p} )^3)) \ dy $$
+
+
+Use chain rule:
+
+$$\frac{dy}{dx} = \frac{dy}{du} \frac{du}{dx}$$
+
+$$dy = \frac{dy}{du} du$$
+
+$$u = \frac{y}{\delta_p}$$
+
+$$du = \frac{1}{\delta_p} dy$$
+
+$$\delta_p du = dy$$
+
+Change integration variable:
+
+$$u = \frac{y}{\delta_p}$$
+$$ \frac{\tau_x}{\rho} =  u_\infty^2 \frac{\partial}{\partial x}  \delta_p \int_0^1 (\frac{3}{2} \frac{y}{\delta_p}  - \frac{1}{2} (\frac{y}{\delta_p} )^3)( 1 - (\frac{3}{2} (\frac{y}{\delta_p} )  - \frac{1}{2} (\frac{y}{\delta_p} )^3)) \ d\frac{y}{\delta_p} $$
+
+$$ \frac{\tau_x}{\rho} =  u_\infty^2 \frac{\partial}{\partial x}  \delta_p \int_0^1 (\frac{3}{2} u  - \frac{1}{2} (u)^3)( 1 - (\frac{3}{2} u )  + \frac{1}{2} (u)^3) \ du $$
+
+$$ \frac{\tau_x}{\rho}|_{wall} = 0.139286 u_\infty^2 \frac{\partial}{\partial x}  \delta_p  $$
+
+From textbook:
+
+$$ \frac{\tau_x}{\rho}|_{wall} = \frac{39}{280} u_\infty^2 \frac{\partial}{\partial x}  \delta_p  $$
+
+Substitute in shear stress
+
+$$\tau_x|_{wall} = \rho \nu \frac{\partial u}{\partial y}|_{y=0}$$
+
+shear stress
+
+$$\frac{\partial u}{\partial y} = \frac{3}{2 \delta_p} u_\infty + 3 (-\frac{u_\infty}{2 \delta_p^3}) y^2$$
+
+at y=0 we find $\tau_x|_{y=0}$
+
+$$\frac{\partial u}{\partial y} = \frac{3}{2 \delta_p} u_\infty $$
+
+$$\frac{\tau_x |_{wall}}{\rho} = \nu \frac{\partial u}{\partial y}|_{y=0} = \nu \frac{3}{2 \delta_p} u_\infty $$
+
+Substitute back:
+$$ \nu \frac{3}{2 \delta_p} u_\infty  = \frac{39}{280} u_\infty^2 \frac{\partial}{\partial x}  \delta_p  $$
+
+$$ \nu \frac{1}{ \delta_p}   = \frac{13}{140} u_\infty \frac{\partial}{\partial x}  \delta_p  $$
+
+$$ \nu \frac{1}{ \delta_p}   = \frac{13}{140} u_\infty \frac{d}{d x}  \delta_p  $$
+
+$$ \nu \frac{140}{13}  dx = u_\infty  \delta_p  d \delta_p  $$
+
+$$ \nu \frac{140}{13} \int_0^x dx = u_\infty \int_0^{\delta_p (x)} \delta_p  d \delta_p  $$
+
+In proper math notation, we have to use dummy variables
+
+$$ \nu \frac{140}{13} \int_0^x dx' = u_\infty \int_0^{\delta_p (x)} \delta_p'  d \delta_p'  $$
+
+Integrating:
+
+$$ \nu \frac{140}{13} x= u_\infty \frac{\delta_p (x)^2}{2}  $$
+$$ \nu \frac{280}{13} x= u_\infty \delta_p (x)^2  $$
+
+$$\delta_p (x) = \sqrt{\frac{280}{13} \frac{\nu x}{u_\infty}}$$
+
+$$\delta_p (x) = \sqrt{\frac{280}{13} \frac{\nu}{u_\infty x} x^2}$$
+
+$$\delta_p (x) \frac{1}{x} = \sqrt{\frac{280}{13} \frac{\nu}{u_\infty x} }$$
+
+
+$$ \frac{\delta_p (x)}{x} = \sqrt{\frac{280}{13} \frac{1}{Re_x} }$$
+
+
+$$ \frac{\delta_p (x)}{x} =  4.64095 \sqrt{ \frac{1}{Re_x} }$$
+
+Where $Re_x = \frac{u_\infty x}{\nu}$
+
+To get shear stress
+
+$$\frac{\tau_x|_{wall}}{\rho} = \nu \frac{3}{2 \delta_p} u_\infty $$
+
+$$\frac{\tau_x|_{wall}}{\rho} = \nu \frac{3}{2* 4.64095 \sqrt{ \frac{1}{Re_x} } x} u_\infty $$
+
+Skin coefficient of friction (local)
+
+$$C_{fx} \equiv \frac{\tau_x |_{wall}}{\frac{1}{2} \rho u_\infty^2}$$
+
+$$C_{fx} \equiv \frac{2}{ u_\infty^2} \nu \frac{3}{2* 4.64095 \sqrt{ \frac{1}{Re_x} } x} u_\infty$$
+
+
+$$C_{fx} \equiv \frac{0.6464}{ u_\infty} \nu \frac{1}{\sqrt{ \frac{1}{Re_x} } x} $$
+$$C_{fx} \equiv \frac{0.6464}{ 1}  \frac{1}{\sqrt{ \frac{1}{Re_x} } Re_x} $$
+
+$$C_{fx} \equiv \frac{0.6464}{ \sqrt{Re_x}}  $$
+
+Average skin friction coefficient:
+
+$$C_{fL} \equiv \frac{1}{L} \int_0^L C_{fx} dx$$
+
+$$C_{fL} \equiv \frac{1}{L} \int_0^L\frac{0.6464}{ \sqrt{Re_x}} dx$$
+
+$$C_{fL} \equiv \frac{1}{L} \int_0^L\frac{0.6464 \sqrt{\nu}}{\sqrt{u_\infty x} } dx$$
+
+$$C_{fL} \equiv \frac{0.6464 \sqrt{\nu}}{\sqrt{ u_\infty }L} \int_0^L\frac{1 }{ \sqrt{x} } dx$$
+
+$$C_{fL} \equiv \frac{0.6464 \sqrt{\nu}}{\sqrt{ u_\infty }L} \int_0^L\frac{1 }{ \sqrt{x} } dx$$
+
+$$C_{fL} \equiv \frac{0.6464 \sqrt{\nu}}{\sqrt{ u_\infty }L} 2 \sqrt{L}$$
+
+$$C_{fL} \equiv \frac{0.6464 \sqrt{\nu}}{\sqrt{ u_\infty }L} 2 \sqrt{L}$$
+
+$$C_{fL} \equiv \frac{1.2928 \sqrt{\nu}}{\sqrt{ u_\infty L}}  $$
+
+$$C_{fL} \equiv \frac{1.2928 }{\sqrt{Re_L}}  $$
+
+
+\subsubsection{Solution Comparison to Similarity Solution}
+
+\paragraph{Von Karman Results (approximate solution)}
+$$ \frac{\delta_p (x)}{x} =   \frac{4.64095 }{\sqrt{Re_x} }$$
+
+
+$$C_{fx} \equiv \frac{0.6464}{ \sqrt{Re_x}}  $$
+
+$$C_{fL} \equiv \frac{1.2928 }{\sqrt{Re_L}}  $$
+
+\paragraph{Blasius Results (Exact solution) }
+
+
+$$ \frac{\delta_p (x)}{x} =   \frac{5}{\sqrt{Re_x} }$$
+
+
+$$C_{fx} \equiv \frac{0.664}{ \sqrt{Re_x}}  $$
+
+$$C_{fL} \equiv \frac{1.328}{\sqrt{Re_L}}  $$
+
+7.2\% off for BL thickness, and 3\% off for skin friction coeff.
+Pretty good!
+
+This shows that Von Karman method is pretty good, if you can't use Blasius results 
+
+\begin{verbatim}
+Welty, J., Rorrer, G. L., & Foster, D. G. (2014). 
+Fundamentals of momentum, heat, and mass transfer. John Wiley & Sons.
+\end{verbatim}
+
 \section{Resources Online}
 
 
