@@ -1,0 +1,15 @@
+[0] Config.pm:312> INFO - This is Biber 2.15
+[0] Config.pm:315> INFO - Logfile is 'convectionBL.blg'
+[133] biber:330> INFO - === Wed Mar 10, 2021, 10:53:57
+[160] Biber.pm:415> INFO - Reading 'convectionBL.bcf'
+[306] Biber.pm:952> INFO - Found 2 citekeys in bib section 0
+[337] Biber.pm:4334> INFO - Processing section 0
+[355] Biber.pm:4523> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[357] bibtex.pm:1682> INFO - LaTeX decoding ...
+[362] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
+[465] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[466] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[466] Biber.pm:4162> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[466] Biber.pm:4168> INFO - No sort tailoring available for locale 'en-US'
+[471] bbl.pm:651> INFO - Writing 'convectionBL.bbl' with encoding 'UTF-8'
+[475] bbl.pm:754> INFO - Output to convectionBL.bbl

@@ -1,0 +1,940 @@
+\documentclass[11pt]{article}
+
+%%%% for pictures %%%%
+\usepackage{graphicx}
+\usepackage{float}
+
+%%% for the degree sign%%%
+\usepackage{siunitx}
+
+%%%% for matrices and vectors%%%%
+
+\usepackage{amsmath}
+
+%%%% for citations %%%%%%
+\usepackage[backend=biber,
+style=apa,
+sorting=none,
+isbn=true,
+doi=true,
+url=true,
+]{biblatex}\addbibresource{bibliography.bib}
+
+\begin{document}
+
+\title{Convection BL YouTube}
+\author{Theodore Ong}
+\date{\today}
+\maketitle
+
+
+\part{Some Links before we start}
+
+\begin{verbatim}
+https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations
+
+Matrices in LaTeX
+https://www.overleaf.com/learn/latex/Matrices
+
+Tensors in LaTeX
+
+Navier Stokes Equations
+https://www.comsol.com/multiphysics/navier-stokes-equations
+https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations
+
+Github
+https://github.com/theodoreOnzGit/heatTransferTheory_YouTube
+\end{verbatim}
+
+
+
+\part{Hydrodynamics}
+\section{Navier Stokes Equations}
+$$\frac{\partial }{\partial t} u + u \frac{\partial}{\partial x} u + v \frac{\partial}{\partial y} u + w \frac{\partial}{\partial z} u - \nu ( \frac{\partial^2}{\partial x^2} u + \frac{\partial^2}{\partial y^2} \ u + \frac{\partial^2}{\partial z^2} u) = - \frac{1}{\rho_0} \frac{\partial P}{\partial x} +g_x$$
+
+$$\frac{\partial }{\partial t} v + u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v + w \frac{\partial}{\partial z} v - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v + \frac{\partial^2}{\partial z^2} v) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+$$\frac{\partial }{\partial t} w + u \frac{\partial}{\partial x} w + v \frac{\partial}{\partial y} w + w \frac{\partial}{\partial z} w - \nu ( \frac{\partial^2}{\partial x^2} w + \frac{\partial^2}{\partial y^2} \ w + \frac{\partial^2}{\partial z^2} w) = - \frac{1}{\rho_0} \frac{\partial P}{\partial z} +g_z$$
+
+\section{Boundary Layer Equations (Laminar)}
+$$0 = - \frac{\partial P}{\partial y} $$
+
+$$\frac{\partial }{\partial t} u + u  \frac{\partial}{\partial x } u + v  \frac{\partial}{\partial y} u -  \nu  \frac{\partial^2}{\partial y^2} \ u  =  ( -  \frac{\partial P}{\partial x} )$$
+
+$$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0$$
+
+\subsubsection{Blasius Similarity Solution}
+
+$$f'=0\ at\ \eta=0$$
+$$f=0\ at\ \eta=0$$
+$$f' =2 \ at \ \eta\rightarrow \infty$$
+$$f''f+f'''=0$$
+
+$$u = \frac{u_\infty}{2} f'$$
+$$\eta  = \frac{1}{2}y \sqrt{\frac{u_\infty}{\nu x}} $$
+[not derived previously:]
+$$\tau_x = \mu \frac{\partial u}{\partial y} = \rho \nu \frac{u_\infty}{4} \sqrt{\frac{u_\infty}{\nu x}} f''$$
+
+\begin{verbatim}
+Welty, J., Rorrer, G. L., & Foster, D. G. (2014). 
+Fundamentals of momentum, heat, and mass transfer. John Wiley & Sons.
+\end{verbatim}
+
+\subsection{Integral Solution by Theodore Von Karman}
+Final form of Von Karman equation:
+
+$$ \frac{\tau_x}{\rho} = ( \frac{\partial u_\infty}{\partial x}) \int_0^{\delta_p} ( u_\infty - u ) \ dy  + \frac{\partial}{\partial x}   \int_0^{\delta_p} u( u_\infty - u) \ dy $$
+
+\section{Solutions to BL}
+
+\subsection{Von Karman Results (approximate solution)}
+$$ \frac{\delta_p (x)}{x} =   \frac{4.64095 }{\sqrt{Re_x} }$$
+
+
+$$C_{fx} \equiv \frac{0.6464}{ \sqrt{Re_x}}  $$
+
+$$C_{fL} \equiv \frac{1.2928 }{\sqrt{Re_L}}  $$
+
+\subsection{Blasius Results (Exact solution) }
+
+
+$$ \frac{\delta_p (x)}{x} =   \frac{5}{\sqrt{Re_x} }$$
+
+
+$$C_{fx} \equiv \frac{0.664}{ \sqrt{Re_x}}  $$
+
+$$C_{fL} \equiv \frac{1.328}{\sqrt{Re_L}}  $$
+
+7.2\% off for BL thickness, and 3\% off for skin friction coeff.
+Pretty good!
+
+This shows that Von Karman method is pretty good, if you can't use Blasius results 
+
+\begin{verbatim}
+Welty, J., Rorrer, G. L., & Foster, D. G. (2014). 
+Fundamentals of momentum, heat, and mass transfer. John Wiley & Sons.
+\end{verbatim}
+
+\part{Energy Equations}
+
+
+$$h \equiv e + PV$$
+
+Enthalpy per unit mass (Specific enthalpy)
+P is pressure
+V is specific volume
+e is specific internal energy
+
+In thermodynamics, U is often used for internal energy, but we avoid using that because it gets confused with u which is x velocity. So we use e instead.
+
+Enthalpy Balance
+
+\begin{equation}
+\frac{\partial }{\partial t} h + u \frac{\partial}{\partial x} h + v \frac{\partial }{\partial y} h + w \frac{\partial }{\partial z} h  = conduction + heat \ generation + dissipation+radiation
+\end{equation}
+
+neglect heat generation and dissipation terms. Also neglect radiation heat transfer
+
+Fourier's law
+
+$$q''_{cond} = - k \nabla T$$
+
+Conduction term:
+
+$$conduction = -\nabla q''_{cond}$$
+
+Heat flux = $q''_{cond}$ ; 
+
+Heat flux is heat energy Transferred per unit area 
+
+$$\frac{\partial }{\partial t} h + u \frac{\partial}{\partial x} h + v \frac{\partial }{\partial y} h + w \frac{\partial }{\partial z} h  = -\nabla q''_{cond} $$ 
+
+
+$$\frac{\partial }{\partial t} h + u \frac{\partial}{\partial x} h + v \frac{\partial }{\partial y} h + w \frac{\partial }{\partial z} h  = -\nabla (- k \nabla T) $$ 
+
+$$\frac{\partial }{\partial t} h + u \frac{\partial}{\partial x} h + v \frac{\partial }{\partial y} h + w \frac{\partial }{\partial z} h  = \nabla ( k \nabla T) $$ 
+
+heat conduction coeffcient is isotropic (it's a scalar), we also assume k does not change with x,y or z
+
+$$\frac{\partial }{\partial t} h + u \frac{\partial}{\partial x} h + v \frac{\partial }{\partial y} h + w \frac{\partial }{\partial z} h  = k \nabla^2 T $$ 
+
+$$\Delta h = \rho c_p  \Delta T$$
+$$h-h_{ref} = \rho c_p  (T-T_{ref})$$
+$$h = \rho c_p  (T-T_{ref}) + h_{ref}$$
+
+We note, reference temperature and enthalpy are constant with time, x y z etc.
+
+
+$$\frac{\partial }{\partial t} \rho c_p T + u \frac{\partial}{\partial x} \rho c_p T + v \frac{\partial }{\partial y} \rho c_p T + w \frac{\partial }{\partial z} \rho c_p T  = k \nabla^2 T $$ 
+
+We assume, volumetric heat capacity does not change with x,y or z and time
+
+$$\rho c_p  = volumetric \ heat \ capacity = \frac{kg}{m^3} \frac{J}{kg \bullet k}$$
+
+$$\frac{\partial }{\partial t} \rho c_p T + u \frac{\partial}{\partial x} \rho c_p T + v \frac{\partial }{\partial y} \rho c_p T + w \frac{\partial }{\partial z} \rho c_p T  = k \nabla^2 T $$ 
+
+$$\frac{\partial }{\partial t} T + u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} \ T + w \frac{\partial }{\partial z} T  = \frac{k}{\rho c_p} \nabla^2 T $$ 
+
+$$\frac{\partial }{\partial t} T + u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} \ T + w \frac{\partial }{\partial z} T  = \alpha \nabla^2 T $$ 
+
+$$\alpha = \frac{k}{\rho c_p}$$
+
+$$\frac{\partial }{\partial t} T + u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} \ T + w \frac{\partial }{\partial z} T  = \alpha ( \frac{\partial^2}{\partial x^2} T +  \frac{\partial^2 }{\partial y^2} \ T +  \frac{\partial^2 }{\partial z^2} T) $$ 
+
+\part{Thermal Laminar BL Equations }
+
+First, we assume, 2D, so z derivatives are zero.
+
+$$\frac{\partial }{\partial t} T + u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} \ T + w \frac{\partial }{\partial z} T  = \alpha ( \frac{\partial^2}{\partial x^2} T +  \frac{\partial^2 }{\partial y^2} \ T +  \frac{\partial^2 }{\partial z^2} T) $$ 
+
+
+$$\frac{\partial }{\partial t} T + u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} \ T  = \alpha ( \frac{\partial^2}{\partial x^2} T +  \frac{\partial^2 }{\partial y^2} \ T ) $$ 
+
+We need to introduce relative temperature  
+
+$$T_{rel} = T-T_s$$
+
+$$\frac{\partial}{\partial x} (T-T_s) =\frac{\partial}{\partial x} (T) $$
+
+so long as $T_s$ is constant
+
+$$\frac{\partial }{\partial t} (T-T_s) + u \frac{\partial}{\partial x} (T-T_s) + v \frac{\partial }{\partial y} (T-T_s)  = \alpha ( \frac{\partial^2}{\partial x^2} (T-T_s) +  \frac{\partial^2 }{\partial y^2} (T-T_s) ) $$ 
+
+Let's see which terms we can neglect
+
+$$\theta = \frac{T-T_s}{T_\infty	-T_s}$$
+$$u^* = \frac{u}{u_\infty}$$
+
+Let's nondimensionaise temrperature:
+
+$$\frac{\partial }{\partial t} \theta(T_\infty-T_s) + u \frac{\partial}{\partial x} \theta(T_\infty-T_s)  + v \frac{\partial }{\partial y} \theta(T_\infty-T_s)   = \alpha ( \frac{\partial^2}{\partial x^2} \theta(T_\infty-T_s)  +  \frac{\partial^2 }{\partial y^2} \theta(T_\infty-T_s) ) $$ 
+
+Divide throughout,
+
+$$\frac{\partial }{\partial t} \theta + u \frac{\partial}{\partial x} \theta + v \frac{\partial }{\partial y} \theta   = \alpha ( \frac{\partial^2}{\partial x^2} \theta  +  \frac{\partial^2 }{\partial y^2} \theta ) $$ 
+
+$$x^* = \frac{x}{L}$$
+
+$$y^* = \frac{y}{\delta_t}$$
+
+Note: in general, thermal boundary layer is different from momentum boundary layer
+
+
+$$\frac{\partial }{\partial t} \theta + u \frac{1}{L} \frac{\partial}{\partial x^*} \theta + v \frac{1}{\delta_t} \frac{\partial }{\partial y^*} \theta   = \alpha ( \frac{1}{L^2} \frac{\partial^2}{\partial (x^*)^2} \theta  +  \frac{1}{\delta_t^2} \frac{\partial^2 }{\partial (y^*)^2} \theta ) $$ 
+
+$$u^* = \frac{u}{u_\infty}$$
+
+
+$$\frac{\partial }{\partial t} \theta + u^* \frac{u_\infty}{L} \frac{\partial}{\partial x^*} \theta + v \frac{1}{\delta_t} \frac{\partial }{\partial y^*} \theta   = \alpha ( \frac{1}{L^2} \frac{\partial^2}{\partial (x^*)^2} \theta  +  \frac{1}{\delta_t^2} \frac{\partial^2 }{\partial (y^*)^2} \theta ) $$ 
+
+We assume no natural convection
+
+$$\frac{\partial }{\partial t} \theta + u^* \frac{u_\infty}{L} \frac{\partial}{\partial x^*} \theta + v \frac{1}{\delta_t} \frac{\partial }{\partial y^*} \theta   = \alpha ( \frac{1}{L^2} \frac{\partial^2}{\partial (x^*)^2} \theta  +  \frac{1}{\delta_t^2} \frac{\partial^2 }{\partial (y^*)^2} \theta ) $$ 
+
+If we were to use momentum nondimensionalisation:
+
+$$y^* = \frac{y}{\delta_p}$$
+$$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0$$
+
+$$ \frac{u_\infty}{L} \frac{\partial u^*}{\partial x^*} + \frac{v_c}{\delta_p} \frac{\partial v^*}{\partial y^*} = 0$$
+
+$$ \frac{u_\infty \delta_p}{v_c L} \frac{\partial u^*}{\partial x^*} +  \frac{\partial v^*}{\partial y^*} = 0$$
+
+$$\frac{u_\infty \delta_p}{v_c L} = \mathcal{O}(1)$$
+
+$$\frac{u_\infty \delta_p}{L} = \mathcal{O}(1) v_c$$
+
+we can just set:
+
+$$v_c = \frac{u_\infty \delta_p}{L}\mathcal{O}(1)$$
+
+so that
+
+$$v^* = \frac{v}{v_c} = \mathcal{O}(1)$$
+
+or else
+
+$$v_c = \frac{u_\infty \delta_p}{L}$$
+
+So we substitute this back in:
+
+$$\frac{\partial }{\partial t} \theta + u^* \frac{u_\infty}{L} \frac{\partial}{\partial x^*} \theta + \frac{u_\infty \delta_p}{L \delta_t} v^* \frac{\partial }{\partial y^*} \theta   = \alpha ( \frac{1}{L^2} \frac{\partial^2}{\partial (x^*)^2} \theta  +  \frac{1}{\delta_t^2} \frac{\partial^2 }{\partial (y^*)^2} \theta ) $$ 
+
+$$t = \frac{t^*}{t_c}$$
+
+if you talk about hydrodynamic timescales:
+$$t_c = \frac{L}{u_\infty}$$
+
+we have to use thermal BL timescales...
+
+For simplicity, we may not want to consider transient timescales in flat plate BL analysis
+
+We assume steady state
+
+$$u^* \frac{u_\infty}{L} \frac{\partial}{\partial x^*} \theta + \frac{u_\infty \delta_p}{L \delta_t} v^* \frac{\partial }{\partial y^*} \theta   = \alpha ( \frac{1}{L^2} \frac{\partial^2}{\partial (x^*)^2} \theta  +  \frac{1}{\delta_t^2} \frac{\partial^2 }{\partial (y^*)^2} \theta ) $$ 
+
+$$u^* \frac{\partial}{\partial x^*} \theta + \frac{\delta_p}{ \delta_t} v^* \frac{\partial }{\partial y^*} \theta   = \alpha \frac{L}{u_\infty} ( \frac{1}{L^2} \frac{\partial^2}{\partial (x^*)^2} \theta  +  \frac{1}{\delta_t^2} \frac{\partial^2 }{\partial (y^*)^2} \theta ) $$ 
+
+We can make this observation:
+
+$$L^2 >> \delta_t^2$$
+
+$$u^* \frac{\partial}{\partial x^*} \theta + \frac{\delta_p}{ \delta_t} v^* \frac{\partial }{\partial y^*} \theta   = \alpha \frac{L}{u_\infty} (\frac{1}{\delta_t^2} \frac{\partial^2 }{\partial (y^*)^2} \theta ) $$ 
+
+assume steady state, and performing BL analysis:
+Also, no dissipation or heat generation
+
+$$ u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} \ T  = \alpha (\frac{\partial^2 }{\partial y^2} \ T ) $$ 
+
+\part{Solution Procedures - Constant Temp Forced Conv BL}
+
+
+$$ u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} T  = \alpha \frac{\partial^2 }{\partial y^2}T  $$ 
+$$0 = - \frac{\partial P}{\partial y} $$
+
+$$u  \frac{\partial}{\partial x } u + v  \frac{\partial}{\partial y} u -  \nu  \frac{\partial^2}{\partial y^2} \ u  =  ( -  \frac{\partial P}{\partial x} )$$
+
+$$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0$$
+
+Solution Procedures:
+\begin{itemize}
+\item Similarity Solution (Blasius Style) [GOLD STANDARD]
+\item Integral Solution (Von Karman Style)
+\item Computational Fluid Dynamics (MultiPhysics) 
+\end{itemize}
+
+\section{back to similarity Solution}
+
+In case of no pressure gradient,
+$$ u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} T  = \alpha \frac{\partial^2 }{\partial y^2}T  $$ 
+
+$$u  \frac{\partial}{\partial x } u + v  \frac{\partial}{\partial y} u  =  \nu  \frac{\partial^2}{\partial y^2} \ u$$
+
+$$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0$$
+
+And nondimensionalising 
+$$f'=0\ at\ \eta=0$$
+$$f=0\ at\ \eta=0$$
+$$f' =2 \ at \ \eta\rightarrow \infty$$
+$$f''f+f'''=0$$
+
+$$u = \frac{u_\infty}{2} f'$$
+$$\eta  = \frac{1}{2}y \sqrt{\frac{u_\infty}{\nu x}} $$
+[not derived previously:]
+$$\tau_x = \mu \frac{\partial u}{\partial y} = \rho \nu \frac{u_\infty}{4} \sqrt{\frac{u_\infty}{\nu x}} f''$$
+
+\subsubsection{Reynold's analogy}
+
+Hey these equations look so similar
+$$ u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} T  = \alpha \frac{\partial^2 }{\partial y^2}T  $$ 
+
+$$u  \frac{\partial}{\partial x } u + v  \frac{\partial}{\partial y} u  =  \nu  \frac{\partial^2}{\partial y^2} \ u$$
+
+Let's copy/paste the solution... (under certain constraints)
+
+$$\nu = \alpha $$
+
+$$Pr = \frac{\nu}{\alpha} = 1$$
+
+If you wanna change up the equations:
+
+$$ u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} T  = \frac{\nu}{Pr} \frac{\partial^2 }{\partial y^2}T  $$ 
+
+If Pr=1,
+
+$$ u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} T  = \nu \frac{\partial^2 }{\partial y^2}T  $$ 
+
+Use the relative temperature trick, and change the variable to $\theta$
+
+$$ u \frac{\partial}{\partial x} \theta + v \frac{\partial }{\partial y} \theta  = \nu \frac{\partial^2 }{\partial y^2} \theta  $$ 
+If we nondimensionalise the momentum equation
+
+$$u  \frac{\partial}{\partial x } u^* u_\infty + v  \frac{\partial}{\partial y} u^* u_\infty  =  \nu  \frac{\partial^2}{\partial y^2} u^* u_\infty$$
+
+$$u  \frac{\partial}{\partial x } u^*  + v  \frac{\partial}{\partial y} u^*   =  \nu  \frac{\partial^2}{\partial y^2} u^* $$
+
+
+We already proved we can reduce the momentum BL equations as follows:
+$$f''f+f'''=0$$
+
+And we note that we can set:
+
+$$ \theta  = u^*$$
+Note that
+$$u = \frac{u_\infty}{2} f'$$
+
+$$u^* = \frac{f'}{2}$$
+
+Under Reynold's analogy we can say:
+
+$$\theta = \frac{f'}{2}$$
+
+We can pretty much adapt the Blasius solution to thermal boundary layer... (Reynold's analogy under Pr=1)
+
+We assume that the nondimensional temperature profile and nondimensional BL profile (and BCs) are exactly equal.
+
+Based on that, we can get the temperature profile and heat flux
+
+$$\theta = \frac{f'}{2}$$
+$$T-T_s = (T_\infty -T_s) \frac{f'}{2}$$
+
+What about heat flux:
+
+$$q'' = - k \frac{\partial T}{\partial y}$$
+
+note:
+
+$$\frac{\partial u}{\partial y} = \frac{u_\infty}{4} \sqrt{\frac{u_\infty}{\nu x}} f''$$
+
+$$\frac{\partial u^* u_\infty}{\partial y} = \frac{u_\infty}{4} \sqrt{\frac{u_\infty}{\nu x}} f''$$
+
+$$\frac{\partial u^*}{\partial y} = \frac{1}{4} \sqrt{\frac{u_\infty}{\nu x}} f''$$
+
+under reynold's analogy
+$$u^* = \theta $$
+
+$$\frac{\partial \theta}{\partial y} = \frac{1}{4} \sqrt{\frac{u_\infty}{\nu x}} f''$$
+
+$$\frac{\partial \theta}{\partial y} = \frac{1}{4} \sqrt{\frac{u_\infty}{\nu x}} f''$$
+$$\frac{\partial \theta}{\partial y} = \frac{1}{4} \sqrt{\frac{u_\infty x}{\nu x^2}} f''$$
+
+$$\frac{\partial \theta}{\partial y} = \frac{1}{4} \sqrt{Re_x} \frac{1}{x} f''$$
+
+$$\frac{\partial (T-T_s)}{\partial y} = \frac{T_\infty - T_s}{4} \sqrt{Re_x} \frac{1}{x} f''$$
+
+$$\frac{\partial T}{\partial y} = \frac{T_\infty - T_s}{4} \sqrt{Re_x} \frac{1}{x} f''$$
+
+Heat flux:
+
+$$q'' = - k \frac{\partial T}{\partial y}$$
+
+$$q'' = - \frac{k}{x} \frac{T_\infty - T_s}{4} \sqrt{Re_x} f''$$
+
+Heat trf Coefficient and Nu
+
+$$q''= - h (T_\infty - T_s)$$
+
+Substitute
+
+$$h (T_\infty - T_s) =  \frac{k}{x} \frac{T_\infty - T_s}{4} \sqrt{Re_x} f''$$
+$$h  =  \frac{k}{x} \frac{f''}{4} \sqrt{Re_x}$$
+
+Define Nusselt Number:
+
+$$Nu_x \equiv \frac{hx}{k}$$
+
+$$Nu_x = \frac{f''}{4} \sqrt{Re_x}$$
+
+What is the value of f'' (look at textbook, or solve it yourself)
+
+at y=0
+$$f'' = 1.328$$
+
+$$Nu_x = \frac{1.328}{4} \sqrt{Re_x} = 0.332 \sqrt{Re_x} $$
+
+\section{What if Pr is not 1?}
+
+\subsection{Similarity Solution by Pohlhausen}
+\begin{verbatim}
+Bejan, A. (2013). Convection heat transfer. John wiley & sons.
+Welty, J., Rorrer, G. L., & Foster, D. G. (2014). 
+Fundamentals of momentum, heat, and mass transfer. John Wiley & Sons.
+\end{verbatim}
+
+
+From Blasius Solution
+
+And nondimensionalising 
+$$f'=0\ at\ \eta=0$$
+$$f=0\ at\ \eta=0$$
+$$f' =2 \ at \ \eta\rightarrow \infty$$
+$$f''f+f'''=0$$
+
+$$u = \frac{u_\infty}{2} f'$$
+Some useful derivatives previously derived (\cite{bejan2013convection},\cite{welty2014fundamentals})
+
+From hydrodynamic BL:
+$$\frac{\partial}{\partial y^*} \eta =  \frac{\partial}{\partial y^*} \frac{1}{2} \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}} = \frac{\eta}{y^*}$$
+
+
+$$ \frac{\partial}{\partial x^*} \eta =  \frac{\partial}{\partial x^*}\frac{1}{2} \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}}  $$
+
+
+
+$$ u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} T  = \alpha \frac{\partial^2 }{\partial y^2}T  $$ 
+
+We nondimensionalised the energy equation during scaling analysis...
+
+$$u^* \frac{\partial}{\partial x^*} \theta + \frac{\delta_p}{ \delta_t} v^* \frac{\partial }{\partial y^*} \theta   = \alpha \frac{L}{u_\infty} (\frac{1}{\delta_t^2} \frac{\partial^2 }{\partial (y^*)^2} \theta ) $$ 
+
+We just need to convert it to include similarity variables...
+
+We start by making substitutions
+$$u^* = \frac{f'}{2}$$
+
+$$v= \frac{1}{2} \sqrt{\frac{\nu u_\infty}{x}}(\eta f' -f)$$
+
+$$v_c = \frac{u_\infty \delta_p}{L}$$
+
+$$v^* \frac{u_\infty \delta_p}{L} = -\frac{1}{2} \sqrt{\frac{\nu u_\infty}{x}}(\eta f' -f)$$
+
+$$v^*  = \frac{1}{2} \frac{L}{\delta_p} \sqrt{\frac{\nu }{x u_\infty}}(\eta f' -f)$$
+
+$$v^*  = \frac{1}{2} \frac{L}{\delta_p} Re_x^{-\frac{1}{2}} (\eta f' -f)$$
+
+
+subs into:
+
+$$u^* \frac{\partial}{\partial x^*} \theta + \frac{\delta_p}{ \delta_t} v^* \frac{\partial }{\partial y^*} \theta   = \alpha \frac{L}{u_\infty} (\frac{1}{\delta_t^2} \frac{\partial^2 }{\partial (y^*)^2} \theta ) $$ 
+
+$$\frac{f'}{2} \frac{\partial}{\partial x^*} \theta + \frac{\delta_p}{ \delta_t} \left[ -\frac{1}{2} \frac{L}{\delta_p} Re_x^{\frac{1}{2}} (\eta f' -f) \right] \frac{\partial }{\partial y^*} \theta   = \alpha \frac{L}{u_\infty} (\frac{1}{\delta_t^2} \frac{\partial^2 }{\partial (y^*)^2} \theta ) $$ 
+
+
+$$\frac{f'}{2} \frac{\partial}{\partial x^*} \theta + \frac{L}{ \delta_t} \left[ -\frac{1}{2}  Re_x^{\frac{1}{2}} (\eta f' -f) \right] \frac{\partial }{\partial y^*} \theta   = \alpha \frac{L}{u_\infty} (\frac{1}{\delta_t^2} \frac{\partial^2 }{\partial (y^*)^2} \theta ) $$ 
+
+Now we need to substitute out $y^*$ and $x^*$ for $\eta$
+
+$$y^* = \frac{y}{\delta_t}$$
+
+$$x^* = \frac{x}{L}$$
+
+we note $x^*$ is the same definition as the nondimensionalised $x^*$ used in deriving hydrodynamic BL, so we use it again...
+
+So we can use:
+
+$$ \frac{\partial}{\partial x^*} \eta =  \frac{\partial}{\partial x^*}\frac{1}{2} \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}}  $$
+
+$$ = \frac{1}{2} \sqrt{Re_\delta} \frac{y^*}{\sqrt{x^*}} \frac{-1}{2x^*} = \frac{\eta}{-2x^*} $$
+
+Replace left most term...
+
+$$\frac{\partial}{\partial x^*} = \frac{\partial \eta}{\partial x^*} \frac{\partial }{\partial \eta} = - \frac{\eta}{2x^*} \frac{\partial }{\partial \eta}  $$
+
+$$\frac{f'}{2} \frac{\partial}{\partial x^*} \theta + \frac{L}{ \delta_t} \left[ \frac{1}{2}  Re_x^{-\frac{1}{2}} (\eta f' -f) \right] \frac{\partial }{\partial y^*} \theta   = \alpha \frac{L}{u_\infty} (\frac{1}{\delta_t^2} \frac{\partial^2 }{\partial (y^*)^2} \theta ) $$ 
+
+$$\frac{f'}{2} ( - \frac{\eta}{2x^*}) \frac{\partial }{\partial \eta} \theta + \frac{L}{ \delta_t} \left[ \frac{1}{2}  Re_x^{-\frac{1}{2}} (\eta f' -f) \right] \frac{\partial }{\partial y^*} \theta   = \alpha \frac{L}{u_\infty} (\frac{1}{\delta_t^2} \frac{\partial^2 }{\partial (y^*)^2} \theta ) $$ 
+
+$$\frac{f'}{2} ( - \frac{\eta}{2x^*}) \theta' + \frac{L}{ \delta_t} \left[ \frac{1}{2}  Re_x^{-\frac{1}{2}} (\eta f' -f) \right] \frac{\partial }{\partial y^*} \theta   = \alpha \frac{L}{u_\infty} (\frac{1}{\delta_t^2} \frac{\partial^2 }{\partial (y^*)^2} \theta ) $$ 
+
+$$\frac{f'}{2} ( - \frac{\eta}{2x^*}) \theta' + L \left[ \frac{1}{2}  Re_x^{-\frac{1}{2}} (\eta f' -f) \right] \frac{\partial }{\partial y} \theta   = \alpha \frac{L}{u_\infty} ( \frac{\partial^2 }{\partial y^2} \theta ) $$ 
+
+
+What about the y terms?
+
+$$\eta = \frac{1}{2} \frac{y}{x} (Re_x)^{\frac{1}{2}} = \frac{1}{2} y \sqrt{\frac{u_\infty}{\nu x}}$$
+
+$$\frac{\partial}{\partial y} = \frac{\partial \eta}{\partial y} \frac{\partial }{\partial \eta}$$
+
+$$\frac{\partial \eta}{\partial y}= \frac{1}{2} \sqrt{\frac{u_\infty}{\nu x}} = \frac{\eta}{y}$$
+
+For RHS...
+
+$$\frac{\partial ^2 \theta}{\partial y^2} = \frac{\partial}{\partial y} (\frac{\partial  \eta}{\partial y} \frac{\partial \theta}{\partial \eta}) = \frac{\partial}{\partial y} (\frac{\partial  \eta}{\partial y} \theta') $$ 
+
+$$ = \frac{\partial \theta' }{\partial y} \frac{\partial \eta }{\partial y} + \frac{\partial^2 \eta}{\partial y^2} \theta'$$
+
+$$\frac{\partial^2 \eta}{\partial y^2} = \frac{\partial }{\partial y} (\frac{\eta}{y}) = 0 $$
+
+$$\frac{\partial ^2 \theta}{\partial y^2} = \frac{\partial \theta' }{\partial y} \frac{\partial \eta }{\partial y} =  \frac{\partial \eta}{\partial y} \frac{\partial \theta'}{\partial \eta} \frac{\partial \eta }{\partial y} = \theta'' (\frac{\eta^2}{y^2})$$ 
+
+Substitution back in:
+
+$$\frac{f'}{2} ( - \frac{\eta}{2x^*}) \theta' + L \left[ -\frac{1}{2}  Re_x^{-\frac{1}{2}} (\eta f' -f) \right] \frac{\eta }{ y} \theta'   = \alpha \frac{L}{u_\infty} ( \frac{\eta^2 }{y^2} \theta'' ) $$ 
+
+tidying up:
+
+
+$$( - \frac{\eta f'}{4x^*}) \theta' + L \left[ \frac{1}{2}  Re_x^{-\frac{1}{2}} (\eta f' -f) \right] \frac{\eta }{ y} \theta'   = \alpha \frac{L}{u_\infty} ( \frac{\eta^2 }{y^2} \theta'' ) $$ 
+
+$$( - \frac{\eta f'}{4x^*}) \theta'   +\frac{1}{2} \frac{\eta }{ y} L   Re_x^{-\frac{1}{2}} (\eta f' -f) \theta'    = \alpha \frac{L}{u_\infty} ( \frac{\eta^2 }{y^2} \theta'' ) $$ 
+
+$$( - \frac{\eta f'}{4x^*}) \theta'   +\frac{1}{2} \frac{\eta }{ y} L   Re_x^{-\frac{1}{2}} (\eta f'  \theta' -f  \theta')    = \alpha \frac{L}{u_\infty} ( \frac{\eta^2 }{y^2} \theta'' ) $$ 
+
+$$( - \frac{\eta f'}{4x^*}) \theta'  +\frac{1}{2} \frac{\eta }{ y} L   Re_x^{-\frac{1}{2}} \eta f'  \theta' - \frac{1}{2} \frac{\eta }{ y} L   Re_x^{-\frac{1}{2}}  f  \theta'   = \alpha \frac{L}{u_\infty} ( \frac{\eta^2 }{y^2} \theta'' ) $$ 
+
+$$\theta' \eta f' ( - \frac{1}{4x^*} +\frac{1}{2} \frac{\eta }{ y} L   Re_x^{-\frac{1}{2}} )   - \frac{1}{2} \frac{\eta }{ y} L   Re_x^{-\frac{1}{2}}  f  \theta'   = \alpha \frac{L}{u_\infty} ( \frac{\eta^2 }{y^2} \theta'' ) $$ 
+
+simplifying...
+
+$$\theta' \eta f' ( - \frac{1}{4x^*} + \frac{1}{4} \sqrt{\frac{u_\infty}{\nu x}}  L   Re_x^{-\frac{1}{2}} )   - \frac{1}{2} \frac{\eta }{ y} L   Re_x^{-\frac{1}{2}}  f  \theta'   = \alpha \frac{L}{u_\infty} ( \frac{\eta^2 }{y^2} \theta'' ) $$ 
+
+
+$$\theta' \eta f' ( - \frac{1}{4x^*} + \frac{1}{4 x} \sqrt{Re_x}  L   Re_x^{-\frac{1}{2}} )   - \frac{1}{2} \frac{\eta }{ y} L   Re_x^{-\frac{1}{2}}  f  \theta'   = \alpha \frac{L}{u_\infty} ( \frac{\eta^2 }{y^2} \theta'' ) $$ 
+
+$$\theta' \eta f' ( - \frac{1}{4x^*} + \frac{L}{4 x}   )   - \frac{1}{2} \frac{\eta }{ y} L   Re_x^{-\frac{1}{2}}  f  \theta'   = \alpha \frac{L}{u_\infty} ( \frac{\eta^2 }{y^2} \theta'' ) $$ 
+
+$$\theta' \eta f' ( - \frac{1}{4x^*} + \frac{1}{4 x^*}   )  - \frac{1}{2} \frac{\eta }{ y} L   Re_x^{-\frac{1}{2}}  f  \theta'   = \alpha \frac{L}{u_\infty} ( \frac{\eta^2 }{y^2} \theta'' ) $$ 
+
+$$ -\frac{1}{2} \frac{\eta }{ y} L   Re_x^{-\frac{1}{2}}  f  \theta'   = \alpha \frac{L}{u_\infty} ( \frac{\eta^2 }{y^2} \theta'' ) $$
+
+ $$- \frac{1}{2} \frac{1 }{2} \frac{1}{x} Re_x^{\frac{1}{2}} L   Re_x^{-\frac{1}{2}}  f  \theta'   = \alpha \frac{L}{u_\infty} ( \frac{\eta^2 }{y^2} \theta'' ) $$
+
+
+ $$-\frac{1}{4} \frac{1}{x^*}   f  \theta'   = \alpha \frac{L}{u_\infty} ( \frac{\eta^2 }{y^2} \theta'' ) $$
+ 
+  $$- \frac{1}{4} \frac{1}{x^*}   f  \theta'   = \alpha \frac{L}{u_\infty} ( \frac{1}{4} \frac{Re_x}{x^2} \theta'' ) $$
+
+  $$-\frac{1}{4} \frac{1}{x^*}   f  \theta'   = \alpha \frac{1}{u_\infty} ( \frac{1}{4} \frac{Re_x}{x x^*} \theta'' ) $$
+
+  $$ -\frac{1}{4}    f  \theta'   = \alpha \frac{1}{u_\infty} ( \frac{1}{4} \frac{Re_x}{x } \theta'' ) $$
+
+$$ - f  \theta'   = \alpha \frac{1}{u_\infty} ( \frac{Re_x}{x } \theta'' ) $$
+  
+$$  -   f  \theta'   = \alpha \frac{1}{u_\infty} ( \frac{u_\infty x}{x \nu } \theta'' ) $$
+
+$$  -   f  \theta'   = \frac{ \alpha}{\nu} \theta'' $$
+
+$$  -   f  \theta'   = \frac{1}{Pr} \theta'' $$
+
+$$\theta'' + Pr \ f \theta' = 0$$
+
+\subsection{Similarity Solution BCs}
+
+2 Bcs:
+
+$$y \rightarrow \infty \ ; \ T \rightarrow T_\infty$$
+
+$$\eta \rightarrow \infty \ ; \ \theta \rightarrow 1$$
+Reminder
+
+$$\theta = \frac{T-T_s}{T_\infty - T_s}$$
+
+$$y=0 ; T=T_s$$
+$$\eta = 0 \  ; \theta = 0 $$
+
+\subsection{solving the equation}
+
+$$\theta'' + Pr \ f \theta' = 0$$
+
+$$ \frac{\partial  \theta'}{\partial \eta} + Pr \ f \theta' = 0$$
+
+$$ \frac{\partial  \theta'}{\partial \eta} = - Pr \ f \theta' $$
+
+$$  \frac{\partial  \theta'}{\partial \eta} = - Pr \ f \theta' $$
+
+$$ \frac{1}{\theta'} \frac{\partial  \theta'}{\partial \eta} = - Pr \ f$$
+
+$$ \int_0^\infty  \frac{1}{\theta'} \frac{\partial  \theta'}{\partial \eta} d \eta = -  \int_0^\infty  Pr \ f d\eta $$
+
+$$ \int_{\theta'|_{\eta=0}}^{\theta'|_{\eta=\infty}} \frac{1}{\theta'}  d \theta' = -  \int_0^\infty  Pr \ f (\eta) d\eta $$
+
+$$ \log_e (\frac{\theta'|_{\eta=\infty}}{\theta'|_{\eta=0}}) = -  \int_0^\infty  Pr \ f (\eta) d\eta $$
+
+$$ \frac{\theta'|_{\eta=\infty}}{\theta'|_{\eta=0}} = \exp ( -  \int_0^\infty  Pr \ f (\eta) d\eta) $$
+
+What if $\eta$ is not infinity,
+
+$$ \int_{\theta'|_{\eta'=0}}^{\theta'|_{\eta'=\eta}} \frac{1}{\theta'}  d \theta' = -  \int_0^\eta  Pr \ f (\eta') d\eta' $$
+
+$$ \log_e (\frac{\theta'|_{\eta'=\infty}}{\theta'|_{\eta=0}}) = -  \int_0^\infty  Pr \ f (\eta) d\eta $$
+
+$$ \frac{\theta'|_{\eta'=\eta}}{\theta'|_{\eta=0}} = \exp ( -  \int_0^\eta  Pr \ f (\eta') d\eta') $$
+
+$$ \theta'|_{\eta} =  \theta'|_{\eta=0}\exp ( -  \int_0^\eta  Pr \ f (\eta') d\eta') $$
+
+Integrate again,
+
+$$ \int_0^\eta \theta' (\eta') d\eta' = \int_0^\eta  \theta'|_{\eta'=0}\exp ( -  \int_0^\eta  Pr \ f (\eta') d\eta') d\eta' $$
+
+$$ \theta (\eta) = \int_0^\eta  \theta'|_{\eta=0}\exp ( -  \int_0^\eta  Pr \ f (\eta') d\eta') d\eta' $$
+
+use other conventional dummy variables to avoid confusion
+
+$$ \theta (\eta) = \int_{\gamma=0}^{\gamma=\eta}  \theta'|_{\eta'=0}\exp ( -  \int_{\beta=0}^{\beta=\eta}  Pr \ f (\beta) d\beta) \gamma $$
+
+One problem: we don't know what $\theta'|_{\eta'=0}$ is
+
+we use the boundary condition:
+
+$$\theta=1 \ at \ \eta = infinity$$
+
+the dummy variable representing $\eta$ is $\gamma$
+
+
+$$ \theta (\eta=\infty) = \int_{\gamma=0}^{\gamma=\infty}  \theta'|_{\eta=0}\exp ( -  \int_{\beta=0}^{\beta=\eta}  Pr \ f (\beta) d\beta) \gamma $$
+
+
+$$ 1 = \int_{\gamma=0}^{\gamma=\infty}  \theta'|_{\eta=0}\exp ( -  \int_{\beta=0}^{\beta=\eta}  Pr \ f (\beta) d\beta) \gamma $$
+
+$$ \theta'(0)^{-1} = \int_{\gamma=0}^{\gamma=\infty}  \exp ( -  \int_{\beta=0}^{\beta=\eta}  Pr \ f (\beta) d\beta) \gamma $$
+
+$$ \theta'(0) = \left[ \int_{\gamma=0}^{\gamma=\infty}  \exp ( -  \int_{\beta=0}^{\beta=\eta}  Pr \ f (\beta) d\beta) \gamma \right] ^{-1}$$
+
+using correct mathematical symbols:
+
+$$ \theta'(0) = \left[ \int_{\gamma=0}^{\gamma=\infty}  \exp ( -  \int_{\beta=0}^{\beta=\gamma}  Pr \ f (\beta) d\beta) \gamma \right] ^{-1}$$
+
+$$ \theta (\eta) = \theta'(0) \int_{\gamma=0}^{\gamma=\eta}    \exp ( -   Pr   \int_{\beta=0}^{\beta=\gamma}\ f (\beta) d\beta) \gamma $$
+
+
+We want to find out heat flux...
+
+$$q'' = - k \frac{\partial T}{\partial y}|_{y=0}$$
+
+$$q'' = - k \frac{\partial (T-T_s)}{\partial y}|_{y=0}$$
+$$q'' = - k (T_\infty-T_s) \frac{\partial \theta}{\partial y}|_{y=0}$$
+
+$$h = \frac{q''}{-(T_\infty-T_s)} = k  \frac{\partial \theta}{\partial y}|_{y=0}$$
+
+$$ \frac{h}{k}=   \frac{\partial \theta}{\partial y}|_{y=0}$$
+
+$$ \frac{h}{k}=  \frac{\partial \eta}{\partial y} \frac{\partial \theta}{\partial \eta}|_{y=0}$$
+
+$$ \frac{h}{k}=  \frac{ \eta}{ y} \frac{\partial \theta}{\partial \eta}|_{y=0}$$
+
+
+$$ \frac{h}{k}=  \frac{1}{2} \sqrt{\frac{u_\infty}{\nu x}} \frac{\partial \theta}{\partial \eta}|_{y=0}$$
+
+
+$$ \frac{h}{k}=  \frac{1}{2} \sqrt{\frac{u_\infty}{\nu x}} \theta' (0)$$
+
+$$ \frac{h}{k}=  \frac{1}{2} \sqrt{\frac{u_\infty x}{\nu x^2}} \theta' (0)$$
+
+
+$$ \frac{h x}{k}=  \frac{1}{2} \sqrt{Re_x} \theta' (0)$$
+
+$$ Nu_x=  \frac{1}{2} \sqrt{Re_x} \theta' (0)$$
+
+$$Nu_x = \frac{1}{2} \sqrt{Re_x}  \left[ \int_{\gamma=0}^{\gamma=\infty}  \exp ( -  \int_{\beta=0}^{\beta=\gamma}  Pr \ f (\beta) d\beta) \gamma \right] ^{-1}$$
+
+In textbook expression:
+
+$$Nu_x =\sqrt{Re_x}  \left[ \int_{\gamma=0}^{\gamma=\infty}  \exp ( -  \int_{\beta=0}^{\beta=\gamma}  \frac{1}{2}  Pr \ f (\beta) d\beta) \gamma \right] ^{-1}$$
+
+
+What is the value of:
+
+$$\left[ \int_{\gamma=0}^{\gamma=\infty}  \exp ( -  \int_{\beta=0}^{\beta=\gamma}  \frac{1}{2}  Pr \ f (\beta) d\beta) \gamma \right] ^{-1}$$
+
+Pohlhausen worked it out for Pr$>$0.5:
+
+$$\left[ \int_{\gamma=0}^{\gamma=\infty}  \exp ( -  \int_{\beta=0}^{\beta=\gamma}  \frac{1}{2}  Pr \ f (\beta) d\beta) \gamma \right] ^{-1} \approx  0.332 Pr^{\frac{1}{3}} $$
+
+Liquid metals $Pr <0.1$
+
+Air $Pr=0.72$
+
+Water $Pr=7$
+
+Pr number says that for liquids of same viscosity, a higher prandtl number means lower  thermal diffusivity
+
+Thermal diffusivity intuition, high thermal conductivity means high thermal diffusivity, all else constant.
+
+$$Nu_x = 0.332 Re_x^{\frac{1}{2}}  Pr^{\frac{1}{3}} $$
+
+$$Nu_L = \frac{1}{L} \int_0^L Nu_x dx$$
+$$Nu_L = \frac{1}{L} \int_0^L 0.332 Re_x^{\frac{1}{2}}  Pr^{\frac{1}{3}}  dx$$
+$$Nu_L = Pr^{\frac{1}{3}} \frac{1}{L}  \int_0^L 0.332 Re_x^{\frac{1}{2}}    dx$$
+$$Nu_L = 0.664 Re_L^{\frac{1}{2}} Pr^{\frac{1}{3}}$$
+
+
+Note: For the above solutions, use film temperature to evaluate thermal properties!
+
+$$T_{film} = \frac{T_s + T_\infty}{2}$$
+
+eg. $c_p, \mu$ etc..
+
+\section{Integral Solutions to Thermal BL Constant Temp Flat Plate}
+
+In the momentum BL, we considered a control volume in the BL to get:
+
+$$ \frac{\tau_x}{\rho} = ( \frac{\partial u_\infty}{\partial x}) \int_0^{\delta_p} ( u_\infty - u ) \ dy  + \frac{\partial}{\partial x}   \int_0^{\delta_p} u( u_\infty - u) \ dy $$
+
+Now for thermal BL, we can also consider control volume too (\cite{welty2014fundamentals}). 
+
+
+
+We can consider again four sides of the control volume and perform an enthalpy balance, neglecting fluid kinetic energy:
+
+$$\dot{Q} - \dot{W} = net \ enthalpy \ flows  \ out +  \Delta \ enthalpy \ w.r.t \ time$$
+
+W is Work done by system, if Q+W then W is work done on system
+
+$$\dot{Q} = q'' dA$$
+
+$$q''_{wall} = - k \frac{\partial T}{\partial y} |_{y=0}$$
+
+$$dA = l_z \Delta x$$
+
+For conduction, ignore conduction within fluid. (important assumption)
+2nd assumption, no work done W=0,
+
+Let's consider the enthalpy flows and assume steady state..
+
+Consider net enthalpy flows in:
+
+neglecting kinetic energy
+
+inflow of enthalpy through left
+
+$$= \int_0^{\delta_t} \rho u h l_z dy |_{x}$$
+
+$$= \int_0^{\delta_t} \rho u c_p (T-T_{ref}) l_z dy |_{x}$$
+
+
+outflow of enthalpy through the right
+
+
+$$= \int_0^{\delta_t} \rho u h l_z dy |_{x+\Delta x}$$
+$$= \int_0^{\delta_t} \rho u c_p (T-T_{ref}) l_z dy |_{x+\Delta x}$$
+
+
+
+inflow of enthalpy through the top
+
+Specific enthalpy:
+
+$$h_\infty = c_p (T_\infty - T_{ref})$$
+
+
+mass flowrate into system:
+
+$$\dot{m} = \int_0^{\delta_t} \rho u l_z dy |_{x+\Delta x} - \int_0^{\delta_t} \rho u l_z dy |_{x}$$
+
+put this toegther to find enthalpy inflow through top: 
+
+$$\dot{m} h_\infty = (\int_0^{\delta_t} \rho u l_z dy |_{x+\Delta x} - \int_0^{\delta_t} \rho u l_z dy |_{x}) c_p (T_\infty - T_{ref})$$
+
+Let's subs everything back:
+
+
+$$\dot{Q} - \dot{W} = net \ enthalpy \ flows  \ out +  \Delta \ enthalpy \ w.r.t \ time$$
+$$- k \frac{\partial T}{\partial y} |_{y=0} l_z \Delta x - 0 = -(\int_0^{\delta_t} \rho u l_z dy |_{x+\Delta x} - \int_0^{\delta_t} \rho u l_z dy |_{x}) c_p (T_\infty - T_{ref}) $$
+
+$$+ \int_0^{\delta_t} \rho u c_p (T-T_{ref}) l_z dy |_{x+\Delta x} -  \int_0^{\delta_t} \rho u c_p (T-T_{ref}) l_z dy |_{x}+  0$$
+
+
+
+divide throughout by $\Delta x$ take limit $\Delta x \rightarrow 0$
+
+
+$$- k \frac{\partial T}{\partial y} |_{y=0} l_z  = - \frac{1}{\Delta x} (\int_0^{\delta_t} \rho u l_z dy |_{x+\Delta x} - \int_0^{\delta_t} \rho u l_z dy |_{x}) c_p (T_\infty - T_{ref}) $$
+
+$$+ \frac{1}{\Delta x} [ \int_0^{\delta_t} \rho u c_p (T-T_{ref}) l_z dy |_{x+\Delta x} -  \int_0^{\delta_t} \rho u c_p (T-T_{ref}) l_z dy |_{x}]$$
+
+Assume $T_\infty $ constant with x
+
+
+$$- k \frac{\partial T}{\partial y} |_{y=0} l_z   = - \frac{\partial}{\partial x} (\int_0^{\delta_t} \rho u l_z dy |) c_p (T_\infty - T_{ref}) $$
+
+$$+ \frac{\partial}{\partial x} [ \int_0^{\delta_t} \rho u c_p (T-T_{ref}) l_z dy ]$$
+
+Drop out $T_{ref}$ after bring $c_p T_\infty $ into integral:
+
+
+$$- k \frac{\partial T}{\partial y} |_{y=0} l_z   = - \frac{\partial}{\partial x} (\int_0^{\delta_t} \rho u l_z dy  c_p T_\infty ) $$
+
+$$+ \frac{\partial}{\partial x} [ \int_0^{\delta_t} \rho u c_p T l_z dy ]$$
+
+Finally get rid of $l_z$
+
+$$- k \frac{\partial T}{\partial y} |_{y=0}    = - \frac{\partial}{\partial x} (\int_0^{\delta_t} \rho u  dy  c_p T_\infty ) + \frac{\partial}{\partial x} [ \int_0^{\delta_t} \rho u c_p T  dy ]$$
+
+$$- k \frac{\partial T}{\partial y} |_{y=0}    = - \frac{\partial}{\partial x} (\int_0^{\delta_t} \rho u  dy  c_p T_\infty ) + \frac{\partial}{\partial x} [ \int_0^{\delta_t} \rho u c_p T  dy ]$$
+
+
+Tidy up equation:
+
+$$- k \frac{\partial T}{\partial y} |_{y=0}    = \frac{\partial}{\partial x} [ \int_0^{\delta_t} \rho u c_p ( T -  T_\infty)  dy ]$$
+
+y is integrated out so the integral on the RHS does not depend on y
+
+$$- k \frac{\partial T}{\partial y} |_{y=0}    = \frac{d}{d x} [ \int_0^{\delta_t} \rho u c_p ( T -  T_\infty)  dy ]$$
+
+You can even bring out $\rho c_p$:
+
+$$- k \frac{\partial T}{\partial y} |_{y=0}    = \rho c_p \frac{d}{d x} [ \int_0^{\delta_t}  u  ( T -  T_\infty)  dy ]$$
+
+But in other textbooks, von karman's integral approach literally integrates the BL equations over y (\cite{bejan2013convection}). 
+
+
+we start at:
+$$ u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} \ T  = \alpha (\frac{\partial^2 }{\partial y^2} \ T ) $$ 
+
+and for we put back u and v into the differential using product rule. 
+
+Now we consider continuity equation
+
+And finally get...
+
+
+Now that we have these equations we integrate across y in the BL.
+
+
+Notice there is a partial derivative with x, we will need to use Leibniz's Rule
+
+\begin{verbatim}
+
+https://en.wikipedia.org/wiki/Leibniz_integral_rule
+\end{verbatim}
+
+Consider the integral
+
+$$\int_{y1=a(x)}^{y2=b(x)} f(x,y) dy$$
+
+$$\frac{d}{dx} \left( \int_{y1=a(x)}^{y2=b(x)} f(x,y) dy \right)= f(x,y=b(x)) \frac{d}{dx}b(x) - f(x,y=a(x)) \frac{d}{dx} a(x)  +  \int_{y1=a(x)}^{y2=b(x)} \frac{\partial}{\partial x} f(x,y) dy $$
+
+
+We can apply it
+
+
+Then consider getting w (y velocity) by integrating continuity equation (\cite{bejan2013convection}).
+
+Now assume a power series (cubic) expression for temperature and velocity...
+
+Recall for velocity:
+
+\begin{equation}
+\frac{u}{u_\infty} = \frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3
+\end{equation}
+
+we will then need to consider ratio of thermal BL and momentum BL.
+
+We already know that from hydrodynamic BL integral and similarity solution
+
+$$\frac{\delta_p}{x} = \frac{4.64}{\sqrt{Re_x}}$$
+$$\frac{\delta_p}{x} = \frac{5}{\sqrt{Re_x}}$$
+
+
+\section{Resources Online}
+
+For Momentum BLs:
+\begin{verbatim}
+http://web.mit.edu/fluids-modules/www/highspeed_flows/ver2/bl_Chap2.pdf
+https://community.dur.ac.uk/suzanne.fielding/teaching/BLT/sec3.pdf
+
+for Von Karman
+https://nptel.ac.in/content/storage2/courses/112104118/lecture-29/29-3_momentum.htm
+\end{verbatim}
+
+For Thermal BLs:
+
+\begin{verbatim}
+http://mech.sut.ac.ir/People/Courses/18/Chapter3-%20Part2.pdf
+http://raops.org.in/epapers/june15_9.pdf
+\end{verbatim}
+
+\part{Github Repo}
+\begin{verbatim}
+https://github.com/theodoreOnzGit/heatTransferTheory_YouTube
+\end{verbatim}
+
+Look under convection heat transfer...
+
+
+\part{Bibliography}
+
+\printbibliography
+
+\end{document}
+
+%% template for graphics
+%
+%\begin{figure}[H]
+%\centering
+%
+%\includegraphics[width=\textwidth]{Q10_compare.png}
+%\caption{H (blue) and Pb scattering inelastic (red) and elastic (green)}
+%\label{H and Pb scattering}
+%
+%\end{figure}
