@@ -845,6 +845,7 @@ You can even bring out $\rho c_p$:
 
 $$- k \frac{\partial T}{\partial y} |_{y=0}    = \rho c_p \frac{d}{d x} [ \int_0^{\delta_t}  u  ( T -  T_\infty)  dy ]$$
 
+\subsection{The Hardcore Integral Solution}
 But in other textbooks, von karman's integral approach literally integrates the BL equations over y (\cite{bejan2013convection}). 
 
 
@@ -853,12 +854,40 @@ $$ u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} \ T  = \alph
 
 and for we put back u and v into the differential using product rule. 
 
+$$\frac{\partial}{\partial x}(uT) = u \frac{\partial}{\partial x}T + T \frac{\partial}{\partial x}u$$
+
+$$u \frac{\partial}{\partial x}T =\frac{\partial}{\partial x}(uT)  - T \frac{\partial}{\partial x}u $$
+
+$$\frac{\partial}{\partial y}(vT) = v \frac{\partial}{\partial y}T + T \frac{\partial}{\partial y}v$$
+
+$$ v \frac{\partial}{\partial y}T =\frac{\partial}{\partial y}(vT) -T \frac{\partial}{\partial y}v  $$
+
+subs back in:
+
+$$ u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} \ T  = \alpha (\frac{\partial^2 }{\partial y^2} \ T ) $$ 
+
+$$ \frac{\partial}{\partial x}(uT)  - T \frac{\partial}{\partial x}u + \frac{\partial}{\partial y}(vT) -T \frac{\partial}{\partial y}v  = \alpha (\frac{\partial^2 }{\partial y^2} \ T ) $$ 
+
+$$ \frac{\partial}{\partial x}(uT)   + \frac{\partial}{\partial y}(vT) -T( \frac{\partial}{\partial y}v + \frac{\partial}{\partial x}u) = \alpha (\frac{\partial^2 }{\partial y^2} \ T ) $$ 
+
+
 Now we consider continuity equation
+
+$$\frac{\partial}{\partial y}v + \frac{\partial}{\partial x}u = 0$$
 
 And finally get...
 
+$$ \frac{\partial}{\partial x}(uT)   + \frac{\partial}{\partial y}(vT)  = \alpha (\frac{\partial^2 }{\partial y^2} \ T ) $$ 
+
 
 Now that we have these equations we integrate across y in the BL.
+
+$$ \int_0^Y \frac{\partial}{\partial x}(uT)  dy  + \int_0^Y \frac{\partial}{\partial y}(vT) dy = \int_0^Y \alpha (\frac{\partial^2 }{\partial y^2} \ T ) dy $$ 
+
+$$ \int_0^Y \frac{\partial}{\partial x}(uT)  dy  + (vT)|_Y - (vT)|_0 = \alpha \int_0^Y  (\frac{\partial^2 }{\partial y^2} \ T ) dy $$ 
+
+$$ \int_0^Y \frac{\partial}{\partial x}(uT)  dy  + (vT)|_Y - (vT)|_0 = \alpha [\frac{\partial T}{\partial y}|_Y -  \frac{\partial T}{\partial y} |_0] $$ 
+
 
 
 Notice there is a partial derivative with x, we will need to use Leibniz's Rule
@@ -875,10 +904,128 @@ $$\int_{y1=a(x)}^{y2=b(x)} f(x,y) dy$$
 $$\frac{d}{dx} \left( \int_{y1=a(x)}^{y2=b(x)} f(x,y) dy \right)= f(x,y=b(x)) \frac{d}{dx}b(x) - f(x,y=a(x)) \frac{d}{dx} a(x)  +  \int_{y1=a(x)}^{y2=b(x)} \frac{\partial}{\partial x} f(x,y) dy $$
 
 
-We can apply it
+We can apply it, we let f(x,y) =$uT$
+
+$$\frac{d}{dx} \left( \int_{y1=a(x)}^{y2=b(x)} uT dy \right)= uT(x,y=b(x)) \frac{d}{dx}b(x) - uT(x,y=a(x)) \frac{d}{dx} a(x)  +  \int_{y1=a(x)}^{y2=b(x)} \frac{\partial}{\partial x} uT dy $$
+
+substitute in y1=0, y2=Y
+
+$$\frac{d}{dx} \left( \int_{0}^{y2=Y} uT dy \right)= uT(x,y=Y) \frac{d}{dx}Y(x) - uT(x,y=0) \frac{d}{dx} 0  +  \int_{0}^{y2=Y} \frac{\partial}{\partial x} uT dy $$
 
 
-Then consider getting w (y velocity) by integrating continuity equation (\cite{bejan2013convection}).
+$$\frac{d}{dx} \left( \int_{0}^{Y} uT dy \right)= uT(x,y=Y) \frac{d}{dx}Y(x) +  \int_{0}^{Y} \frac{\partial}{\partial x} uT dy $$
+
+$$ \int_{0}^{Y} \frac{\partial}{\partial x} uT dy = \frac{d}{dx} \left( \int_{0}^{Y} uT dy \right) - uT(x,y=Y) \frac{d}{dx}Y(x)$$
+
+substitute back into main equation:
+
+$$ \int_0^Y \frac{\partial}{\partial x}(uT)  dy  + (vT)|_Y - (vT)|_0 = \alpha [\frac{\partial T}{\partial y}|_Y -  \frac{\partial T}{\partial y} |_0] $$ 
+
+$$ \frac{d}{dx} \left( \int_{0}^{Y} uT dy \right) - uT(x,y=Y) \frac{d}{dx}Y(x)  + (vT)|_Y - (vT)|_0 = \alpha [\frac{\partial T}{\partial y}|_Y -  \frac{\partial T}{\partial y} |_0] $$ 
+
+
+Then consider getting v (y velocity) by integrating continuity equation (\cite{bejan2013convection}).
+
+$$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0$$
+
+$$ \int_0^Y \frac{\partial u}{\partial x} dy + \int_0^Y \frac{\partial v}{\partial y} dy = 0$$
+
+$$ \int_0^Y \frac{\partial u}{\partial x} dy + v|_Y - v|_0 = 0$$
+
+$$v|_Y = v|_0 - \int_0^Y \frac{\partial u}{\partial x} dy $$
+
+We considered Leibniz's rule before using f=uT,
+
+$$ \int_{0}^{Y} \frac{\partial}{\partial x} uT dy = \frac{d}{dx} \left( \int_{0}^{Y} uT dy \right) - uT(x,y=Y) \frac{d}{dx}Y(x)$$
+
+now consider f(x,y)=u(x,y)
+
+$$ \int_{0}^{Y} \frac{\partial}{\partial x} u dy = \frac{d}{dx} \left( \int_{0}^{Y} u dy \right) - u(x,y=Y) \frac{d}{dx}Y(x)$$
+
+$$v|_Y = v|_0 - (\frac{d}{dx} \left( \int_{0}^{Y} u dy \right) - u(x,y=Y) \frac{d}{dx}Y(x))$$
+
+$$v|_Y = v|_0 -\frac{d}{dx} \left( \int_{0}^{Y} u dy \right) + u(x,y=Y) \frac{d}{dx}Y(x)$$
+
+Let's substitute this back into our energy equation:
+
+$$ \frac{d}{dx} \left( \int_{0}^{Y} uT dy \right) - uT(x,y=Y) \frac{d}{dx}Y(x)  + (vT)|_Y - (vT)|_0 = \alpha [\frac{\partial T}{\partial y}|_Y -  \frac{\partial T}{\partial y} |_0] $$ 
+
+$$ \frac{d}{dx} \left( \int_{0}^{Y} uT dy \right) - uT(x,y=Y) \frac{d}{dx}Y(x)  + v|_Y T|_Y - (vT)|_0 = \alpha [\frac{\partial T}{\partial y}|_Y -  \frac{\partial T}{\partial y} |_0] $$ 
+
+
+
+$$ \frac{d}{dx} \left( \int_{0}^{Y} uT dy \right) - uT(x,y=Y) \frac{d}{dx}Y(x)  + (v|_0 -\frac{d}{dx} \left( \int_{0}^{Y} u dy \right) + u(x,y=Y) \frac{d}{dx}Y(x)) T|_Y - (vT)|_0 $$
+
+$$= \alpha [\frac{\partial T}{\partial y}|_Y -  \frac{\partial T}{\partial y} |_0] $$ 
+
+
+$$ \frac{d}{dx} \left( \int_{0}^{Y} uT dy \right) - uT(x,y=Y) \frac{d}{dx}Y(x)  + v|_0 T|_Y -\frac{d}{dx} \left( \int_{0}^{Y} u dy \right)T|_Y + u(x,y=Y)T|_Y \frac{d}{dx}Y(x)  - (vT)|_0 $$
+
+$$= \alpha [\frac{\partial T}{\partial y}|_Y -  \frac{\partial T}{\partial y} |_0] $$ 
+
+$$ \frac{d}{dx} \left( \int_{0}^{Y} uT dy \right)   + v|_0 T|_Y -\frac{d}{dx} \left( \int_{0}^{Y} u dy \right)T|_Y  - (vT)|_0 = \alpha [\frac{\partial T}{\partial y}|_Y -  \frac{\partial T}{\partial y} |_0] $$ 
+
+Now we need to introduce some BCs to tidy things up:
+
+\begin{itemize}
+\item no slip
+\item $Y=\delta_t$
+\item conduction at surface $>>$ conduction at BL
+\end{itemize}
+
+Firstly no slip v=0 at y=0:
+
+
+$$ \frac{d}{dx} \left( \int_{0}^{Y} uT dy \right)   -\frac{d}{dx} \left( \int_{0}^{Y} u dy \right)T|_Y   = \alpha [\frac{\partial T}{\partial y}|_Y -  \frac{\partial T}{\partial y} |_0] $$ 
+
+now, Y $=\delta_t (x)$
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} uT dy \right)   -\frac{d}{dx} \left( \int_{0}^{\delta_t} u dy \right)T|_{\delta_t}   = \alpha [\frac{\partial T}{\partial y}|_{\delta_t} -  \frac{\partial T}{\partial y} |_0] $$ 
+
+note: $T_\infty = T|_{\delta_t}$
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} uT dy \right)   -\frac{d}{dx} \left( \int_{0}^{\delta_t} u dy \right)T_\infty   = \alpha [\frac{\partial T}{\partial y}|_{\delta_t} -  \frac{\partial T}{\partial y} |_0] $$ 
+
+in general, $T_\infty = T_\infty (x)$
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} uT dy \right)   - T_\infty (x) \frac{d}{dx} \left( \int_{0}^{\delta_t} u dy \right)    = \alpha [\frac{\partial T}{\partial y}|_{\delta_t} -  \frac{\partial T}{\partial y} |_0] $$ 
+
+Apply product rule:
+
+$$\frac{d}{dx} \left( T_\infty (x) \int_{0}^{\delta_t} u dy \right) = T_\infty (x) \frac{d}{dx} \left( \int_{0}^{\delta_t} u dy \right) + \left( \frac{d T_\infty (x)}{dx} \right) \int_{0}^{\delta_t} u dy  $$
+
+multiply all by -1, im going to just use $T_\infty$ instead of $T_\infty (x)$
+
+$$\frac{d}{dx} \left( T_\infty  \int_{0}^{\delta_t} u dy \right) = T_\infty  \frac{d}{dx} \left( \int_{0}^{\delta_t} u dy \right) + \left( \frac{d T_\infty }{dx} \right) \int_{0}^{\delta_t} u dy  $$
+
+$$-\frac{d}{dx} \left( T_\infty  \int_{0}^{\delta_t} u dy \right) = - T_\infty  \frac{d}{dx} \left( \int_{0}^{\delta_t} u dy \right) - \left( \frac{d T_\infty }{dx} \right) \int_{0}^{\delta_t} u dy  $$
+
+$$-\frac{d}{dx} \left( T_\infty  \int_{0}^{\delta_t} u dy \right) + \left( \frac{d T_\infty }{dx} \right) \int_{0}^{\delta_t} u dy = - T_\infty  \frac{d}{dx} \left( \int_{0}^{\delta_t} u dy \right)   $$
+
+$$ - T_\infty  \frac{d}{dx} \left( \int_{0}^{\delta_t} u dy \right) = -\frac{d}{dx} \left( T_\infty  \int_{0}^{\delta_t} u dy \right) + \left( \frac{d T_\infty }{dx} \right) \int_{0}^{\delta_t} u dy   $$
+
+Substitute back:
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} uT dy \right)   - T_\infty (x) \frac{d}{dx} \left( \int_{0}^{\delta_t} u dy \right)    = \alpha [\frac{\partial T}{\partial y}|_{\delta_t} -  \frac{\partial T}{\partial y} |_0] $$ 
+
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} uT dy \right)   -\frac{d}{dx} \left( T_\infty  \int_{0}^{\delta_t} u dy \right) + \left( \frac{d T_\infty }{dx} \right) \int_{0}^{\delta_t} u dy     = \alpha [\frac{\partial T}{\partial y}|_{\delta_t} -  \frac{\partial T}{\partial y} |_0] $$ 
+
+bring $T_\infty$ into integral
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} uT dy \right)   -\frac{d}{dx} \left( \int_{0}^{\delta_t} u  T_\infty  dy \right) + \left( \frac{d T_\infty }{dx} \right) \int_{0}^{\delta_t} u dy     = \alpha [\frac{\partial T}{\partial y}|_{\delta_t} -  \frac{\partial T}{\partial y} |_0] $$ 
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} u(T-T_\infty) dy \right)   + \left( \frac{d T_\infty }{dx} \right) \int_{0}^{\delta_t} u dy     = \alpha [\frac{\partial T}{\partial y}|_{\delta_t} -  \frac{\partial T}{\partial y} |_0] $$ 
+
+on RHS we assume heat conduction at BL negligible compared to heat conduction at surface
+
+$$[\frac{\partial T}{\partial y}|_{\delta_t} -  \frac{\partial T}{\partial y} |_0] \approx - \frac{\partial T}{\partial y} |_0$$
+
+So we are left with our integral BL equation:
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} u(T-T_\infty) dy \right)   + \left( \frac{d T_\infty }{dx} \right) \int_{0}^{\delta_t} u dy = - \alpha \frac{\partial T}{\partial y} |_0 $$ 
+
+note: $\alpha = \frac{k}{\rho c_p}$
 
 Now assume a power series (cubic) expression for temperature and velocity...
 
