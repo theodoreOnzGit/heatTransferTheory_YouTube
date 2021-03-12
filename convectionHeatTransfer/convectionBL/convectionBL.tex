@@ -1035,12 +1035,411 @@ Recall for velocity:
 \frac{u}{u_\infty} = \frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3
 \end{equation}
 
+with the BCs:
+
+$$u=0 \ at \  y=0$$
+$$u=u_\infty \ at \  y=\delta_p$$
+$$\frac{\partial u}{\partial y}= 0 \ at \ y=\delta_p$$
+$$\frac{\partial ^2 u}{\partial y^2} = 0 \ at \ y=0$$
+
+and assuming
+
+$$u = a + by + cy^2 + dy^3$$
+
+Near the wall, wall shear stress is constant.
+
+Now we apply the same thing for temperature:
+
+$$T-T_s = a + by + cy^2 + dy^3$$
+
+with the BCs:
+
+$$T-T_s = 0  \ at \ y = 0$$
+$$T-T_s= T_\infty -T_s \ at \ y = \delta_t$$
+
+$$\frac{\partial (T-T_s)}{\partial y} = 0 \ at \ y=\delta_t$$
+$$\frac{\partial^2 (T-T_s)}{\partial y^2} = 0 \ at \ y=0$$
+
+Last BC is saying, near the wall, heat flux is constant..
+
+Now if we do the same thing for temperature profile, you will get:
+
+$$\frac{T-T_s}{T_\infty-T_s} = \frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3$$
+
+$$T = T_s + (T_\infty -T_s)(\frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3) $$
+
 we will then need to consider ratio of thermal BL and momentum BL.
 
+Let's try substituting these back into our integral BL equation.
+
+So in case we need:
 We already know that from hydrodynamic BL integral and similarity solution
 
 $$\frac{\delta_p}{x} = \frac{4.64}{\sqrt{Re_x}}$$
 $$\frac{\delta_p}{x} = \frac{5}{\sqrt{Re_x}}$$
+
+Let's substitute back.
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} u(T-T_\infty) dy \right)   + \left( \frac{d T_\infty }{dx} \right) \int_{0}^{\delta_t} u dy = - \alpha \frac{\partial T}{\partial y} |_0 $$ 
+
+Assume $T_\infty$ is constant w.r.t x
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} u(T-T_\infty) dy \right)  = - \alpha \frac{\partial T}{\partial y} |_0 $$ 
+
+Subs the Temp and Velocity profiles:
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} u_\infty(\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)(T-T_\infty) dy \right)  = - \alpha \frac{\partial T}{\partial y} |_0 $$ 
+
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} u_\infty(\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)(T-T_\infty) dy \right)  = - \alpha \frac{\partial T}{\partial y} |_0 $$ 
+
+subs:
+$$T = T_s + (T_\infty -T_s)(\frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3) $$
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} u_\infty(\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)((T_s + (T_\infty -T_s)(\frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3))-T_\infty) dy \right)  = - \alpha \frac{\partial T}{\partial y} |_0 $$ 
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} u_\infty(\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)((T_s-T_\infty + (T_\infty -T_s)(\frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3))) dy \right)  = - \alpha \frac{\partial T}{\partial y} |_0 $$ 
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} u_\infty(\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)(T_s-T_\infty - (T_s-T_\infty)(\frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3)) dy \right)  = - \alpha \frac{\partial T}{\partial y} |_0 $$ 
+
+$$ \frac{d}{dx} \left( \int_{0}^{\delta_t} u_\infty(T_s-T_\infty )(\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)(1-(\frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3)) dy \right)  = - \alpha \frac{\partial T}{\partial y} |_0 $$ 
+
+$$ u_\infty(T_s-T_\infty ) \frac{d}{dx} \left( \int_{0}^{\delta_t} (\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)(1-(\frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3)) dy \right)  = - \alpha \frac{\partial T}{\partial y} |_0 $$ 
+
+divide both sides by $(T_s-T_\infty)$, 
+
+$$ u_\infty \frac{d}{dx} \left( \int_{0}^{\delta_t} (\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)(1-(\frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3)) dy \right)  =  -\alpha (\frac{1}{(T_s-T_\infty )}) \frac{\partial T-T_s}{\partial y} |_0 $$ 
+
+$$ u_\infty \frac{d}{dx} \left( \int_{0}^{\delta_t} (\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)(1-(\frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3)) dy \right)  =  \alpha (\frac{1}{(T_\infty- T_s )}) \frac{\partial T-T_s}{\partial y} |_0 $$ 
+
+
+
+$$ u_\infty \frac{d}{dx} \left( \int_{0}^{\delta_t} (\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)(1-(\frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3)) dy \right)  = \alpha \frac{\partial \theta}{\partial y} |_0 $$ 
+
+Where $\theta= \frac{T-T_s}{T_\infty-T_s}$
+
+Let's evaluate the integral:
+
+$$\int_{0}^{\delta_t} (\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)(1-(\frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3)) dy$$
+
+let's substitute the integral for dy with $d \frac{y}{\delta_t}$
+
+$$dy = \delta_t d \frac{y}{\delta_t}$$
+
+note: $\delta_t$ and $\delta_p$ are constant w.r.t y
+
+subs the change of variable:
+
+
+$$\int_{0}^{\delta_t} (\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)(1-(\frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3)) dy$$
+
+$$=\int_{0}^{\delta_t} (\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)(1-(\frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3)) d \frac{y}{\delta_t} \delta_t $$
+
+$$= \delta_t  \int_{0}^{1} (\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)(1-(\frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3)) d \frac{y}{\delta_t} $$
+
+let's replace $\beta = \frac{y}{\delta_t}$, $y=\beta \delta_t$
+
+$$= \delta_t  \int_{0}^{1} (\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)(1-(\frac{3}{2} \beta- \frac{1}{2} \beta)^3) d \beta $$
+
+
+$$= \delta_t  \int_{0}^{1} (\frac{3}{2} \frac{y}{\delta_p} - \frac{1}{2} (\frac{y}{\delta_p})^3)(1-\frac{3}{2} \beta + \frac{1}{2} \beta^3) d \beta $$
+
+$$= \delta_t  \int_{0}^{1} (\frac{3}{2} \frac{\beta \delta_t}{\delta_p} - \frac{1}{2} (\frac{\beta \delta_t}{\delta_p})^3)(1-\frac{3}{2} \beta + \frac{1}{2} \beta^3) d \beta $$
+
+$$= \delta_t  \int_{0}^{1} \frac{3}{2} \frac{\beta \delta_t}{\delta_p} (1-\frac{3}{2} \beta + \frac{1}{2} \beta^3) - \frac{1}{2} (\frac{\beta \delta_t}{\delta_p})^3(1-\frac{3}{2} \beta + \frac{1}{2} \beta^3) d \beta $$
+
+$$= \delta_t  \int_{0}^{1} \frac{3}{2} \frac{\beta \delta_t}{\delta_p} (1-\frac{3}{2} \beta + \frac{1}{2} \beta^3) d \beta  - \delta_t  \int_{0}^{1} \frac{1}{2} (\frac{\beta \delta_t}{\delta_p})^3(1-\frac{3}{2} \beta + \frac{1}{2} \beta^3) d \beta $$
+
+[careless mistake! multiplied in $\beta$ not $\beta^3$]
+
+$$= \delta_t \frac{\delta_t}{\delta_p} \int_{0}^{1} \frac{3}{2} \beta  (1-\frac{3}{2} \beta + \frac{1}{2} \beta^3) d \beta  - \delta_t (\frac{ \delta_t}{\delta_p})^3 \int_{0}^{1} \frac{1}{2}\beta^3 (1-\frac{3}{2} \beta + \frac{1}{2} \beta^3) d \beta $$
+
+$$= \delta_t \frac{\delta_t}{\delta_p} \int_{0}^{1} \frac{3}{2}   (\beta-\frac{3}{2} \beta^2 + \frac{1}{2} \beta^4) d \beta  - \delta_t (\frac{ \delta_t}{\delta_p})^3 \int_{0}^{1} \frac{1}{2} (\beta^3-\frac{3}{2} \beta^4 + \frac{1}{2} \beta^6) d \beta $$
+
+$$=  \frac{3}{2} \delta_t \frac{\delta_t}{\delta_p}  \int_{0}^{1}    (\beta-\frac{3}{2} \beta^2 + \frac{1}{2} \beta^4) d \beta  - \frac{1}{2} \delta_t (\frac{ \delta_t}{\delta_p})^3 \int_{0}^{1}  (\beta^3-\frac{3}{2} \beta^4 + \frac{1}{2} \beta^6) d \beta $$
+
+$$=  \frac{3}{2} \delta_t \frac{\delta_t}{\delta_p}  \int_{0}^{1}    (\beta-\frac{3}{2} \beta^2 + \frac{1}{2} \beta^4) d \beta  - \frac{1}{2} \delta_t (\frac{ \delta_t}{\delta_p})^3 \int_{0}^{1}  (\beta^3-\frac{3}{2} \beta^4 + \frac{1}{2} \beta^6) d \beta $$
+
+$$=  \frac{3}{2} \delta_t \frac{\delta_t}{\delta_p}  \frac{1}{10}  - \frac{1}{2} \delta_t (\frac{ \delta_t}{\delta_p})^3 \frac{3}{140} $$
+
+
+$$=  \frac{3}{20} \delta_t \frac{\delta_t}{\delta_p}   - \frac{3}{280} \delta_t (\frac{ \delta_t}{\delta_p})^3 $$
+
+Substituting the integral back:
+
+$$ u_\infty \frac{d}{dx} \left(  \frac{3}{20} \delta_t \frac{\delta_t}{\delta_p}   - \frac{3}{280} \delta_t (\frac{ \delta_t}{\delta_p})^3 \right)  = \alpha \frac{\partial \theta}{\partial y} |_0 $$ 
+
+$$ u_\infty \frac{d}{dx} \left(  \frac{3}{20} \frac{\delta_t^2}{\delta_p}   - \frac{3}{280} (\frac{ \delta_t^4}{\delta_p^3}) \right)  = \alpha \frac{\partial \theta}{\partial y} |_0 $$ 
+
+in approximate method, we consider the ratio $\frac{\delta_t}{\delta_p}$
+
+
+if $\frac{\delta_t}{\delta_p} >> 1$ we can ignore first term, otherwise, if $\frac{\delta_t}{\delta_p} << 1$ we can ignore the second term
+
+$$\frac{\delta_t}{\delta_p} >> 1$$
+
+$$ u_\infty \frac{d}{dx} \left(   - \frac{3}{280} (\frac{ \delta_t^4}{\delta_p^3}) \right)  = \alpha \frac{\partial \theta}{\partial y} |_0 $$ 
+
+$$\frac{\delta_t}{\delta_p} << 1$$
+
+$$ u_\infty \frac{d}{dx} \left(  \frac{3}{20} \frac{\delta_t^2}{\delta_p}   \right)  = \alpha \frac{\partial \theta}{\partial y} |_0 $$ 
+
+Now we can substitute $\theta$
+
+$$\theta = \frac{T-T_s}{T_\infty-T_s} = \frac{3}{2} \frac{y}{\delta_t} - \frac{1}{2} (\frac{y}{\delta_t})^3$$
+
+$$ \frac{\partial }{\partial y}\theta = \frac{3}{2} \frac{1}{\delta_t} - \frac{1}{2} (\frac{3y^2}{\delta_t^3})$$
+now set y=0
+
+$$\frac{\partial }{\partial y}\theta |_{y=0} = \frac{3}{2\delta_t}$$
+
+subs back in:
+
+$$\frac{\delta_t}{\delta_p} >> 1$$
+
+$$ u_\infty \frac{d}{dx} \left(   - \frac{3}{280} (\frac{ \delta_t^4}{\delta_p^3}) \right)  = \alpha \frac{3}{2\delta_t} $$ 
+
+$$\frac{\delta_t}{\delta_p} << 1$$
+
+$$ u_\infty \frac{d}{dx} \left(  \frac{3}{20} \frac{\delta_t^2}{\delta_p}   \right)  = \alpha \frac{3}{2\delta_t}$$ 
+
+note: from momentum integral equation
+
+$$\delta_p = x \frac{4.64}{\sqrt{Re_x}} = 4.64\sqrt{\frac{\nu x}{u_\infty}}$$
+
+Try substituting in latter case 
+
+$$\frac{\delta_t}{\delta_p} << 1$$
+$$ u_\infty \frac{d}{dx} \left(  \frac{3}{20} \frac{\delta_t^2}{\delta_p}   \right)  = \alpha \frac{3}{2\delta_t}$$ 
+
+$$ u_\infty \frac{d}{dx} \left(  \frac{3}{20} \frac{\delta_t^2}{ 4.64\sqrt{\frac{\nu x}{u_\infty}}}   \right)  = \alpha \frac{3}{2\delta_t}$$ 
+
+
+$$  \frac{u_\infty^{1.5}}{\sqrt{\nu}} \frac{3}{20*4.64} \frac{d}{dx} \left(   \frac{\delta_t^2}{\sqrt{x}}   \right)  = \alpha \frac{3}{2\delta_t}$$ 
+
+using quotient rule [careless mistake here, forgot to multiply by 2]:
+
+$$\frac{d}{dx} \left(   \frac{\delta_t^2}{\sqrt{x}}   \right) = \frac{2\sqrt{x} \delta_t \frac{d \delta_t}{d x} - \delta_t^2 (0.5) \frac{1}{\sqrt{x}}}{x}$$
+
+substitute back:
+
+$$  \frac{u_\infty^{1.5}}{\sqrt{\nu}} \frac{3}{20*4.64} \frac{2 \sqrt{x} \delta_t \frac{d \delta_t}{d x} - \delta_t^2 (0.5) \frac{1}{\sqrt{x}}}{x}  = \alpha \frac{3}{2\delta_t}$$ 
+
+$$  \frac{u_\infty^{1.5}}{\sqrt{\nu}} \frac{3}{20*4.64} (\frac{2}{ \sqrt{x}} \delta_t \frac{d \delta_t}{d x} - \delta_t^2 (0.5) \frac{1}{x\sqrt{x}})  = \alpha \frac{3}{2\delta_t}$$ 
+
+$$  \frac{u_\infty^{1.5}}{\sqrt{\nu}} \frac{3}{20*4.64} (\frac{2}{\sqrt{x}} \delta_t^2 \frac{d \delta_t}{d x} - \delta_t^3 (0.5) \frac{1}{x\sqrt{x}})  = \alpha \frac{3}{2}$$ 
+
+
+$$\frac{d \delta_t^3}{dx} = 3 \delta_t^2 \frac{d \delta_t}{dx}$$
+
+
+$$ \frac{1}{3} \frac{d \delta_t^3}{dx} =  \delta_t^2 \frac{d \delta_t}{dx}$$
+
+
+substitute back:
+
+$$  \frac{u_\infty^{1.5}}{\sqrt{\nu}} \frac{3}{20*4.64} (\frac{1}{\sqrt{x}}\frac{2}{3} \frac{d \delta_t^3}{dx} - \delta_t^3 (0.5) \frac{1}{x\sqrt{x}})  = \alpha \frac{3}{2}$$ 
+
+1st order linear ODE in $\delta_t^3$
+
+$$  \frac{u_\infty^{1.5}}{\sqrt{\nu}} (\frac{1}{\sqrt{x}}\frac{2}{3} \frac{d \delta_t^3}{dx} - \delta_t^3 (0.5) \frac{1}{x\sqrt{x}})  =  \alpha \frac{20*4.64}{3}  \frac{3}{2}$$ 
+
+$$  \frac{1}{\sqrt{x}}\frac{2}{3} \frac{d \delta_t^3}{dx} - \delta_t^3 (0.5) \frac{1}{x\sqrt{x}}  =  \alpha \frac{10*4.64}{1} \frac{\sqrt{\nu}}{u_\infty^{1.5}} $$ 
+
+$$  \frac{d \delta_t^3}{dx} - \delta_t^3 (0.75) \frac{1}{x}  =  \alpha \frac{15*4.64}{1} \frac{\sqrt{\nu}}{u_\infty^{1.5}} \sqrt{x} $$ 
+
+Let 
+
+$$A = \alpha \frac{15*4.64}{1} \frac{\sqrt{\nu}}{u_\infty^{1.5}} $$
+
+$$  \frac{d \delta_t^3}{dx} - \delta_t^3  \frac{0.75}{x}  =  A \sqrt{x} $$ 
+
+
+
+
+[Alternate solution: substitute later, may get better solution (less careless mistake)]
+
+$$ u_\infty \frac{d}{dx} \left(  \frac{3}{20} \frac{\delta_t^2}{\delta_p}   \right)  = \alpha \frac{3}{2\delta_t}$$ 
+
+$$ u_\infty \frac{d}{dx} \left(  \frac{3}{20} \delta_p \frac{\delta_t^2}{\delta_p^2}   \right)  = \alpha \frac{3}{2\delta_t}$$ 
+
+$$ u_\infty \frac{d}{dx} \left(  \frac{3}{20} \delta_p \frac{\delta_t^2}{\delta_p^2}   \right)  = \alpha \frac{3}{2\delta_t}$$ 
+
+let $\phi= \frac{\delta_t}{\delta_p}$
+
+$$ u_\infty \frac{d}{dx} \left(  \frac{3}{20} \delta_p \phi^2 \right)  = \alpha \frac{3}{2\delta_t}$$ 
+
+$$ u_\infty \frac{d}{dx} \left(  \delta_p \phi^2 \right)  = \alpha \frac{10}{\delta_t}$$ 
+
+
+Product rule:
+
+$$ \phi^2 \frac{d}{dx} \delta_p  + \delta_p \frac{d}{dx} \phi^2  = \alpha \frac{10}{  u_\infty \delta_t}$$ 
+
+$$ \delta_t \phi^2 \frac{d}{dx} \delta_p  + \delta_t \delta_p \frac{d}{dx} \phi^2  = \alpha \frac{10}{  u_\infty }$$ 
+
+sub $\delta_t = \phi \delta_p$
+
+$$ \delta_p \phi^3 \frac{d}{dx} \delta_p  + \phi \delta_p^2 \frac{d}{dx} \phi^2  = \alpha \frac{10}{  u_\infty }$$ 
+
+$$ \delta_p \phi^3 \frac{d}{dx} \delta_p  + 2 \phi^2 \delta_p^2 \frac{d}{dx} \phi  = \alpha \frac{10}{  u_\infty }$$ 
+
+
+$$  \phi^3 \delta_p \frac{d}{dx} \delta_p  + 2 \delta_p^2  \phi^2 \frac{d}{dx} \phi^2  = \alpha \frac{10}{  u_\infty }$$ 
+
+$$  \phi^3 \delta_p \frac{d}{dx} \delta_p  +  \delta_p^2  \frac{2}{3} \frac{d}{dx} \phi^3  = \alpha \frac{10}{  u_\infty }$$ 
+
+$$\delta_p = x \frac{4.64}{\sqrt{Re_x}} = \frac{4.64 \sqrt{\nu x}}{\sqrt{u_\infty}}$$
+
+$$\delta_p = x \frac{4.64}{\sqrt{Re_x}} = \frac{4.64 \sqrt{\nu x}}{\sqrt{u_\infty}}$$
+
+$$\delta_p^2 = x \frac{4.64^2}{\sqrt{Re_x}} = \frac{4.64^2 \nu x}{u_\infty}$$
+
+
+$$\frac{d}{dx} \delta_p = \frac{1}{2} \frac{4.64 \sqrt{\nu}}{\sqrt{u_\infty x}}$$
+
+$$\delta_p \frac{d}{dx} \delta_p = \frac{1}{2}  \frac{4.64 \sqrt{\nu x}}{\sqrt{u_\infty}} \frac{4.64 \sqrt{\nu}}{\sqrt{u_\infty x}}$$
+
+$$\delta_p \frac{d}{dx} \delta_p = \frac{1}{2}  \frac{4.64^2 \nu}{u_\infty} $$
+
+subs back:
+
+$$  \phi^3 \delta_p \frac{d}{dx} \delta_p  +  \delta_p^2  \frac{2}{3} \frac{d}{dx} \phi^3  = \alpha \frac{10}{  u_\infty }$$ 
+
+$$  \phi^3 \frac{1}{2}  \frac{4.64^2 \nu}{u_\infty}  + \frac{4.64^2 \nu x}{u_\infty} \frac{2}{3} \frac{d}{dx} \phi^3  = \alpha \frac{10}{  u_\infty }$$ 
+
+
+$$  \phi^3 \frac{1}{2}  \frac{4.64^2 \nu}{1}  + \frac{4.64^2 \nu x}{1} \frac{2}{3} \frac{d}{dx} \phi^3  = \alpha \frac{10}{ 1 }$$ 
+
+$$  \phi^3 \frac{1}{2}   + x \frac{2}{3} \frac{d}{dx} \phi^3  = \frac{ 10}{4.64^2} \frac{\alpha}{ \nu  }$$ 
+
+$$  \phi^3 \frac{3}{2}   +2 x \frac{d}{dx} \phi^3  = \frac{30}{4.64^2} \frac{1}{Pr }$$ 
+$$  \phi^3    + \frac{4}{3} x \frac{d}{dx} \phi^3  = \frac{20}{4.64^2} \frac{1}{Pr }$$ 
+
+
+
+First order ODE:
+
+\begin{verbatim}
+https://mathworld.wolfram.com/First-OrderOrdinaryDifferentialEquation.html
+\end{verbatim}
+$$y' + p(x) y = q(x)$$
+
+
+$$y = \frac{\int e^{\int^x p(x') dx'} q(x) dx + c }{e^{\int^x p(x') dx'}}$$
+
+Replace x by dummy variables x'
+
+$$  \frac{d \delta_t^3}{dx'} - \delta_t^3  \frac{0.75}{x'}  =  A \sqrt{x'} $$ 
+
+$$p(x') = -\frac{0.75}{x'}$$
+
+$$q(x') = A \sqrt{x'}$$
+
+[second careless mistake: wrong choice of integrating factor]
+$$ \int^x p(x') dx' = \int^x \frac{-0.75}{x'} dx' = -0.75 \ln (x)  $$ 
+
+
+$$\exp (0.75 \ln (x)) = -\exp(0.75) x$$
+
+
+$$\int e^{\int^x p(x') dx'} q(x) dx  = -\int \exp(0.75) x  A \sqrt{x} dx  $$
+
+$$=-A \exp (0.75) \int x^{1.5} dx $$
+$$=-A \exp (0.75) \frac{x^{2.5}}{2.5}$$
+
+$$\delta_t^3 = \frac{-A \exp (0.75) \frac{x^{2.5}}{2.5} + c }{-\exp(0.75) x}$$
+
+$$\delta_t^3 = \frac{-A \exp (0.75) \frac{x^{2.5}}{2.5} }{-\exp(0.75) x}+\frac{c }{\exp(0.75) x}$$
+
+$$\delta_t^3 = A  \frac{x^{1.5}}{2.5}  +\frac{c }{-\exp(0.75) x}$$
+
+[wrong... ODE solving gone wrong...]
+
+\begin{verbatim}
+https://www.wolframalpha.com/input/?i=solve+y%27+-+0.75+y%2Ft+%3DA+sqrt%28t%29
+\end{verbatim}
+
+According to wolfram:
+
+$$y = \frac{4}{3} A x^{1.5} + C x^{0.75}$$
+
+apply BC, x=0 $\delta_t= 0$, c=0
+
+$$\delta_t^3 = \frac{4}{3} A  x^{1.5}  $$
+
+$$\delta_t = \mathcal{O}( \sqrt{x})$$
+
+$$\delta_t^3 =  \alpha \frac{15*4.64}{1} \frac{\sqrt{\nu}}{u_\infty^{1.5}}  x^{1.5} \frac{4}{3}  $$
+
+$$\frac{\delta_p}{x} = \frac{4.64}{\sqrt{Re_x}}$$
+
+$$\delta_t^3 =  \frac{\alpha}{\nu} \frac{15*4.64}{1} \frac{\nu^{1.5}}{u_\infty^{1.5}}   \frac{4}{3} x^{1.5} $$
+
+
+$$\frac{x}{\sqrt{Re_x}} = \frac{\sqrt{\nu x}}{\sqrt{u_\infty}}$$
+
+$$\delta_t^3 =  \frac{\alpha}{\nu} \frac{15*4.64}{1} \frac{x^3}{Re_x^{1.5}}   \frac{4}{3}   $$
+
+$$\frac{\delta_p}{4.64} = \frac{x}{\sqrt{Re_x}}$$
+
+
+$$\delta_t^3 =  \frac{1}{Pr} \frac{15*4.64}{1} (\frac{\delta_p}{4.64} )^3  \frac{4}{3} $$
+
+
+$$\frac{\delta_t^3}{\delta_p^3} = \frac{1}{Pr} \frac{15*4.64}{4.64^3} \frac{4}{3}$$
+
+$$\frac{\delta_t^3}{\delta_p^3} = \frac{1}{Pr} 0.92895$$
+
+$$\frac{\delta_t}{\delta_p} = 0.97573 \frac{1}{Pr^{1/3}}$$
+
+
+[redundant to use similarity soln and wrong number]
+If you use the similarity solution, you will get this:
+
+$$\frac{\delta_p}{x} = \frac{5}{\sqrt{Re_x}}$$
+
+
+$$\delta_t^3 =  \frac{1}{Pr} \frac{30*5}{1} (\frac{\delta_p}{5} )^3   \frac{1}{2.5}  $$
+
+$$\frac{\delta_t}{\delta_p} = 0.78297 \frac{1}{Pr^{1/3}}$$
+[redundant to use similarity soln and wrong number]
+
+What's our heat flux?
+
+
+$$\frac{\partial}{\partial y} \theta |_{y=0} = \frac{3}{2 \delta_t}$$
+
+$$\frac{\partial}{\partial y} \theta |_{y=0} = \frac{3}{2 \delta_p *0.97573 \frac{1}{Pr^{1/3}}}$$
+
+
+$$\frac{\partial}{\partial y} \theta |_{y=0} = \frac{3}{2 \delta_p *0.97573} * Pr^{1/3}$$
+
+
+$$\delta_p = \frac{4.64 x}{\sqrt{Re_x}}$$
+
+$$\frac{\partial}{\partial y} \theta |_{y=0} = \frac{3}{2 \frac{4.64 x}{\sqrt{Re_x}} *0.97573} * Pr^{1/3}$$
+
+$$\frac{\partial}{\partial y} \theta |_{y=0} = \frac{3}{2 *4.64 x *0.97573} * Pr^{1/3} Re^{1/2}$$
+
+$$Nu_x = \frac{h x}{k}$$
+
+$$q''_{wall \rightarrow fluid} = -k \frac{\partial T}{\partial y}=-h(T_\infty-T_s)$$
+
+$$-k \frac{\partial T}{\partial y}=-h(T_\infty-T_s)$$
+
+$$\frac{\partial T}{\partial y} = \frac{h}{k}(T_\infty-T_s)$$
+
+$$\theta = \frac{T-T_s}{T_\infty - T_s}$$
+
+$$\frac{\partial \theta}{\partial y} = \frac{h}{k}$$
+
+$$\frac{h}{k}  |_{y=0} = \frac{3}{2 *4.64 x *0.97573} * Pr^{1/3} Re^{1/2}$$
+
+$$\frac{hx}{k}  |_{y=0} = \frac{3}{2 *4.64 *0.97573} * Pr^{1/3} Re^{1/2}$$
+
+$$Nu_x |_{y=0} = \frac{3}{2 *4.64 *0.97573} * Pr^{1/3} Re^{1/2}$$
+$$Nu_x |_{y=0} = 0.3313 Pr^{1/3} Re_x^{1/2}$$
+$$Nu_L |_{y=0} = 0.663 Pr^{1/3} Re_L^{1/2}$$
 
 
 \section{Resources Online}
@@ -1059,6 +1458,8 @@ For Thermal BLs:
 \begin{verbatim}
 http://mech.sut.ac.ir/People/Courses/18/Chapter3-%20Part2.pdf
 http://raops.org.in/epapers/june15_9.pdf
+
+https://nptel.ac.in/content/storage2/courses/112101001/downloads/lec25.pdf
 \end{verbatim}
 
 \part{Github Repo}
