@@ -1810,6 +1810,79 @@ For example, in high Pr fluids, we want to just neglect the momentum advection t
 
 In this case, very simply, we eliminate the momentum advection terms.
 
+$$ \frac{1}{Pr} \left[ u^* \frac{\partial}{\partial x^*} v^* +    v^* \frac{\partial}{\partial y^*} v^* \right] -   \frac{\partial^2}{\partial (x^*)^2} v^*  = \frac{\delta_T^4}{ H^4} Ra_H \theta $$
+
+$$  -   \frac{\partial^2}{\partial (x^*)^2} v^*  = \frac{\delta_T^4}{ H^4} Ra_H \theta $$
+
+From this we can see that:
+
+$$ \frac{\delta_T^4}{ H^4} Ra_H =\mathcal{O}(1)$$
+(remember all dimensionless terms are of the order of magnitude of 1)
+
+$$\delta_T = \mathcal{O} (H Ra_H^{-\frac{1}{4}})$$
+
+Another way to write this is:
+$$\delta_T = k H Ra_H^{-\frac{1}{4}}$$
+
+Based on this, we can guess the velocity profile. Given that
+
+$$v = \mathcal{O}(\frac{aH}{\delta_T^2})$$
+
+What about the Nusselt number or heat transfer coeffcient?
+
+We need to then look at our energy equations:
+
+$$ u \frac{(T_s - T_\infty)}{\delta_T} \frac{\partial}{\partial x^*}\theta + v \frac{(T_s - T_\infty)}{H} \frac{\partial }{\partial y^*}  \theta  = \alpha ( \frac{(T_s - T_\infty)}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} \theta ) $$ 
+
+
+The heat transfer in the x direction is governed by,
+
+$$\frac{\partial T}{\partial x} = \mathcal{O}( u \frac{(T_s - T_\infty)}{\delta_T})$$
+
+Recall:
+
+$$u  = \mathcal{O}(\frac{\alpha}{\delta_T})$$
+
+With this we can see how the temperature gradient scales as we go up the wall. 
+
+Why is all this important? Because we assume a velocity or temperature profile shape when we do integral solution analysis. 
+
+So how can we get a temperature profile across x? It's more or less qualitative. Just like for the original von karman solution, a polynomial solution was assumed.
+
+We can try looking at the energy equations and come up with some qualitative shapes:
+
+Consider the energy equation, hold y constant. 
+
+$$ u \frac{(T_s - T_\infty)}{\delta_T} \frac{\partial}{\partial x^*}\theta + v \frac{(T_s - T_\infty)}{H} \frac{\partial }{\partial y^*}  \theta  = \alpha ( \frac{(T_s - T_\infty)}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} \theta ) $$ 
+
+
+As we go further away from the wall, intuitively u and v increase. Or more correctly advection increases. Up to some certain maximum point, and then falls off.
+
+For temperature, there is conduction effect but with some advection which effectively acts like a heat sink. 
+
+In Bejan's textbook, the recommended profiles are (\cite{bejan2013convection}):
+
+$$T-T_\infty = (T_s -T_\infty) \exp (-\frac{x}{\delta_T})$$
+$$v (x,y) = v_x (x) \exp (-\frac{x}{\delta}) (1- \exp (-\frac{x}{\delta_T}))$$
+
+Now this is just an estimate and assumption, based on the rough shapes of the BL, there are no exact reasoning why there must be exponential decay shapes. 
+
+Now for integral solutions, we need to integrate momentum and energy equations across BL in x direction:
+
+$$ u \frac{\partial}{\partial x} v +  v \frac{\partial}{\partial y} v  -\nu ( \frac{\partial^2}{\partial x^2} v ) = \beta(T_s-T_\infty) g \theta $$
+
+$$ \int_0^{x_\infty}  dx\ u \frac{\partial}{\partial x} v  + \int_0^{x_\infty}  dx \  v \frac{\partial}{\partial y} v  - \int_0^{x_\infty}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) =  \int_0^{x_\infty}  dx \ \beta(T_s-T_\infty) g \theta $$
+
+The choice of $x_\infty$ is such that the conditions are close enough to freestream. Ie $u = u_\infty = 0 $, $T=T_\infty$.
+
+We can do the same for energy equation
+
+$$ u \frac{\partial}{\partial x} T + v  \frac{\partial }{\partial y}  T  = \alpha (  \frac{\partial^2}{\partial x^2} T ) $$ 
+
+$$  \int_0^{x_\infty}  dx\ u \frac{\partial}{\partial x} T +  \int_0^{x_\infty}  dx\  v  \frac{\partial }{\partial y}  T  =  \int_0^{x_\infty}  dx\  \alpha (  \frac{\partial^2}{\partial x^2} T ) $$ 
+
+
+
 
 \part{Resources Online}
 
