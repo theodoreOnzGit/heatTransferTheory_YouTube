@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.9)  11 MAR 2021 17:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.4.20)  26 APR 2021 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -477,20 +477,20 @@ File: biblatex.cfg
 \@quotelevel=\count420
 \@quotereset=\count421
  (./convectionBL.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -565,24 +565,24 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'convectionBL.bbl' found.
 
 (./convectionBL.bbl)
-Package biblatex Info: Reference section=0 on input line 23.
-Package biblatex Info: Reference segment=0 on input line 23.
+Package biblatex Info: Reference section=0 on input line 29.
+Package biblatex Info: Reference segment=0 on input line 29.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (36.65945pt too wide) in paragraph at lines 81--81
+Overfull \hbox (36.65945pt too wide) in paragraph at lines 87--87
 []\OT1/cmtt/m/n/10.95 Fundamentals of momentum, heat, and mass transfer. John W
 iley & Sons.[] 
  []
 
 [2]
-Overfull \hbox (36.65945pt too wide) in paragraph at lines 116--116
+Overfull \hbox (36.65945pt too wide) in paragraph at lines 122--122
 []\OT1/cmtt/m/n/10.95 Fundamentals of momentum, heat, and mass transfer. John W
 iley & Sons.[] 
  []
 
 
-Overfull \hbox (37.72627pt too wide) detected at line 134
+Overfull \hbox (37.72627pt too wide) detected at line 140
 []\OML/cmm/m/it/10.95 h \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 u[]h \OT1/cmr/
 m/n/10.95 + \OML/cmm/m/it/10.95 v[]h \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 w
 []h \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 conduction \OT1/cmr/m/n/10.95 + \O
@@ -591,7 +591,7 @@ ipation \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 radiation
  []
 
 [3] [4] [5]
-Overfull \hbox (32.81564pt too wide) detected at line 210
+Overfull \hbox (32.81564pt too wide) detected at line 216
 []\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy/
 m/n/10.95 ^^@ \OML/cmm/m/it/10.95 T[]\OT1/cmr/m/n/10.95 ) + \OML/cmm/m/it/10.95
  u[]^^R\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@ \OML
@@ -605,18 +605,18 @@ t/10.95 ^^R\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@
  []
 
 [6] [7] [8] [9] [10] [11]
-Overfull \hbox (36.65945pt too wide) in paragraph at lines 442--442
+Overfull \hbox (36.65945pt too wide) in paragraph at lines 448--448
 []\OT1/cmtt/m/n/10.95 Fundamentals of momentum, heat, and mass transfer. John W
 iley & Sons.[] 
  []
 
 [12] [13] [14] [15] [16] [17] [18] [19] [20]
-Overfull \hbox (5.97777pt too wide) in paragraph at lines 737--737
+Overfull \hbox (5.97777pt too wide) in paragraph at lines 743--743
 []\OT1/cmr/bx/n/14.4 Integral So-lu-tions to Ther-mal BL Con-stant Temp
  []
 
 [21] [22] [23] [24]
-Overfull \hbox (96.22847pt too wide) detected at line 904
+Overfull \hbox (96.22847pt too wide) detected at line 910
 [] [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/
 it/10.95 x; y \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 b\OT1/cmr/m/n/10.95 (\OM
 L/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ))[]\OML/cmm/m/it/10.95 b\OT1/cmr/m/n/10.9
@@ -629,7 +629,7 @@ ML/cmm/m/it/10.95 a\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95
  []
 
 
-Overfull \hbox (76.01665pt too wide) detected at line 909
+Overfull \hbox (76.01665pt too wide) detected at line 915
 [] [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 uT\OT1/cmr/m/n/10.95 (\OML/cmm/m
 /it/10.95 x; y \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 b\OT1/cmr/m/n/10.95 (\O
 ML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ))[]\OML/cmm/m/it/10.95 b\OT1/cmr/m/n/10.
@@ -641,7 +641,7 @@ n/10.95 ) + [][] []\OML/cmm/m/it/10.95 uTdy
  []
 
 
-Overfull \hbox (21.59769pt too wide) detected at line 913
+Overfull \hbox (21.59769pt too wide) detected at line 919
 [] [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 uT\OT1/cmr/m/n/10.95 (\OML/cmm/m
 /it/10.95 x; y \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 Y\OT1/cmr/m/n/10.95 )[]
 \OML/cmm/m/it/10.95 Y\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.9
@@ -650,7 +650,7 @@ m/it/10.95 x; y \OT1/cmr/m/n/10.95 = 0)[]0 + [][] []\OML/cmm/m/it/10.95 uTdy
  []
 
 [25] [26]
-Overfull \hbox (94.85266pt too wide) detected at line 957
+Overfull \hbox (94.85266pt too wide) detected at line 963
 [] [] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 uT\OT1/cmr/m/n/10.95 (\OML/cm
 m/m/it/10.95 x; y \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 Y\OT1/cmr/m/n/10.95 
 )[]\OML/cmm/m/it/10.95 Y\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/1
@@ -663,7 +663,7 @@ cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 j[]
  []
 
 
-Overfull \hbox (124.71455pt too wide) detected at line 962
+Overfull \hbox (124.71455pt too wide) detected at line 968
 [] [] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 uT\OT1/cmr/m/n/10.95 (\OML/cm
 m/m/it/10.95 x; y \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 Y\OT1/cmr/m/n/10.95 
 )[]\OML/cmm/m/it/10.95 Y\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/1
@@ -677,79 +677,174 @@ mm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95
  []
 
 [27] [28] [29] [30]
-Overfull \hbox (39.87848pt too wide) detected at line 1098
+Overfull \hbox (39.87848pt too wide) detected at line 1104
 [] [] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 []\OMS/c
 msy/m/n/10.95 j[]
  []
 
 
-Overfull \hbox (39.87848pt too wide) detected at line 1100
+Overfull \hbox (39.87848pt too wide) detected at line 1106
 [] [] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 []\OMS/c
 msy/m/n/10.95 j[]
  []
 
 
-Overfull \hbox (31.36179pt too wide) detected at line 1102
+Overfull \hbox (31.36179pt too wide) detected at line 1108
 [] [] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 []\OMS/c
 msy/m/n/10.95 j[]
  []
 
 
-Overfull \hbox (30.52948pt too wide) detected at line 1110
+Overfull \hbox (30.52948pt too wide) detected at line 1116
 \OML/cmm/m/it/10.95 u[][] [] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/c
 mm/m/it/10.95 \OT1/cmr/m/n/10.95 ([])[]\OMS/cmsy/m/n/10.95 j[]
  []
 
 
-Overfull \hbox (22.01279pt too wide) detected at line 1112
+Overfull \hbox (22.01279pt too wide) detected at line 1118
 \OML/cmm/m/it/10.95 u[][] [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 \OT1/cmr
 /m/n/10.95 ([])[]\OMS/cmsy/m/n/10.95 j[]
  []
 
 [31] [32] [33] [34] [35] [36]
-Overfull \hbox (65.4029pt too wide) in paragraph at lines 1324--1324
+Overfull \hbox (65.4029pt too wide) in paragraph at lines 1330--1330
 []\OT1/cmtt/m/n/10.95 https://mathworld.wolfram.com/First-OrderOrdinaryDifferen
 tialEquation.html[] 
  []
 
 [37]
-Overfull \hbox (88.39764pt too wide) in paragraph at lines 1360--1360
+Overfull \hbox (88.39764pt too wide) in paragraph at lines 1366--1366
 []\OT1/cmtt/m/n/10.95 https://www.wolframalpha.com/input/?i=solve+y%27+-+0.75+y
 %2Ft+%3DA+sqrt%28t%29[] 
  []
 
-[38] [39] [40]
-Overfull \hbox (48.15683pt too wide) in paragraph at lines 1454--1454
+[38] [39] [40] [41] [42] [43]
+Overfull \hbox (14.97293pt too wide) in paragraph at lines 1535--1535
+[]\OT1/cmr/bx/n/14.4 Boussinesq ap-prox-i-ma-tion and di-men-sion-less anal-
+ []
+
+[44] [45]
+Overfull \hbox (22.75839pt too wide) detected at line 1637
+\OML/cmm/m/it/10.95 u[][]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T \OMS/cmsy/m/
+n/10.95 ^^@ \OML/cmm/m/it/10.95 T[]\OT1/cmr/m/n/10.95 ) + \OML/cmm/m/it/10.95 v
+[][]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/
+m/it/10.95 T[]\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 \OT1/cmr/m/n/10.95 ([
+][](\OML/cmm/m/it/10.95 T \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 T[]\OT1/c
+mr/m/n/10.95 ) + [][](\OML/cmm/m/it/10.95 T \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/
+it/10.95 T[]\OT1/cmr/m/n/10.95 ))
+ []
+
+[46]
+Overfull \hbox (27.91647pt too wide) detected at line 1639
+\OML/cmm/m/it/10.95 u[][]^^R \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 v[][]^^R 
+\OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 \OT1/cmr/m/n/10.95 ([][]\OML/cmm/m/it
+/10.95 ^^R \OT1/cmr/m/n/10.95 + [][]\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 )
+
+ []
+
+[47]
+Overfull \hbox (10.20898pt too wide) detected at line 1695
+\OMS/cmsy/m/n/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 u\OT1/cmr/m/n/10.9
+5 )\OMS/cmsy/m/n/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/1
+0.95 )[]\OML/cmm/m/it/10.95 u[][]v[] \OT1/cmr/m/n/10.95 + \OMS/cmsy/m/n/10.95 O
+\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.9
+5 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it
+/10.95 v[][]v[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 ^^W\OT1/cmr/m/n/10.
+95 ([]\OML/cmm/m/it/10.95 v \OT1/cmr/m/n/10.95 + [] \OML/cmm/m/it/10.95 v\OT1/c
+mr/m/n/10.95 ) = \OML/cmm/m/it/10.95 ^^L\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95
+ T[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 T[]\OT1/cmr/m/n/10.95 )\OML/cm
+m/m/it/10.95 g^^R
+ []
+
+
+Overfull \hbox (97.52039pt too wide) detected at line 1699
+\OMS/cmsy/m/n/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 u\OT1/cmr/m/n/10.9
+5 )\OMS/cmsy/m/n/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/1
+0.95 )[]\OML/cmm/m/it/10.95 u[][]v[] \OT1/cmr/m/n/10.95 + \OMS/cmsy/m/n/10.95 O
+\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.9
+5 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it
+/10.95 v[][]v[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 ^^W\OT1/cmr/m/n/10.
+95 ([][]\OML/cmm/m/it/10.95 v[] \OT1/cmr/m/n/10.95 + [][] \OML/cmm/m/it/10.95 v
+[]\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 ^^L\OT1/cmr/m/n/10.95 (\OML/cmm/m/
+it/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 T[]\OT1/cmr/m/n/10.95 
+)\OML/cmm/m/it/10.95 g^^R
+ []
+
+[48]
+Overfull \hbox (17.88086pt too wide) detected at line 1707
+\OMS/cmsy/m/n/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 u\OT1/cmr/m/n/10.9
+5 )\OMS/cmsy/m/n/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/1
+0.95 )[]\OML/cmm/m/it/10.95 u[][]v[] \OT1/cmr/m/n/10.95 + \OMS/cmsy/m/n/10.95 O
+\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.9
+5 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it
+/10.95 v[][]v[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 ^^W\OT1/cmr/m/n/10.
+95 ([][]\OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 ^^L\O
+T1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it
+/10.95 T[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 g^^R
+ []
+
+
+Overfull \hbox (17.88086pt too wide) detected at line 1723
+\OMS/cmsy/m/n/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 u\OT1/cmr/m/n/10.9
+5 )\OMS/cmsy/m/n/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/1
+0.95 )[]\OML/cmm/m/it/10.95 u[][]v[] \OT1/cmr/m/n/10.95 + \OMS/cmsy/m/n/10.95 O
+\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.9
+5 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it
+/10.95 v[][]v[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 ^^W\OT1/cmr/m/n/10.
+95 ([][]\OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 ^^L\O
+T1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it
+/10.95 T[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 g^^R
+ []
+
+
+Overfull \hbox (4.25882pt too wide) detected at line 1725
+[][][]\OML/cmm/m/it/10.95 u[][]v[] \OT1/cmr/m/n/10.95 + [][][]\OML/cmm/m/it/10.
+95 v[][]v[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 ^^W\OT1/cmr/m/n/10.95 (
+[][][]\OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 ^^L\OT1
+/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/1
+0.95 T[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 g^^R
+ []
+
+[49] [50] [51]
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 1818--1818
 []\OT1/cmtt/m/n/10.95 http://web.mit.edu/fluids-modules/www/highspeed_flows/ver
 2/bl_Chap2.pdf[] 
  []
 
 
-Overfull \hbox (19.41339pt too wide) in paragraph at lines 1454--1454
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 1818--1818
 []\OT1/cmtt/m/n/10.95 https://community.dur.ac.uk/suzanne.fielding/teaching/BLT
 /sec3.pdf[] 
  []
 
 
-Overfull \hbox (117.14108pt too wide) in paragraph at lines 1454--1454
+Overfull \hbox (117.14108pt too wide) in paragraph at lines 1818--1818
 []\OT1/cmtt/m/n/10.95 https://nptel.ac.in/content/storage2/courses/112104118/le
 cture-29/29-3_momentum.htm[] 
  []
 
 
-Overfull \hbox (65.4029pt too wide) in paragraph at lines 1463--1463
+Overfull \hbox (65.4029pt too wide) in paragraph at lines 1827--1827
 []\OT1/cmtt/m/n/10.95 https://nptel.ac.in/content/storage2/courses/112101001/do
 wnloads/lec25.pdf[] 
  []
 
-[41] [42] (./convectionBL.aux)
+[52] [53] (./convectionBL.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                convectionBL
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'convectionBL.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 12685 strings out of 479383
- 257273 string characters out of 5875831
- 1043398 words of memory out of 5000000
- 29673 multiletter control sequences out of 15000+600000
+ 12688 strings out of 479383
+ 257304 string characters out of 5875830
+ 1043447 words of memory out of 5000000
+ 29676 multiletter control sequences out of 15000+600000
  412378 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,6n,76p,745b,4805s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -769,10 +864,10 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public
 sy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
 share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-di
 st/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on convectionBL.pdf (42 pages, 300251 bytes).
+Output written on convectionBL.pdf (53 pages, 328874 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
+ 249 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

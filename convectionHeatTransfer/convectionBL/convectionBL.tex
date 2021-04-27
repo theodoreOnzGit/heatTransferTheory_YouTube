@@ -20,6 +20,12 @@ doi=true,
 url=true,
 ]{biblatex}\addbibresource{bibliography.bib}
 
+%%%%% for citep
+
+%%%% https://www.overleaf.com/learn/latex/natbib_citation_styles
+
+
+
 \begin{document}
 
 \title{Convection BL YouTube}
@@ -1442,7 +1448,370 @@ $$Nu_x |_{y=0} = 0.3313 Pr^{1/3} Re_x^{1/2}$$
 $$Nu_L |_{y=0} = 0.663 Pr^{1/3} Re_L^{1/2}$$
 
 
-\section{Resources Online}
+\part{Natural Convection}
+
+\section{Simplifying N-S equations and Energy Equations}
+
+Mass, momentum and energy balances:
+$$  \frac{\partial}{\partial x} u +  \frac{\partial}{\partial y} v +  \frac{\partial}{\partial z} w = 0$$
+
+
+$$\frac{\partial }{\partial t} u + u \frac{\partial}{\partial x} u + v \frac{\partial}{\partial y} u + w \frac{\partial}{\partial z} u - \nu ( \frac{\partial^2}{\partial x^2} u + \frac{\partial^2}{\partial y^2} \ u + \frac{\partial^2}{\partial z^2} u) = - \frac{1}{\rho_0} \frac{\partial P}{\partial x} +g_x$$
+
+$$\frac{\partial }{\partial t} v + u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v + w \frac{\partial}{\partial z} v - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v + \frac{\partial^2}{\partial z^2} v) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+$$\frac{\partial }{\partial t} w + u \frac{\partial}{\partial x} w + v \frac{\partial}{\partial y} w + w \frac{\partial}{\partial z} w - \nu ( \frac{\partial^2}{\partial x^2} w + \frac{\partial^2}{\partial y^2} \ w + \frac{\partial^2}{\partial z^2} w) = - \frac{1}{\rho_0} \frac{\partial P}{\partial z} +g_z$$
+
+
+$$\frac{\partial }{\partial t} T + u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} \ T + w \frac{\partial }{\partial z} T  = \alpha ( \frac{\partial^2}{\partial x^2} T +  \frac{\partial^2 }{\partial y^2} \ T +  \frac{\partial^2 }{\partial z^2} T) $$ 
+
+
+Note: compressibility applies here! How can we deal with this?
+
+$$  \frac{\partial}{\partial x} \rho u +  \frac{\partial}{\partial y}  \rho v +  \frac{\partial}{\partial z} \rho w = 0$$
+
+$$ ...+ \rho \left[ \frac{\partial}{\partial x} u +  \frac{\partial}{\partial y} v +  \frac{\partial}{\partial z} w \right] = 0$$
+
+The change in density is considered small in comparison to change in velocity... (Boussinesq approximation)
+
+Therefore,
+$$  \frac{\partial}{\partial x} u +  \frac{\partial}{\partial y} v +  \frac{\partial}{\partial z} w = 0$$
+
+With this equation, we can still use essentially the same form of the (mostly) incompressible momentum equations:
+
+$$\frac{\partial }{\partial t} u + u \frac{\partial}{\partial x} u + v \frac{\partial}{\partial y} u + w \frac{\partial}{\partial z} u - \nu ( \frac{\partial^2}{\partial x^2} u + \frac{\partial^2}{\partial y^2} \ u + \frac{\partial^2}{\partial z^2} u) = - \frac{1}{\rho_0} \frac{\partial P}{\partial x} +g_x$$
+
+$$\frac{\partial }{\partial t} v + u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v + w \frac{\partial}{\partial z} v - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v + \frac{\partial^2}{\partial z^2} v) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+$$\frac{\partial }{\partial t} w + u \frac{\partial}{\partial x} w + v \frac{\partial}{\partial y} w + w \frac{\partial}{\partial z} w - \nu ( \frac{\partial^2}{\partial x^2} w + \frac{\partial^2}{\partial y^2} \ w + \frac{\partial^2}{\partial z^2} w) = - \frac{1}{\rho_0} \frac{\partial P}{\partial z} +g_z$$
+
+For simplicity, we assume a 2D type flow, where convection goes upwards in the positive y axis. This is to say, w=0 everywhere, $g_z=0$
+
+$$0 = - \frac{1}{\rho_0} \frac{\partial P}{\partial z} $$
+
+we can also apply the same for the x and y velocity eqns
+
+$$\frac{\partial }{\partial t} u + u \frac{\partial}{\partial x} u + v \frac{\partial}{\partial y} u + w \frac{\partial}{\partial z} u - \nu ( \frac{\partial^2}{\partial x^2} u + \frac{\partial^2}{\partial y^2} \ u + \frac{\partial^2}{\partial z^2} u) = - \frac{1}{\rho_0} \frac{\partial P}{\partial x} +g_x$$
+
+$$\frac{\partial }{\partial t} v + u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v + w \frac{\partial}{\partial z} v - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v + \frac{\partial^2}{\partial z^2} v) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+
+Thus resulting in:
+
+$$\frac{\partial }{\partial t} u + u \frac{\partial}{\partial x} u + v \frac{\partial}{\partial y} u  - \nu ( \frac{\partial^2}{\partial x^2} u + \frac{\partial^2}{\partial y^2} \ u ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial x} +g_x$$
+
+$$\frac{\partial }{\partial t} v + u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v  - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+With gravity being only in y direction,
+
+$$\frac{\partial }{\partial t} u + u \frac{\partial}{\partial x} u + v \frac{\partial}{\partial y} u  - \nu ( \frac{\partial^2}{\partial x^2} u + \frac{\partial^2}{\partial y^2} \ u ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial x} $$
+
+$$\frac{\partial }{\partial t} v + u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v  - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+With steady state assumption:
+
+$$ u \frac{\partial}{\partial x} u + v \frac{\partial}{\partial y} u  - \nu ( \frac{\partial^2}{\partial x^2} u + \frac{\partial^2}{\partial y^2} \ u ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial x} $$
+
+$$ u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v  - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+
+Thus we have our full set of hydrodynamic equations to begin:
+
+
+$$  \frac{\partial}{\partial x} u +  \frac{\partial}{\partial y} v  = 0$$
+
+$$ u \frac{\partial}{\partial x} u + v \frac{\partial}{\partial y} u  - \nu ( \frac{\partial^2}{\partial x^2} u + \frac{\partial^2}{\partial y^2} \ u ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial x} $$
+
+$$ u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v  - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+Now what about our energy equations?
+
+$$\frac{\partial }{\partial t} T + u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} \ T + w \frac{\partial }{\partial z} T  = \alpha ( \frac{\partial^2}{\partial x^2} T +  \frac{\partial^2 }{\partial y^2} \ T +  \frac{\partial^2 }{\partial z^2} T) $$ 
+
+We make the assumption that the change in density is so small it does not significantly impact thermal diffusivity. Again if we expand things out via product rule, the terms with change in density are assumed small compared to other terms.
+
+$$ u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} \ T = \alpha ( \frac{\partial^2}{\partial x^2} T +  \frac{\partial^2 }{\partial y^2} \ T ) $$ 
+
+\section{Boussinesq approximation and dimensionless analysis}
+Now where does the buoyancy force come from?
+
+Think in terms of intuition...
+
+It comes from surrounding fluid of heavier density "pushing" the lighter fluid upwards.
+
+We expect buoyancy force to come from the pressure term. How do we then put this into our equations?
+
+Consider this dimensionless analysis that as long as we are within the boundary layer, (\cite{bejan2013convection}):
+
+$$\mathcal{O}(x) = \delta_T$$
+$$\mathcal{O}(y) = H \ (wall\ height)$$
+$$H >> \delta_T$$
+
+
+(why thermal boundary layer and not momentum boundary layer? because the underlying driving force is temperature, that's the more important BL in natural convection)
+
+Also static pressure should change only with y, not x.
+
+What's the expression then?
+
+$$P_\infty (y) = (L-y)\rho_\infty (-g_y) $$ 
+
+L is the length from the "surface" so to speak.
+
+So that
+
+$$\frac{d P_\infty}{dy} = -\rho_\infty (-g_y)$$
+
+substitute this back and we get:
+
+$$ u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v  - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = - \frac{1}{\rho_0} \frac{\partial P}{\partial y} +g_y$$
+
+$$ u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v  - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = - \frac{1}{\rho_0} (-\rho_\infty (-g_y)) +g_y$$
+
+of course $g_y$ is negative, we can simply state
+
+$$g_y = -g$$
+
+$$ u \frac{\partial}{\partial x} v + v \frac{\partial}{\partial y} v  - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = - \frac{1}{\rho_0} (-\rho_\infty g) -g$$
+
+Note that the $\rho_0$ here refers to fluid density at the BL, not in the freestream.
+
+The change in $\rho_0$ was small compared to other terms. But in this case, on the RHS, the only driving force for the fluid is this density change, so it cannot be neglected as before.
+
+$$\rho u \frac{\partial}{\partial x} v + \rho v \frac{\partial}{\partial y} v  -\rho \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = (\rho_\infty g) - \rho g$$
+
+$$\rho u \frac{\partial}{\partial x} v + \rho v \frac{\partial}{\partial y} v  -\rho \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = (\rho_\infty - \rho)  g$$
+
+How do u then quantify $\rho_\infty - \rho$?
+
+Here's were the boussinesq approximation comes in, only applies for small density changes due to temperature, not pressure. Constant static pressure is assumed (\cite{bejan2013convection})
+
+$$\rho = \rho_\infty (1- \beta(T-T_\infty))$$
+
+This is a linear relationship for a constant $\beta$ value (thermal expansion coefficient).
+
+$$ \beta  = - \frac{1}{\rho} \left( \frac{\partial \rho}{\partial T} \right)_P$$
+
+When we substitute all this in, we are ready to start deriving the equations.
+
+$$\rho u \frac{\partial}{\partial x} v + \rho v \frac{\partial}{\partial y} v  -\rho \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = \rho_\infty \beta(T-T_\infty)  g$$
+
+Once again, for the sake of simplification, density changes are not important except that the buoyancy forces are accounted for, therefore,
+
+$$\rho \approx \rho_\infty$$
+
+$$ u \frac{\partial}{\partial x} v +  v \frac{\partial}{\partial y} v  - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) =  \beta(T-T_\infty)  g$$
+
+
+This substitution is known as the boussinesq approximation.
+
+First we start with continuity
+
+$$  \frac{\partial}{\partial x} u +  \frac{\partial}{\partial y} v  = 0$$
+
+$$ x = x^* \delta_T$$
+
+$$y=y^* H$$
+
+What's the characteristic velocity scale? We don't have a $u_\infty$ to really look to here...
+
+Okay, so maybe, it's easier to start with energy equations because this is our driving force! In forced convection, the driving force is sort of implicit in the momentum and mass conservation equations (freestream velocity is driving force). 
+
+$$ u \frac{\partial}{\partial x} T + v \frac{\partial }{\partial y} \ T  = \alpha ( \frac{\partial^2}{\partial x^2} T +  \frac{\partial^2 }{\partial y^2} \ T) $$ 
+
+So now, we can nondimensionalise T, x and y. u and v will remain. 
+
+Now combine this with the continuity equation we have two equations with two unknowns (order of magnitude so to speak).
+
+$$ u \frac{1}{\delta_T} \frac{\partial}{\partial x^*} T + v \frac{1}{H} \frac{\partial }{\partial y^*} \ T  = \alpha ( \frac{1}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} T + \frac{1}{H^2} \frac{\partial^2 }{\partial (y^*)^2} \ T) $$ 
+
+Now we can also nondimensionalise temperature.
+
+$$\theta= \frac{T-T_\infty}{T_s - T_\infty}$$
+
+$$(T_s - T_\infty) d \theta = d (T - T_\infty)$$
+
+$$ u \frac{1}{\delta_T} \frac{\partial}{\partial x^*} T + v \frac{1}{H} \frac{\partial }{\partial y^*} \ T  = \alpha ( \frac{1}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} T + \frac{1}{H^2} \frac{\partial^2 }{\partial (y^*)^2} \ T) $$ 
+
+
+$$ u \frac{1}{\delta_T} \frac{\partial}{\partial x^*} (T - T_\infty) + v \frac{1}{H} \frac{\partial }{\partial y^*}  (T - T_\infty)  = \alpha ( \frac{1}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} (T - T_\infty) + \frac{1}{H^2} \frac{\partial^2 }{\partial (y^*)^2} (T - T_\infty)) $$ 
+
+$$ u \frac{(T_s - T_\infty)}{\delta_T} \frac{\partial}{\partial x^*}\theta + v \frac{(T_s - T_\infty)}{H} \frac{\partial }{\partial y^*}  \theta  = \alpha ( \frac{(T_s - T_\infty)}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} \theta + \frac{(T_s - T_\infty)}{H^2} \frac{\partial^2 }{\partial (y^*)^2} \theta) $$ 
+
+Now since $H >> \delta_T$, we can assume that
+
+$$( \frac{(T_s - T_\infty)}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} \theta + \frac{(T_s - T_\infty)}{H^2} \frac{\partial^2 }{\partial (y^*)^2} \theta) \approx ( \frac{(T_s - T_\infty)}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} \theta )$$
+
+$$ u \frac{(T_s - T_\infty)}{\delta_T} \frac{\partial}{\partial x^*}\theta + v \frac{(T_s - T_\infty)}{H} \frac{\partial }{\partial y^*}  \theta  = \alpha ( \frac{(T_s - T_\infty)}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} \theta ) $$ 
+
+And since the nondimensionalised terms are all $\mathcal{O}(1)$
+
+$$\mathcal{O}( u \frac{(T_s - T_\infty)}{\delta_T}) + \mathcal{O}(v \frac{(T_s - T_\infty)}{H}) = \mathcal{O}( \alpha  \frac{(T_s - T_\infty)}{\delta_T^2})$$
+
+
+So now we can work with the mass balance equations:
+
+
+$$  \frac{\partial}{\partial x} u +  \frac{\partial}{\partial y} v  = 0$$
+
+$$ x = x^* \delta_T$$
+
+$$y=y^* H$$
+
+
+$$ \frac{1}{\delta_T} \frac{\partial}{\partial x^* } u + \frac{1}{H} \frac{\partial}{\partial y^*} v  = 0$$
+
+$$ \frac{\mathcal{O}(u)}{\delta_T} \frac{\partial}{\partial x^* } u^* + \frac{\mathcal{O}(v)}{H} \frac{\partial}{\partial y^*} v^*  = 0 $$
+
+$$\mathcal{O}(\frac{u}{\delta_T}) = \mathcal{O}(\frac{v}{H})$$
+
+Where u and v are typical velocity values in the BL. This is thermal BL btw
+
+From this, we find that we cannot just throw out any of the terms here... However, we do know that the x and y velocity terms are on the same order of magnitude. We can then perform elimination to find:
+
+$$2 \mathcal{O}( u ) = \mathcal{O}(\frac{\alpha}{\delta_T})$$
+$$2 \mathcal{O}(v ) = \mathcal{O}( \frac{\alpha H}{\delta_T^2})$$
+
+Of course we can easily get rid of the factor of 2, since it is still in the same order of magnitude
+
+
+$$ \mathcal{O}( u ) = \mathcal{O}(\frac{\alpha}{\delta_T})$$
+$$ \mathcal{O}(v ) = \mathcal{O}( \frac{\alpha H}{\delta_T^2})$$
+
+Now let's move on to the momentum equations
+
+$$ u \frac{\partial}{\partial x} v +  v \frac{\partial}{\partial y} v  - \nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = \beta(T-T_\infty)  g$$
+
+
+
+Now here, we only nondimensionalise the position and velocity coordinates, for density and viscosity, while they are changing withing the fluid, we choose not to nondimensionalise as the changes are not as significant as the terms contributing to inertial forces, frictional forces and buoyancy forces.
+
+The easiest is to start with the temperature.
+
+$$ u \frac{\partial}{\partial x} v +  v \frac{\partial}{\partial y} v  -\nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = \beta(T_s-T_\infty) g \theta $$
+
+Then the viscous forces,
+
+$$ \mathcal{O}(u) \mathcal{O}(v) \frac{1}{\delta_T} u^* \frac{\partial}{\partial x^*} v^* +  \mathcal{O}(v) \mathcal{O}(v) \frac{1}{H} v^* \frac{\partial}{\partial y^*} v^*  -\nu ( \frac{\partial^2}{\partial x^2} v + \frac{\partial^2}{\partial y^2} \ v ) = \beta(T_s-T_\infty) g \theta $$
+
+Then the frictional forces
+
+$$  \mathcal{O}(u) \mathcal{O}(v) \frac{1}{\delta_T} u^* \frac{\partial}{\partial x^*} v^* +  \mathcal{O}(v) \mathcal{O}(v) \frac{1}{H} v^* \frac{\partial}{\partial y^*} v^*  -\nu ( \frac{\mathcal{O}(v)}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} v^* + \frac{\mathcal{O}(v)}{H^2} \frac{\partial^2}{\partial (y^*)^2} \ v^* ) = \beta(T_s-T_\infty) g \theta $$
+
+We make an approximation:
+
+$$( \frac{\mathcal{O}(v)}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} v^* + \frac{\mathcal{O}(v)}{H^2} \frac{\partial^2}{\partial (y^*)^2} \ v^* ) \approx ( \frac{\mathcal{O}(v)}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} v^* )$$
+
+So we are left with:
+
+$$  \mathcal{O}(u) \mathcal{O}(v) \frac{1}{\delta_T} u^* \frac{\partial}{\partial x^*} v^* + \mathcal{O}(v) \mathcal{O}(v) \frac{1}{H} v^* \frac{\partial}{\partial y^*} v^*  -\nu ( \frac{\mathcal{O}(v)}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} v^* ) = \beta(T_s-T_\infty) g \theta $$
+
+Or in its dimensional form,
+
+$$ u \frac{\partial}{\partial x} v +  v \frac{\partial}{\partial y} v  - \nu ( \frac{\partial^2}{\partial x^2} v) = \beta(T-T_\infty)  g$$
+
+
+Now if we want to nondimensionalise everything, we found the characteristic velocity scaling to be:
+
+$$\mathcal{O}(\frac{u}{\delta_T}) = \mathcal{O}(\frac{v}{H})$$
+
+$$ \mathcal{O}( u ) = \mathcal{O}(\frac{\alpha}{\delta_T})$$
+$$ \mathcal{O}(v ) = \mathcal{O}( \frac{\alpha H}{\delta_T^2})$$
+
+Hence, we can use these to nondimensionalise the velocity scales
+
+$$  \mathcal{O}(u) \mathcal{O}(v) \frac{1}{\delta_T} u^* \frac{\partial}{\partial x^*} v^* +  \mathcal{O}(v) \mathcal{O}(v) \frac{1}{H} v^* \frac{\partial}{\partial y^*} v^*  -\nu ( \frac{\mathcal{O}(v)}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} v^* ) = \beta(T_s-T_\infty) g \theta $$
+
+$$  \frac{\alpha}{\delta_T} \frac{\alpha H}{\delta_T^2} \frac{1}{\delta_T} u^* \frac{\partial}{\partial x^*} v^* +  \frac{\alpha H}{\delta_T^2} \frac{\alpha H}{\delta_T^2} \frac{1}{H} v^* \frac{\partial}{\partial y^*} v^*  -\nu ( \frac{\alpha H}{\delta_T^2} \frac{1}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} v^* ) = \beta(T_s-T_\infty) g \theta $$
+
+Now collecting terms together,
+
+$$  \frac{\alpha^2 H}{\delta_T^4}  u^* \frac{\partial}{\partial x^*} v^* +  \frac{\alpha^2 H}{\delta_T^4} v^* \frac{\partial}{\partial y^*} v^*  -\nu ( \frac{\alpha H}{\delta_T^4} \frac{\partial^2}{\partial (x^*)^2} v^* ) = \beta(T_s-T_\infty) g \theta $$
+
+
+we divide both sides by, $\frac{\alpha^2 H}{\delta_T^4}$
+
+$$   u^* \frac{\partial}{\partial x^*} v^* +    v^* \frac{\partial}{\partial y^*} v^*  -  ( \frac{\nu}{\alpha} \frac{\partial^2}{\partial (x^*)^2} v^* ) = \frac{\delta_T^4}{\alpha^2 H} \beta(T_s-T_\infty) g \theta $$
+
+We introduce the prandtl number,
+
+$$   u^* \frac{\partial}{\partial x^*} v^* +    v^* \frac{\partial}{\partial y^*} v^*  -  ( Pr \frac{\partial^2}{\partial (x^*)^2} v^* ) = \frac{\delta_T^4}{\alpha^2 H} \beta(T_s-T_\infty) g \theta $$
+
+Also we notice the ratio $\frac{\delta_T}{H}$ should be important
+
+$$   u^* \frac{\partial}{\partial x^*} v^* +    v^* \frac{\partial}{\partial y^*} v^*  -  ( Pr \frac{\partial^2}{\partial (x^*)^2} v^* ) = \frac{\delta_T^4}{\alpha^2 H^4} \beta(T_s-T_\infty) H^3 g \theta $$
+
+
+
+$$   u^* \frac{\partial}{\partial x^*} v^* +    v^* \frac{\partial}{\partial y^*} v^*  -  ( Pr \frac{\partial^2}{\partial (x^*)^2} v^* ) = \frac{\delta_T^4}{ H^4} \frac{\beta(T_s-T_\infty) H^3 g}{\alpha^2}  \theta $$
+
+Divide throughout by Pr,
+
+$$ \frac{1}{Pr} \left[ u^* \frac{\partial}{\partial x^*} v^* +    v^* \frac{\partial}{\partial y^*} v^* \right] -   \frac{\partial^2}{\partial (x^*)^2} v^*  = \frac{\delta_T^4}{ H^4} \frac{\beta(T_s-T_\infty) H^3 g}{\alpha^2} \frac{1}{Pr} \theta $$
+
+$$ \frac{1}{Pr} \left[ u^* \frac{\partial}{\partial x^*} v^* +    v^* \frac{\partial}{\partial y^*} v^* \right] -   \frac{\partial^2}{\partial (x^*)^2} v^*  = \frac{\delta_T^4}{ H^4} \frac{\beta(T_s-T_\infty) H^3 g}{\alpha^2} \frac{\alpha	}{\nu} \theta $$
+
+$$ \frac{1}{Pr} \left[ u^* \frac{\partial}{\partial x^*} v^* +    v^* \frac{\partial}{\partial y^*} v^* \right] -   \frac{\partial^2}{\partial (x^*)^2} v^*  = \frac{\delta_T^4}{ H^4} \frac{\beta(T_s-T_\infty) H^3 g}{\alpha \nu}  \theta $$
+
+$$ \frac{1}{Pr} \left[ u^* \frac{\partial}{\partial x^*} v^* +    v^* \frac{\partial}{\partial y^*} v^* \right] -   \frac{\partial^2}{\partial (x^*)^2} v^*  = \frac{\delta_T^4}{ H^4} \frac{\beta(T_s-T_\infty) H^3 g}{\alpha \nu}  \theta $$
+
+Here we see the occurence of an important number:
+
+$$Ra_H =  \frac{\beta(T_s-T_\infty) H^3 g}{\alpha \nu}$$
+
+
+
+This is called the Rayleigh number. Which is THE important term for natural convection, it is dependent on both thermal diffusivity and momentum diffusivity. 
+
+$$ \frac{1}{Pr} \left[ u^* \frac{\partial}{\partial x^*} v^* +    v^* \frac{\partial}{\partial y^*} v^* \right] -   \frac{\partial^2}{\partial (x^*)^2} v^*  = \frac{\delta_T^4}{ H^4} Ra_H  \theta $$
+
+
+It mismashes all the effects in one term. Both thermal and momentum diffusivity, so it's not quite like the Reynold's number.
+
+We can see that Pr is important in whether we consider advection of momentum an important effect. In fact $\frac{1}{Pr}$ is important in this equation. We can remove these terms, but what are they small in comparision to? We need another term with $\frac{1}{Pr}$ coefficient to compare it to.
+
+Normally if Prandtl number is really big, and the Rayleigh number is big, this comparison is not needed. But if the prandtl number is small, we got a problem. So we'll need to do comparisons another way.
+
+
+$$ \frac{1}{Pr} \left[ u^* \frac{\partial}{\partial x^*} v^* +    v^* \frac{\partial}{\partial y^*} v^* \right] -   \frac{\partial^2}{\partial (x^*)^2} v^*  = \frac{\delta_T^4}{ H^4} \frac{\beta(T_s-T_\infty) H^3 g}{\alpha \nu}  \theta $$
+
+let's try this trick
+
+$$ \frac{1}{Pr} \left[ u^* \frac{\partial}{\partial x^*} v^* +    v^* \frac{\partial}{\partial y^*} v^* \right] -   \frac{\partial^2}{\partial (x^*)^2} v^*  = \frac{\delta_T^4}{ H^4} \frac{\beta(T_s-T_\infty) H^3 g}{\alpha \nu}  \frac{Pr}{Pr} \theta $$
+
+$$ \frac{1}{Pr} \left[ u^* \frac{\partial}{\partial x^*} v^* +    v^* \frac{\partial}{\partial y^*} v^* \right] -   \frac{\partial^2}{\partial (x^*)^2} v^*  = \frac{\delta_T^4}{ H^4} \frac{\beta(T_s-T_\infty) H^3 g}{\alpha^2}  \frac{1}{Pr} \theta $$
+
+Now we find this new dimensionless number(\cite{bejan2013convection}):
+
+$$Bo=\frac{\beta(T_s-T_\infty) H^3 g}{\alpha^2}=Ra_H Pr$$
+
+This is called the boussinesq number. Important for fluids with low Pr, so that the viscous term can then be neglected.
+
+
+$$ u \frac{(T_s - T_\infty)}{\delta_T} \frac{\partial}{\partial x^*}\theta + v \frac{(T_s - T_\infty)}{H} \frac{\partial }{\partial y^*}  \theta  = \alpha ( \frac{(T_s - T_\infty)}{\delta_T^2} \frac{\partial^2}{\partial (x^*)^2} \theta ) $$ 
+
+\section{solution procedure - integral}
+
+Now to solve the equation. First we always need to know what we are solving for, otherwise we will go in circles.
+
+We have some questions of interest.
+
+\begin{itemize}
+\item What is the Nu (heat transfer coeff)?
+\item Velocity profile
+\item BL thickness of thermal and momentum BL
+\end{itemize}
+
+Remember, we may not want to solve the equation in totality, but rather go for special cases, eg. high or low Pr to make life easier for ourselves.
+
+For example, in high Pr fluids, we want to just neglect the momentum advection terms, making life easier for ourselves. 
+
+\subsection{High Pr fluids}
+
+In this case, very simply, we eliminate the momentum advection terms.
+
+
+\part{Resources Online}
 
 For Momentum BLs:
 \begin{verbatim}
