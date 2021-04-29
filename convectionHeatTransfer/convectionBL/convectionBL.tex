@@ -2365,18 +2365,50 @@ we don't really know how both of these will vary except for:
 
 $$\delta_p \sim y^{1/4} \ ; v \sim y^{1/2}$$
 
+[correction to last video]
+
+$$v\sim y^{1/2} \neq v_y(y) \sim y^{1/2}$$
+$$v (x,y) = v_Y (y) \exp (-\frac{x}{\delta_p}) (1- \exp (-\frac{x}{\delta_T}))$$
+
+$$v\sim y^{1/2} \rightarrow v_Y (y) \exp (-\frac{x}{\delta_p}) (1- \exp (-\frac{x}{\delta_T})) \sim y^{1/2}$$
+
+$$v_Y (y) \sim \frac{y^{1/2} \exp (\frac{x}{\delta_p})}{1- \exp (-\frac{x}{\delta_T})}$$
+
+$$v_Y (y) \sim \frac{y^{1/2} }{\exp (-\frac{x}{\delta_p})- \exp (-x (\frac{1}{\delta_p} + \frac{1}{\delta_T} ))}$$
+
+$$v_Y (y) \sim \frac{y^{1/2} }{\exp (-\frac{x}{\delta_p})- \exp (-x (\frac{\delta_T + \delta_p}{\delta_p \delta_T} ))}$$
+
+$$v_Y (y) \sim \frac{y^{1/2} }{\exp (-\frac{x}{\delta_p})- \exp (-x (\frac{q+1}{\delta_p } ))}$$
+
+Now this means we have only $\delta_p =f(y)$ here, so we can just substitute,
+
+ $$v_Y (y) \sim \frac{y^{1/2} }{\exp (-\frac{x}{Ay^{1/4}})- \exp (-x (\frac{q+1}{Ay^{1/4}} ))}$$
+
+
+so we will use the form,
+
+ $$v_Y (y) =  \frac{B y^{1/2} }{\exp (-\frac{x}{Ay^{1/4}})- \exp (-x (\frac{q+1}{Ay^{1/4}} ))}$$
+
+
+yikes! more work to do...
+
 $$\delta_p = A y^{1/4}$$
 
-$$\int dt \delta_p = A y^{5/4} \frac{4}{5}= \delta_p \frac{4y}{5}+C$$
+$$\int dy \delta_p = A y^{5/4} \frac{4}{5}= \delta_p \frac{4y}{5}+C$$
 
 using this logic,
 
-$$\int dy \frac{v_Y(y)}{\delta_p} =\int dy \frac{B y^{1/2}}{A y^{1/4}} =  C_2 + \frac{v_Y(y)}{\delta_p} \frac{4y}{5}$$
+[correction to last video]
+$$\int dy \frac{v_Y(y)}{\delta_p} =\int dy \frac{B y^{1/2}}{A y^{1/4} [ \exp (-\frac{x}{Ay^{1/4}})- \exp (-x (\frac{q+1}{Ay^{1/4}} ))]} \neq  C_2 + \frac{v_Y(y)}{\delta_p} \frac{4y}{5}$$
+
+Now i'm NOT going to integrate this...
+
+
 
 
 and also,
 
-$$\int dy \frac{\alpha}{\delta_p} = \int dy \frac{\alpha}{A } = \frac{\alpha}{A} y^{3/4} \frac{4}{3} =  \frac{\alpha}{A y^{1/4}} y  \frac{4}{3} = \frac{\alpha}{\delta_p} \frac{4y}{3} $$
+$$\int dy \frac{\alpha}{\delta_p} = \int dy \frac{\alpha}{A y^{1/4}} = \frac{\alpha}{A} y^{3/4} \frac{4}{3} =  \frac{\alpha}{A y^{1/4}} y  \frac{4}{3} = \frac{\alpha}{\delta_p} \frac{4y}{3} $$
 
 okay, so we will integrate from $y^*=0$ to $y^*=y$
 
@@ -2404,18 +2436,50 @@ $$\frac{d}{dy^*} \left[  \frac{v_Y^2 (y^*) \delta_p q^2  }{2(2+q)(1+ q)} \right]
 
 $$ \int_0^y dy^* \  \frac{d}{dy^*}  ( \frac{ v_Y (y^*) \delta_p}{(1 + q)(1+2q)}  ) =  \int_0^y dy^* \ \frac{\alpha}{\delta_p}$$
 
+[correction to last video]
+
+I'm not going to integrate this equation, too hard. I'll do derivatives of the left hand side instead...
 
 $$\int_0^y dy^* \ \frac{d}{dy^*} \left[  \frac{v_Y^2 (y^*) \delta_p q^2  }{2(2+q)(1+ q)} \right] = -\int_0^y dy^* \  \nu  \frac{ v_Y (y^*) q}{\delta_p} + \int_0^y dy^* \  g\beta  (T_s -T_\infty) \frac{\delta_p}{q}$$
 
-Some steps later... using the BC
+$$\frac{d}{dy} \left[  \frac{v_Y^2 (y) \delta_p q^2  }{2(2+q)(1+ q)} \right] = - \nu  \frac{ v_Y (y) q}{\delta_p} + g\beta  (T_s -T_\infty) \frac{\delta_p}{q}$$
 
-at y=0
-$$v_y(y)=0  \ \delta_p = 0$$
+let's evaluate the derivatives using
 
-$$   ( \frac{ v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) =  \int_0^y dy^* \ \frac{\alpha}{\delta_p}$$
+ $$v_Y (y) =  \frac{B y^{1/2} }{\exp (-\frac{x}{Ay^{1/4}})- \exp (-x (\frac{q+1}{Ay^{1/4}} ))}$$
+
+$$\delta_p = Ay^{1/4}$$
+
+We will need to evaluate,
+
+$$\frac{d}{dy} \left[  \frac{v_Y^2 (y) \delta_p q^2  }{2(2+q)(1+ q)} \right]  = \frac{q^2}{2(2+q)(1+ q)} \frac{d}{dy}(v_Y^2 \delta_p)$$
+
+$$\frac{d}{dy}(v_Y^2 \delta_p) = \frac{d}{dy}( \frac{B y^{1/2} }{\exp (-\frac{x}{Ay^{1/4}})- \exp (-x (\frac{q+1}{Ay^{1/4}} ))} )^2 Ay^{1/4}$$
+
+$$\frac{d}{dy}(v_Y^2 \delta_p) = \frac{d}{dy} \frac{B^2 y }{\exp (-\frac{2x}{Ay^{1/4}})+ \exp (-2x \frac{q+1}{Ay^{1/4}} ) -2 \exp (-\frac{x}{Ay^{1/4}})\exp (-x \frac{q+1}{Ay^{1/4}} ) }  Ay^{1/4}$$
 
 
-$$\left[  \frac{v_Y^2 (y) \delta_p q^2  }{2(2+q)(1+ q)} \right] = -\int_0^y dy^* \  \nu  \frac{ v_Y (y^*) q}{\delta_p} + \int_0^y dy^* \  g\beta  (T_s -T_\infty) \frac{\delta_p}{q}$$
+$$\frac{d}{dy}(v_Y^2 \delta_p) = \frac{d}{dy} \frac{B^2 y }{\exp (-\frac{2x}{Ay^{1/4}})+ \exp (-2x \frac{q+1}{Ay^{1/4}} ) -2 \exp (-\frac{x}{Ay^{1/4}}(1 +q+1)) }  Ay^{1/4}$$
+
+$$\frac{d}{dy}(v_Y^2 \delta_p) = \frac{d}{dy} \frac{B^2 y }{\exp (-\frac{2x}{Ay^{1/4}})+ \exp (-2x \frac{q+1}{Ay^{1/4}} ) -2 \exp (-\frac{x}{Ay^{1/4}}(q+2)) }  Ay^{1/4}$$
+
+Now this is a BIG thing to differentiate, i may not want to do it this way since it's very tedious. Let's try something easier...
+
+we'll differentiate $v_y$ directly, and use product rule
+
+ $$v_Y (y) =  \frac{B y^{1/2} }{\exp (-\frac{x}{Ay^{1/4}})- \exp (-x (\frac{q+1}{Ay^{1/4}} ))}$$
+
+ $$\frac{d}{dy} v_Y (y) = \frac{d}{dy} \frac{B y^{1/2} }{\exp (-\frac{x}{Ay^{1/4}})- \exp (-x (\frac{q+1}{Ay^{1/4}} ))}$$
+
+now we note,
+
+$$\delta_p = Ay^{1/4}$$
+
+ $$\frac{d}{dy} v_Y (y) = \frac{d}{dy} \frac{B y^{1/2} }{\exp (-\frac{x}{\delta_p})- \exp (-x (\frac{q+1}{\delta_p} ))}$$
+
+i make an assumption here,
+
+$$x^+ = \frac{x}{\delta_p} \neq f(y)$$
 
 using what we derived,
 
@@ -2424,7 +2488,163 @@ $$   ( \frac{ v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) = \frac{4y}{3} \frac{\alpha}{\
 
 $$\left[  \frac{v_Y^2 (y) \delta_p q^2  }{2(2+q)(1+ q)} \right] = -\frac{4y}{5} \nu  \frac{ v_Y (y) q}{\delta_p} + \frac{4y}{5}  g\beta  (T_s -T_\infty) \frac{\delta_p}{q}$$
 
+
+\subsubsection{one more equation...}
 Problem, we have 3 unknowns, q, $\delta_p$ and $v_y(y)$, we only have 2 equations. Where is equation 3?
+
+[CORRECTION, X is not BL thickness, but just x value big enough for all properties to reach freestream values]
+
+From textbook (\cite{bejan2013convection}),
+
+consider near the wall, in the region just next to the wall. Since velocity is so slow, we can consider that buoyancy forces balance viscous forces. Advection is small compared to viscous forces.
+
+$$ 0 =  \nu \frac{\partial ^2 v}{\partial x^2} + g\beta (T-T_\infty)$$
+
+This becomes our third equation to play with. So let's substitute:
+
+$$T-T_\infty = (T_s -T_\infty) \exp (-\frac{x}{\delta_T})$$
+$$v (x,y) = v_Y (y) \exp (-\frac{x}{\delta_p}) (1- \exp (-\frac{x}{\delta_T}))$$
+
+we are going to differentiate twice the velocity,
+
+$$v (x,y) = v_Y (y) \exp (-\frac{x}{\delta_p}) (1- \exp (-\frac{x}{\delta_T}))$$
+$$v (x,y) = v_Y (y)  (\exp (-\frac{x}{\delta_p})- \exp (-x [\frac{1}{\delta_T} + \frac{1}{\delta_p}]))$$
+
+$$v (x,y) = v_Y (y)  (\exp (-\frac{x}{\delta_p})- \exp (-x \frac{\delta_p + \delta_T}{\delta_T \delta_p} ))$$
+
+Reintroducing q,
+$$v (x,y) = v_Y (y)  (\exp (-\frac{x}{\delta_p})- \exp (-x \frac{q + 1}{ \delta_p} ))$$
+
+Differentiating twice wrt x,
+
+$$\frac{\partial v}{\partial x} =v_Y (y)  (\frac{-1}{\delta_p} \exp (-\frac{x}{\delta_p})- (-\frac{q + 1}{ \delta_p}) \exp (-x \frac{q + 1}{ \delta_p} )) $$
+
+$$\frac{\partial^2 v}{\partial x^2} =v_Y (y)  (\frac{1}{\delta_p^2} \exp (-\frac{x}{\delta_p})- ([-\frac{q + 1}{ \delta_p})]^2 \exp (-x \frac{q + 1}{ \delta_p} )) $$
+
+$$\frac{\partial^2 v}{\partial x^2} =v_Y (y)  (\frac{1}{\delta_p^2} \exp (-\frac{x}{\delta_p})- (\frac{(q + 1)^2}{ \delta_p^2}) \exp (-x \frac{q + 1}{ \delta_p} )) $$
+
+Now remember, we are evaluating near the wall $x \approx 0$
+
+$$\frac{\partial^2 v}{\partial x^2} =v_Y (y)  (\frac{1}{\delta_p^2} - (\frac{(q + 1)^2}{ \delta_p^2}) ) $$
+
+Let's do likewise for the temperature, $x\approx 0$
+
+$$T-T_\infty = (T_s -T_\infty) \exp (-\frac{x}{\delta_T})$$
+
+$$T-T_\infty|_{x\approx 0} = (T_s -T_\infty)$$
+
+
+Substitute back
+
+$$ 0 =  \nu \frac{\partial ^2 v}{\partial x^2} + g\beta (T-T_\infty)$$
+$$ 0 =  \nu v_Y (y)  (\frac{1}{\delta_p^2} - (\frac{(q + 1)^2}{ \delta_p^2}) ) + g\beta (T_s -T_\infty)$$
+
+$$ 0 =  \nu v_Y (y)  (1 - (q + 1)^2 ) +  \delta_p^2 g\beta (T_s -T_\infty)$$
+
+
+$$ 0 =  \nu v_Y (y)  (1 - (q^2+2q+1)  ) +  \delta_p^2 g\beta (T_s -T_\infty)$$
+$$ 0 =  \nu v_Y (y)  (- (q^2+2q)  ) +  \delta_p^2 g\beta (T_s -T_\infty)$$
+
+
+$$   \nu v_Y (y)  q (q+2) =  \delta_p^2 g\beta (T_s -T_\infty)$$
+
+
+\subsubsection{Solving}
+
+$$   \nu v_Y (y)  q (q+2) =  \delta_p^2 g\beta (T_s -T_\infty)$$
+$$   ( \frac{ v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) = \frac{4y}{3} \frac{\alpha}{\delta_p}$$
+
+
+$$\left[  \frac{v_Y^2 (y) \delta_p q^2  }{2(2+q)(1+ q)} \right] = -\frac{4y}{5} \nu  \frac{ v_Y (y) q}{\delta_p} + \frac{4y}{5}  g\beta  (T_s -T_\infty) \frac{\delta_p}{q}$$
+
+So now with 3 equations, 3 unknowns, we should be in theory, able to solve this completely.
+
+First strategy: eliminate $v_Y$, so let's square the energy equation
+
+
+$$   ( \frac{ v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) = \frac{4y}{3} \frac{\alpha}{\delta_p}$$
+
+$$   ( \frac{ v_Y^2 (y) \delta_p^2}{(1 + q)^2(1+2q)^2}  ) = \frac{4^2y^2}{3^2} \frac{\alpha^2}{\delta_p^2}$$
+
+$$   ( \frac{ v_Y^2 (y) \delta_p^2}{(1 + q)(1+2q)}  ) \frac{1}{(1 + q)(1+2q)} = \frac{16 y^2}{9} \frac{\alpha^2}{\delta_p^2}$$
+
+$$   ( \frac{ v_Y^2 (y) \delta_p^2}{2(1 + q)(1+2q)}  ) \frac{1}{(1 + q)(1+2q)} = \frac{8 y^2}{9} \frac{\alpha^2}{\delta_p^2}$$
+
+$$   ( \frac{ v_Y^2 (y) \delta_p^2 q^2}{2(1 + q)(1+2q)}  ) \frac{1}{(1 + q)(1+2q)} = \frac{8 y^2}{9} \frac{\alpha^2}{\delta_p^2}q^2$$
+
+$$   ( \frac{ v_Y^2 (y) \delta_p^2 q^2}{2(1 + q)(1+2q)}  )  = \frac{8 y^2}{9} \frac{\alpha^2}{\delta_p^2}q^2 (1 + q)(1+2q)$$
+
+This will be a natural fit to replace the LHS of the momentum equation.
+
+So we will just multiply the momentum equation thru by $\delta_p$ 
+
+$$\left[  \frac{v_Y^2 (y) \delta_p^2 q^2  }{2(2+q)(1+ q)} \right] = -\frac{4y}{5} \nu  \frac{ v_Y (y) q}{1} + \frac{4y}{5}  g\beta  (T_s -T_\infty) \frac{\delta_p^2}{q}$$
+
+And replace the term accordingly
+
+$$\frac{8 y^2}{9} \frac{\alpha^2}{\delta_p^2}q^2 (1 + q)(1+2q) = -\frac{4y}{5} \nu  \frac{ v_Y (y) q}{1} + \frac{4y}{5}  g\beta  (T_s -T_\infty) \frac{\delta_p^2}{q}$$
+
+Now then,  we then make $v_Y$ the subject of equation 3,  and eliminate that from the leftmost term on RHS
+
+$$    v_Y (y)   =  \frac{\delta_p^2 g\beta (T_s -T_\infty)}{\nu q (q+2)} $$
+
+And substituting,
+
+$$\frac{8 y^2}{9} \frac{\alpha^2}{\delta_p^2}q^2 (1 + q)(1+2q) = -\frac{4y}{5} \nu q \frac{\delta_p^2 g\beta (T_s -T_\infty)}{\nu q (q+2)}  + \frac{4y}{5}  g\beta  (T_s -T_\infty) \frac{\delta_p^2}{q}$$
+
+$$\frac{8 y^2}{9} \frac{\alpha^2}{\delta_p^2}q^2 (1 + q)(1+2q) = -\frac{4y}{5}  \frac{\delta_p^2 g\beta (T_s -T_\infty)}{ (q+2)}  + \frac{4y}{5}  g\beta  (T_s -T_\infty) \frac{\delta_p^2}{q}$$
+
+$$\frac{8 y^2}{9} \frac{\alpha^2}{\delta_p^2}q^2 (1 + q)(1+2q) = \frac{4y}{5} \delta_p^2 g\beta (T_s - T_\infty) \left( -  \frac{1}{ (q+2)}  +   \frac{1}{q} \right)$$
+
+$$\frac{8 y^2}{9} \frac{\alpha^2}{\delta_p^2}q^2 (1 + q)(1+2q) = \frac{4y}{5} \delta_p^2 g\beta (T_s - T_\infty) \left( -  \frac{q}{ (q+2)q}  +   \frac{q+2}{q(q+2)} \right)$$
+
+$$\frac{8 y^2}{9} \frac{\alpha^2}{\delta_p^2}q^2 (1 + q)(1+2q) = \frac{4y}{5} \delta_p^2 g\beta (T_s - T_\infty) \left(   \frac{2}{q(q+2)} \right)$$
+
+$$\frac{2 y}{9} \frac{\alpha^2}{\delta_p^2}q^2 (1 + q)(1+2q) = \frac{1}{5} \delta_p^2 g\beta (T_s - T_\infty) \left(   \frac{2}{q(q+2)} \right)$$
+
+$$\frac{10 y}{9} \frac{\alpha^2}{\delta_p^2}q^2 (1 + q)(1+2q) =  \delta_p^2 g\beta (T_s - T_\infty) \left(   \frac{2}{q(q+2)} \right)$$
+
+$$\frac{5 y}{9} \frac{\alpha^2}{\delta_p^2}q^3 (1 + q)(1+2q)(2+q) =  \delta_p^2 g\beta (T_s - T_\infty) $$
+
+$$\frac{5 y}{9} \alpha^2 q^3 (1 + q)(1+2q)(2+q) =  \delta_p^4 g\beta (T_s - T_\infty) $$
+
+Now this is decently neat. We will need to further eliminate terms. $\delta_p$
+
+So we will combine the third equation with the energy equation
+
+$$    v_Y (y)   =  \frac{\delta_p^2 g\beta (T_s -T_\infty)}{\nu q (q+2)} $$
+
+$$   ( \frac{ v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) = \frac{4y}{3} \frac{\alpha}{\delta_p}$$
+
+Substituting,
+
+$$  \frac{\delta_p^2 g\beta (T_s -T_\infty)}{\nu q (q+2)}  \frac{ \delta_p}{(1 + q)(1+2q)}   = \frac{4y}{3} \frac{\alpha}{\delta_p}$$
+
+
+$$  \frac{\delta_p^4 g\beta (T_s -T_\infty)}{\nu q (q+2)}  \frac{1}{(1 + q)(1+2q)}   = \frac{4y}{3} \alpha $$
+
+$$\delta_p^4 g\beta (T_s -T_\infty) =\frac{4y}{3} \alpha \nu q (q+2)(1 + q)(1+2q) $$
+
+Now we can substitute this in,
+
+$$\frac{5 y}{9} \alpha^2 q^3 (1 + q)(1+2q)(2+q) =  \delta_p^4 g\beta (T_s - T_\infty) $$
+
+to obtain,
+
+$$\frac{5 y}{9} \alpha^2 q^3 (1 + q)(1+2q)(2+q) =  \frac{4y}{3} \alpha \nu q (q+2)(1 + q)(1+2q) $$
+
+$$\frac{5 y}{9} \alpha^2 q^3  =  \frac{4y}{3} \alpha \nu q  $$
+
+Introducing Pr
+
+$$\frac{5 y}{9}  q^3  =  \frac{4y}{3} Pr q  $$
+
+$$\frac{5 y}{9}  q^2  =  \frac{4y}{3} Pr  $$
+$$\frac{5}{3*4}  q^2 =   Pr   $$
+$$\frac{5}{12}  q^2 =   Pr  $$
+$$\frac{5}{6} q^2 =   Pr  $$
+
+So we get a result that is consistent as before, q only depends on Pr (momentum and temperature BL thickness ratio depends only on Pr)
 
 
 %\section{solution procedure - similarity solution}
