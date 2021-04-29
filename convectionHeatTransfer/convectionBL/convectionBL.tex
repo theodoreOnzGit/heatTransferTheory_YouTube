@@ -2050,65 +2050,383 @@ $$   \frac{d}{dy} \left( \int_{x1=0}^{x2=\delta_p(y)} v(T-T_\infty) dx \right) =
 
 $$   \frac{d}{dy} \left( \int_{0}^{\delta_p(y)} v(T_\infty - T) dx \right) = \alpha \frac{\partial T }{\partial x}|_{x=0}    $$ 
 
-%For advection terms, we want to eliminate u by considering 2D continuity equation.
-%
-%$$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}= 0$$
-%
-%$$ \int_0^{x_\infty}  dx\ \frac{\partial u}{\partial x} + \int_0^{x_\infty}  dx\  \frac{\partial v}{\partial y}= 0$$
+Now we are done with energy equation, let's move on to momentum...
+
+$$ \int_0^{x_\infty}  dx\ u \frac{\partial}{\partial x} v  + \int_0^{x_\infty}  dx \  v \frac{\partial}{\partial y} v  - \int_0^{x_\infty}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) =  \int_0^{x_\infty}  dx \ \beta(T_s-T_\infty) g \theta $$
+
+$$ \int_0^{x_\infty}  dx\ (\frac{\partial }{\partial x} (uv) - v \frac{\partial u}{\partial x})  + \int_0^{x_\infty}  dx \  v \frac{\partial}{\partial y} v  - \int_0^{x_\infty}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) =  \int_0^{x_\infty}  dx \ \beta(T_s-T_\infty) g \theta $$
+
+
+For advection terms, we want to eliminate u by considering 2D continuity equation.
+
+$$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}= 0$$
+
+$$ \frac{\partial v}{\partial y}= -\frac{\partial u}{\partial x}$$
+
+Substitute back in To get:
+
+
+$$ \int_0^{x_\infty}  dx\ (\frac{\partial }{\partial x} (uv) + v \frac{\partial v}{\partial y})  + \int_0^{x_\infty}  dx \  v \frac{\partial}{\partial y} v  - \int_0^{x_\infty}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) =  \int_0^{x_\infty}  dx \ \beta(T_s-T_\infty) g \theta $$
 
 
 
-%$$ u|_{x_\infty} - u|_0 + \int_0^{x_\infty}  dx\  \frac{\partial v}{\partial y}= 0$$
-%
-%Not very helpful, both u are zero...
-%
-%$$ u|_{x} - u|_0 + \int_0^{x}  dx^*\  \frac{\partial v}{\partial y}= 0$$
-%
-%Here's the easier way
-%
-%$$u \frac{\partial }{\partial x} v =\frac{\partial }{\partial x} (uv) - v \frac{\partial u}{\partial x}$$
-%
-%substitute continuity equation
-%
-%$$u \frac{\partial }{\partial x} v =\frac{\partial }{\partial x} (uv) + v \frac{\partial v}{\partial y}$$
-%
-%
-%Substitute back in:
-%
-%$$ \int_0^{x_\infty}  dx\ u \frac{\partial}{\partial x} v  + \int_0^{x_\infty}  dx \  v \frac{\partial}{\partial y} v  - \int_0^{x_\infty}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) =  \int_0^{x_\infty}  dx \ \beta(T_s-T_\infty) g \theta $$
-%
-%
-%To get:
-%
-%$$ \int_0^{x_\infty}  dx\ (\frac{\partial }{\partial x} (uv) + v \frac{\partial v}{\partial y})  + \int_0^{x_\infty}  dx \  v \frac{\partial}{\partial y} v  - \int_0^{x_\infty}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) =  \int_0^{x_\infty}  dx \ \beta(T_s-T_\infty) g \theta $$
-%
-%$$ \int_0^{x_\infty}  dx\ (\frac{\partial }{\partial x} (uv) )  + \int_0^{x_\infty}  dx \ 2 v \frac{\partial}{\partial y} v  - \int_0^{x_\infty}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) =  \int_0^{x_\infty}  dx \ \beta(T_s-T_\infty) g \theta $$
-%
-%$$ \int_0^{x_\infty}  dx\ (\frac{\partial }{\partial x} (uv) )  + \int_0^{x_\infty}  dx \  \frac{\partial}{\partial y} v^2  - \int_0^{x_\infty}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) =  \int_0^{x_\infty}  dx \ \beta(T_s-T_\infty) g \theta $$
-%
-%The first integral disappears because of no slip and freestream conditions
-%
-%$$ \int_0^{x_\infty}  dx\ (\frac{\partial }{\partial x} (uv) ) = uv|_{wall} - uv|_{freestream} = 0 - 0 = 0$$
-%
-%So we are left with:
-%
-%$$ \int_0^{x_\infty}  dx \  \frac{\partial}{\partial y} v^2  - \int_0^{x_\infty}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) =  \int_0^{x_\infty}  dx \ \beta(T_s-T_\infty) g \theta $$
-%
-%We'll need to have a go with leibniz's rule
-%
-%$$\frac{d}{dx} \left( \int_{y1=a(x)}^{y2=b(x)} f(x,y) dy \right)= f(x,y=b(x)) \frac{d}{dx}b(x) - f(x,y=a(x)) \frac{d}{dx} a(x)  +  \int_{y1=a(x)}^{y2=b(x)} \frac{\partial}{\partial x} f(x,y) dy $$
-%
-%
-%The final form of the BL equation is (\cite{bejan2013convection}):
-%
-%$$\frac{d}{dy} \int_0^X v^2 dx = - \nu (\frac{\partial v}{\partial x})|_{x=0} + g\beta \int_0^X (T-T_\infty) dx$$
-%
-%$$\frac{d}{dy} \int_0^X v (T_\infty - T) dx = \alpha (\frac{\partial T}{\partial x})|_{x=0}$$
-%
-%To adapt this for our equation, we need to have 
-%
-%$$$$
-%
+$$ \int_0^{x_\infty}  dx\ (\frac{\partial }{\partial x} (uv) )  + \int_0^{x_\infty}  dx \ 2 v \frac{\partial}{\partial y} v  - \int_0^{x_\infty}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) =  \int_0^{x_\infty}  dx \ \beta(T_s-T_\infty) g \theta $$
+
+$$ \int_0^{x_\infty}  dx\ (\frac{\partial }{\partial x} (uv) )  + \int_0^{x_\infty}  dx \  \frac{\partial}{\partial y} v^2  - \int_0^{x_\infty}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) =  \int_0^{x_\infty}  dx \ \beta(T_s-T_\infty) g \theta $$
+
+The first integral disappears because of no slip and freestream conditions
+
+$$ \int_0^{x_\infty}  dx\ (\frac{\partial }{\partial x} (uv) ) = - uv|_{wall} + uv|_{freestream} = 0 - 0 = 0$$
+
+So we are left with:
+
+$$ \int_0^{x_\infty}  dx \  \frac{\partial}{\partial y} v^2  - \int_0^{x_\infty}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) =  \int_0^{x_\infty}  dx \ \beta(T_s-T_\infty) g \theta $$
+
+We'll need to have a go with leibniz's rule
+
+$$\frac{d}{dx} \left( \int_{y1=a(x)}^{y2=b(x)} f(x,y) dy \right)= f(x,y=b(x)) \frac{d}{dx}b(x) - f(x,y=a(x)) \frac{d}{dx} a(x)  +  \int_{y1=a(x)}^{y2=b(x)} \frac{\partial}{\partial x} f(x,y) dy $$
+
+Note that our x and y is swapped around
+
+$$ \frac{d}{dy} \left( \int_{x1=a(y)}^{x2=b(y)} f(y,x) dx \right)= f(y,x=b(y)) \frac{d}{dy}b(y) - f(y,x=a(y)) \frac{d}{dy} a(y)  +  \int_{x1=a(y)}^{x2=b(y)} \frac{\partial}{\partial y} f(y,x) dx $$
+
+$$x1=0 \ ; a(y) = 0$$
+$$x2= \delta_p (y) \ ; b(y) = \delta_p$$
+
+$$f(y,x) = v^2$$
+Substitute into leibniz's rule:
+
+$$ \frac{d}{dy} \left( \int_{x1=0}^{x2=\delta_p(y)} v^2 dx \right)= v^2 (y,x=\delta_p(y)) \frac{d}{dy}\delta_p(y) - v^2 (y,x=0) \frac{d}{dy} 0  +  \int_{x1=0}^{x2=\delta_p(y)} \frac{\partial}{\partial y} v^2 dx $$
+
+$$ \frac{d}{dy} \left( \int_{x1=0}^{x2=\delta_p(y)} v^2 dx \right)=   \int_{x1=0}^{x2=\delta_p(y)} \frac{\partial}{\partial y} v^2 dx $$
+
+
+$$ \frac{\partial}{\partial y} \int_0^{x_\infty}  dx \   v^2  - \int_0^{x_\infty}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) =  \int_0^{x_\infty}  dx \ \beta(T_s-T_\infty) g \theta $$
+
+$$ \frac{\partial}{\partial y} \int_0^{\delta_p}  dx \   v^2  - \int_0^{\delta_p}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) =  \int_0^{\delta_p}  dx \ \beta(T_s-T_\infty) g \theta $$
+
+
+The second term is easy:
+
+$$ \int_0^{\delta_p}  dx \ \nu ( \frac{\partial^2}{\partial x^2} v ) = \nu (\frac{\partial v}{\partial x}|_{\delta_p} - \frac{\partial v}{\partial x}|_{wall} )=\nu ( - \frac{\partial v}{\partial x}|_{wall} )$$
+
+Subs back in:
+
+$$ \frac{\partial}{\partial y} \int_0^{\delta_p}  dx \   v^2  - \nu ( - \frac{\partial v}{\partial x}|_{wall} ) =  \int_0^{\delta_p}  dx \ \beta(T_s-T_\infty) g \theta $$
+
+
+For the last term:
+$$\theta (T_s - T_\infty) = (T - T_\infty)$$
+
+$$ \int_0^{\delta_p}  dx \ \beta(T_s-T_\infty) g \theta =g \beta \int_0^{\delta_p}  dx  (T - T_\infty)$$
+
+Substitute back in:
+
+$$ \frac{\partial}{\partial y} \int_0^{\delta_p}  dx \   v^2  - \nu ( - \frac{\partial v}{\partial x}|_{wall} ) =  g \beta \int_0^{\delta_p}  dx  (T - T_\infty) $$
+
+\subsubsection{BL equation integral soln}
+
+The final form of the BL equation is (\cite{bejan2013convection}):
+
+$$\frac{d}{dy} \int_0^X v^2 dx = - \nu (\frac{\partial v}{\partial x})|_{x=0} + g\beta \int_0^X (T-T_\infty) dx$$
+
+$$\frac{d}{dy} \int_0^X v (T_\infty - T) dx = \alpha (\frac{\partial T}{\partial x})|_{x=0}$$
+
+X is an x value big enough where all values T, u and v are in their freestream values.
+
+\subsubsection{Substitution of velocity profiles and temperature profiles into integral soln}
+
+Now we can start to try and solve this, substitute
+
+$$T-T_\infty = (T_s -T_\infty) \exp (-\frac{x}{\delta_T})$$
+$$v (x,y) = v_Y (y) \exp (-\frac{x}{\delta_p}) (1- \exp (-\frac{x}{\delta_T}))$$
+
+
+For momentum equation first,
+
+$$\frac{d}{dy} \int_0^X v^2 dx = - \nu (\frac{\partial v}{\partial x})|_{x=0} + g\beta \int_0^X (T-T_\infty) dx$$
+
+$$v^2 (x,y) = v_Y^2 (y) [\exp (-\frac{x}{\delta_p})]^2 [(1- \exp (-\frac{x}{\delta_T}))]^2$$
+
+$$v^2 (x,y) = v_Y^2 (y) [\exp (-\frac{2x}{\delta_p})] [1 - 2 \exp (-\frac{x}{\delta_T}) + \exp (-\frac{2x}{\delta_T})]$$
+
+$$v^2 (x,y) = v_Y^2 (y)  [\exp (-\frac{2x}{\delta_p}) - 2 \exp (-\frac{2x}{\delta_p}) \exp (-\frac{x}{\delta_T}) + \exp (-\frac{2x}{\delta_p}) \exp (-\frac{2x}{\delta_T})]$$
+
+$$v^2 (x,y) = v_Y^2 (y)  [\exp (-\frac{2x}{\delta_p}) - 2 \exp (-x(\frac{2}{\delta_p} + \frac{1}{\delta_T}))  + \exp (-x(\frac{2}{\delta_p}+\frac{2}{\delta_T})) ]$$
+
+$$\int_0^X v^2 dx = v_Y^2 (y) [ \int_0^X dx \  \exp (-\frac{2x}{\delta_p}) - \int_0^X dx \  2 \exp (-x(\frac{2}{\delta_p} + \frac{1}{\delta_T}))  + \int_0^X dx \  \exp (-x(\frac{2}{\delta_p}+\frac{2}{\delta_T}) ] $$
+
+Before we continue, combine into single fraction...
+
+$$(\frac{2}{\delta_p} + \frac{1}{\delta_T}) = \frac{2\delta_T + \delta_p}{\delta_T \delta_p}$$
+
+$$(\frac{2}{\delta_p} + \frac{2}{\delta_T}) = \frac{2\delta_T +2 \delta_p}{\delta_T \delta_p}$$
+
+now we are ready:
+
+
+$$\int_0^X v^2 dx = v_Y^2 (y) [  \frac{-\delta_p}{2} \exp (-\frac{2x}{\delta_p}) - \frac{-2\delta_p \delta_T}{2\delta_T + \delta_p} \exp (-x(\frac{2}{\delta_p} + \frac{1}{\delta_T}))  + \frac{-\delta_P \delta_T}{2 \delta_T + 2\delta_p}  \exp (-x(\frac{2}{\delta_p}+\frac{2}{\delta_T}) ]|_{x=0}^{x=X} $$
+
+$$\int_0^X v^2 dx = v_Y^2 (y) [  \frac{-\delta_p}{2} \exp (-\frac{2x}{\delta_p}) + \frac{2\delta_p \delta_T}{2\delta_T + \delta_p} \exp (-x(\frac{2}{\delta_p} + \frac{1}{\delta_T}))  - \frac{\delta_P \delta_T}{2 \delta_T + 2\delta_p}  \exp (-x(\frac{2}{\delta_p}+\frac{2}{\delta_T}) ]|_{x=0}^{x=X} $$
+
+
+First evaluate at $x=X$ where X is such that velocity will be at freestream value.
+
+When x is large, the terms in the bracket drop to near 0.
+
+$$[  \frac{-\delta_p}{2} \exp (-\frac{2X}{\delta_p}) + \frac{2\delta_p \delta_T}{2\delta_T + \delta_p} \exp (-X(\frac{2}{\delta_p} + \frac{1}{\delta_T}))  - \frac{\delta_P \delta_T}{2 \delta_T + 2\delta_p}  \exp (-X(\frac{2}{\delta_p}+\frac{2}{\delta_T}) ] \approx 0$$
+
+But we cannot just get rid of it yet... you have to compare it to something else.
+
+let's also evaluate it at x=0,
+
+$$[  \frac{-\delta_p}{2}  + \frac{2\delta_p \delta_T}{2\delta_T + \delta_p} - \frac{\delta_P \delta_T}{2 \delta_T + 2\delta_p}  ]$$
+
+The integral evaluates to:
+
+$$  \frac{-\delta_p}{2} \exp (-\frac{2X}{\delta_p}) + \frac{2\delta_p \delta_T}{2\delta_T + \delta_p} \exp (-X(\frac{2}{\delta_p} + \frac{1}{\delta_T}))  - \frac{\delta_P \delta_T}{2 \delta_T + 2\delta_p}  \exp (-X(\frac{2}{\delta_p}+\frac{2}{\delta_T}) ] $$
+
+$$ - [  \frac{-\delta_p}{2}  + \frac{2\delta_p \delta_T}{2\delta_T + \delta_p} - \frac{\delta_P \delta_T}{2 \delta_T + 2\delta_p}  ]$$
+
+$$\approx - [  \frac{-\delta_p}{2}  + \frac{2\delta_p \delta_T}{2\delta_T + \delta_p} - \frac{\delta_P \delta_T}{2 \delta_T + 2\delta_p}  ]$$
+
+$$=  [  \frac{\delta_p}{2}  - \frac{2\delta_p \delta_T}{2\delta_T + \delta_p} + \frac{\delta_P \delta_T}{2 \delta_T + 2\delta_p}  ]$$
+
+$$=  [  \frac{\delta_p(2\delta_T + \delta_p)(2 \delta_T + 2\delta_p)}{2(2\delta_T + \delta_p)(2 \delta_T + 2\delta_p)}  - \frac{2\delta_p \delta_T(2)(2 \delta_T + 2\delta_p)}{2(2\delta_T + \delta_p)(2 \delta_T + 2\delta_p)} + \frac{2(2\delta_T+\delta_p) \delta_P \delta_T}{2(2\delta_T+\delta_p)(2 \delta_T + 2\delta_p)}  ]$$
+
+$$= \frac{\delta_p(2\delta_T + \delta_p)(2 \delta_T + 2\delta_p)-4\delta_p \delta_T(2 \delta_T + 2\delta_p)+2(2\delta_T+\delta_p) \delta_P \delta_T}{2(2\delta_T+\delta_p)(2 \delta_T + 2\delta_p)}$$
+
+$$= \frac{\delta_p(2\delta_T + \delta_p)( \delta_T + \delta_p)-4\delta_p \delta_T( \delta_T + \delta_p)+(2\delta_T+\delta_p) \delta_P \delta_T}{2(2\delta_T+\delta_p)( \delta_T + \delta_p)}$$
+
+To make life easier, we introduce this ratio (\cite{bejan2013convection})
+
+$$q = \frac{\delta_p	}{\delta_T}$$
+
+divide top and bottom by $\delta_T^2$
+
+$$= \frac{\delta_p(2+ q)( \delta_T + \delta_p)-4\delta_p( \delta_T + \delta_p)+(2\delta_T+\delta_p) \delta_P }{2(2+q)( \delta_T + \delta_p)}$$
+
+$$= \frac{\delta_p(2+ q)(1+q)-4\delta_p(1+q)+(2+q) \delta_P }{2(2+q)(1+ q)}$$
+
+$$=\delta_p \frac{(2+ q)(1+q)-4(1+q)+(2+q)  }{2(2+q)(1+ q)}$$
+
+$$=\delta_p \frac{(2+ q)(1+q)-4(1+q)+(2+q)  }{2(2+q)(1+ q)}$$
+$$=\delta_p \frac{q^2  }{2(2+q)(1+ q)}$$
+
+substitute into integral:
+
+$$\int_0^X v^2 dx = v_Y^2 (y) [  \frac{-\delta_p}{2} \exp (-\frac{2x}{\delta_p}) + \frac{2\delta_p \delta_T}{2\delta_T + \delta_p} \exp (-x(\frac{2}{\delta_p} + \frac{1}{\delta_T}))  - \frac{\delta_P \delta_T}{2 \delta_T + 2\delta_p}  \exp (-x(\frac{2}{\delta_p}+\frac{2}{\delta_T}) ]|_{x=0}^{x=X} $$
+
+
+$$\int_0^X v^2 dx = v_Y^2 (y) \delta_p \frac{q^2  }{2(2+q)(1+ q)} $$
+
+subs back into equation:
+
+$$\frac{d}{dy} \left[  \frac{v_Y^2 (y) \delta_p q^2  }{2(2+q)(1+ q)} \right] = - \nu (\frac{\partial v}{\partial x})|_{x=0} + g\beta \int_0^X (T-T_\infty) dx$$
+
+Let's do the viscosity term 
+
+$$\frac{\partial v}{\partial x} = \frac{\partial}{\partial x}( v_Y (y) \exp (-\frac{x}{\delta_p}) (1- \exp (-\frac{x}{\delta_T}))) $$
+
+$$ =v_Y (y) \frac{\partial}{\partial x}(  \exp (-\frac{x}{\delta_p}) (1- \exp (-\frac{x}{\delta_T}))) $$
+
+$$ =v_Y (y) \frac{\partial}{\partial x}(\exp (-\frac{x}{\delta_p})- \exp (-\frac{x}{\delta_p}) \exp (-\frac{x}{\delta_T}))) $$
+
+$$ =v_Y (y) \frac{\partial}{\partial x}(\exp (-\frac{x}{\delta_p})- \exp (-x (\frac{1}{\delta_p}+\frac{1}{\delta_T})) ) $$
+
+$$ =v_Y (y) (\frac{-1}{\delta_p} \exp (-\frac{x}{\delta_p})- \frac{-1(\delta_T+\delta_p)}{\delta_T \delta_p} \exp (-x (\frac{1}{\delta_p}+\frac{1}{\delta_T})) ) $$
+
+$$ =v_Y (y) (-\frac{1}{\delta_p} \exp (-\frac{x}{\delta_p})+ \frac{(\delta_T+\delta_p)}{\delta_T \delta_p} \exp (-x (\frac{1}{\delta_p}+\frac{1}{\delta_T})) ) $$
+
+Now evaluate at x=0,
+
+$$(\frac{\partial v}{\partial x})|_{x=0} =v_Y (y) (-\frac{1}{\delta_p} + \frac{(\delta_T+\delta_p)}{\delta_T \delta_p}  ) $$
+
+$$=(\frac{\partial v}{\partial x})|_{x=0} =v_Y (y) (-\frac{1}{\delta_p} + \frac{(1+q)}{\delta_p}  ) $$
+
+$$(\frac{\partial v}{\partial x})|_{x=0} = ( \frac{ v_Y (y) q}{\delta_p}  ) $$
+
+substitute back:
+
+$$\frac{d}{dy} \left[  \frac{v_Y^2 (y) \delta_p q^2  }{2(2+q)(1+ q)} \right] = - \nu  \frac{ v_Y (y) q}{\delta_p} + g\beta \int_0^X (T-T_\infty) dx$$
+
+$$T-T_\infty = (T_s -T_\infty) \exp (-\frac{x}{\delta_T})$$
+
+$$\int_0^X (T-T_\infty) = (T_s -T_\infty) \int_0^X dx \ \exp (-\frac{x}{\delta_T})$$
+
+$$ = (T_s -T_\infty) (-\delta_T) \exp (-\frac{x}{\delta_T})|_{x=0}^{x=X}$$
+$$ = (T_s -T_\infty) (-\delta_T) [\exp (-\frac{X}{\delta_T})-1]$$
+
+$$ = (T_s -T_\infty) (\delta_T) [(1)]$$
+$$ = (T_s -T_\infty) (\delta_T) $$
+
+substitute back:
+
+$$\frac{d}{dy} \left[  \frac{v_Y^2 (y) \delta_p q^2  }{2(2+q)(1+ q)} \right] = - \nu  \frac{ v_Y (y) q}{\delta_p} + g\beta  (T_s -T_\infty) (\delta_T)$$
+
+\subsubsection{Momentum equation transformed... after substitution}
+$$\frac{d}{dy} \left[  \frac{v_Y^2 (y) \delta_p q^2  }{2(2+q)(1+ q)} \right] = - \nu  \frac{ v_Y (y) q}{\delta_p} + g\beta  (T_s -T_\infty) \frac{\delta_p}{q}$$
+
+
+\subsubsection{now onto the energy equation}
+
+$$\frac{d}{dy} \int_0^X v (T_\infty - T) dx = \alpha (\frac{\partial T}{\partial x})|_{x=0}$$
+
+$$-\frac{d}{dy} \int_0^X v (T- T_\infty ) dx = \alpha (\frac{\partial T}{\partial x})|_{x=0}$$
+
+
+$$T-T_\infty = (T_s -T_\infty) \exp (-\frac{x}{\delta_T})$$
+$$v (x,y) = v_Y (y) \exp (-\frac{x}{\delta_p}) (1- \exp (-\frac{x}{\delta_T}))$$
+
+$$(T-T_\infty )v (x,y) = (T_s -T_\infty) \exp (-\frac{x}{\delta_T})v_Y (y) \exp (-\frac{x}{\delta_p}) (1- \exp (-\frac{x}{\delta_T}))$$
+
+$$ = (T_s -T_\infty)v_Y (y) \exp (-\frac{x}{\delta_T}) \exp (-\frac{x}{\delta_p}) (1- \exp (-\frac{x}{\delta_T}))$$
+
+$$ = (T_s -T_\infty)v_Y (y)  \exp (-\frac{x}{\delta_p}) (\exp (-\frac{x}{\delta_T})- \exp (-\frac{2x}{\delta_T}))$$
+
+$$ = (T_s -T_\infty)v_Y (y)   (\exp (-x(\frac{1}{\delta_T}+\frac{1}{\delta_p}))- \exp (-x(\frac{2}{\delta_T}+\frac{1}{\delta_p})))$$
+
+$$ = (T_s -T_\infty)v_Y (y)   (\exp (-x\frac{\delta_T + \delta_p}{\delta_T \delta_p})- \exp (-x\frac{\delta_T + 2\delta_p}{\delta_T \delta_p})$$
+
+Now we can integrate
+
+
+$$\int_0^X v (T_\infty - T) dx  = \int_0^X  dx \  (T_s -T_\infty)v_Y (y)   (\exp (-x\frac{\delta_T + \delta_p}{\delta_T \delta_p})- \exp (-x\frac{\delta_T + 2\delta_p}{\delta_T \delta_p})$$
+
+
+$$\int_0^X v (T_\infty - T) dx  =(T_s -T_\infty)v_Y (y) \int_0^X  dx \     (\exp (-x\frac{\delta_T + \delta_p}{\delta_T \delta_p})- \exp (-x\frac{\delta_T + 2\delta_p}{\delta_T \delta_p})$$
+
+$$\int_0^X v (T_\infty - T) dx  =(T_s -T_\infty)v_Y (y)   ( -\frac{\delta_T  \delta_p}{\delta_T + \delta_p} \exp (-x\frac{\delta_T + \delta_p}{\delta_T \delta_p})-(-\frac{\delta_T  \delta_p}{\delta_T + 2\delta_p}) \exp (-x\frac{\delta_T +2 \delta_p}{\delta_T \delta_p})|_{x=0}^{x=X}$$
+
+$$\int_0^X v (T_\infty - T) dx  =(T_s -T_\infty)v_Y (y)   ( -\frac{\delta_T  \delta_p}{\delta_T + \delta_p} \exp (-x\frac{\delta_T + \delta_p}{\delta_T \delta_p})+(\frac{\delta_T  \delta_p}{\delta_T + 2\delta_p}) \exp (-x\frac{\delta_T +2 \delta_p}{\delta_T \delta_p})|_{x=0}^{x=X}$$
+
+
+Evaluate at x=X, we find that it is negligible with respect to the first term.
+
+
+$$\int_0^X v (T_\infty - T) dx  =(T_s -T_\infty)v_Y (y)   ( -\frac{\delta_T  \delta_p}{\delta_T + \delta_p} \exp (-x\frac{\delta_T + \delta_p}{\delta_T \delta_p})+(\frac{\delta_T  \delta_p}{\delta_T + 2\delta_p}) \exp (-x\frac{\delta_T +2 \delta_p}{\delta_T \delta_p})|_{x=0}^{x=X}$$
+
+$$\int_0^X v (T_\infty - T) dx  =(T_s -T_\infty)v_Y (y) (-1)  ( -\frac{\delta_T  \delta_p}{\delta_T + \delta_p} \exp (-x\frac{\delta_T + \delta_p}{\delta_T \delta_p})+(\frac{\delta_T  \delta_p}{\delta_T + 2\delta_p}) \exp (-x\frac{\delta_T +2 \delta_p}{\delta_T \delta_p})|_{x=0}$$
+
+$$\int_0^X v (T_\infty - T) dx  =(T_s -T_\infty)v_Y (y) (-1) ( -\frac{\delta_T  \delta_p}{\delta_T + \delta_p} +\frac{\delta_T  \delta_p}{\delta_T + 2\delta_p} )$$
+
+We are going to reintroduce q, divide top and bottom by $\delta_T$
+
+
+
+$$\int_0^X v (T_\infty - T) dx  =(T_s -T_\infty)v_Y (y) (-1) ( -\frac{ \delta_p}{1 + q} +\frac{  \delta_p}{1+2q} )$$
+
+$$\int_0^X v (T_\infty - T) dx  =(T_s -T_\infty)v_Y (y) (-1) \delta_p ( -\frac{1 }{1 + q} +\frac{ 1}{1+2q} )$$
+
+$$\int_0^X v (T_\infty - T) dx  =(T_s -T_\infty)v_Y (y) (-1) \delta_p ( \frac{-(1+2q)+(1+q) }{(1 + q)(1+2q)}  )$$
+
+
+$$\int_0^X v (T_\infty - T) dx  =(T_s -T_\infty)v_Y (y) \delta_p (-1) ( \frac{-q}{(1 + q)(1+2q)}  )$$
+
+substitute back
+
+
+$$-\frac{d}{dy} \int_0^X v (T- T_\infty ) dx = \alpha (\frac{\partial T}{\partial x})|_{x=0}$$
+$$-\frac{d}{dy} (-1) (T_s -T_\infty)v_Y (y) \delta_p ( \frac{-q}{(1 + q)(1+2q)}  ) = \alpha (\frac{\partial T}{\partial x})|_{x=0}$$
+
+$$(T_s -T_\infty) \frac{d}{dy}  ( \frac{-q v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) = \alpha (\frac{\partial T}{\partial x})|_{x=0}$$
+
+divide both sides by $(T_s -T_\infty)$
+
+$$(T_s -T_\infty) \frac{d}{dy}  ( \frac{q v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) = -\alpha (\frac{\partial T}{\partial x})|_{x=0}$$
+
+$$ \frac{d}{dy}  ( \frac{q v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) = -\alpha (\frac{\partial \theta}{\partial x})|_{x=0}$$
+
+
+$$T-T_\infty = (T_s -T_\infty) \exp (-\frac{x}{\delta_T})$$
+$$\theta =  \exp (-\frac{x}{\delta_T})$$
+
+$$(\frac{\partial \theta}{\partial x})|_{x=0} = [- \frac{1}{\delta_T} \exp (-\frac{x}{\delta_T})]_{x=0}=- \frac{1}{\delta_T} = - \frac{q}{\delta_p}$$
+
+subs back to obtain:
+
+$$ \frac{d}{dy}  ( \frac{q v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) = \alpha \frac{q}{\delta_p}$$
+
+One more assumption to make, q is independent of y since q = f(Pr) only.
+
+$$ \frac{d}{dy}  ( \frac{ v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) =  \frac{\alpha}{\delta_p}$$
+
+\subsubsection{Energy and momentum equation for integral solution}
+
+
+$$ \frac{d}{dy}  ( \frac{ v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) =  \frac{\alpha}{\delta_p}$$
+
+
+$$\frac{d}{dy} \left[  \frac{v_Y^2 (y) \delta_p q^2  }{2(2+q)(1+ q)} \right] = - \nu  \frac{ v_Y (y) q}{\delta_p} + g\beta  (T_s -T_\infty) \frac{\delta_p}{q}$$
+
+Solution proceudre, integrate equations. we will need suitable BCs for $v_Y$, $\delta_p$ 
+
+we don't really know how both of these will vary except for:
+
+$$\delta_p \sim y^{1/4} \ ; v \sim y^{1/2}$$
+
+$$\delta_p = A y^{1/4}$$
+
+$$\int dt \delta_p = A y^{5/4} \frac{4}{5}= \delta_p \frac{4y}{5}+C$$
+
+using this logic,
+
+$$\int dy \frac{v_Y(y)}{\delta_p} =\int dy \frac{B y^{1/2}}{A y^{1/4}} =  C_2 + \frac{v_Y(y)}{\delta_p} \frac{4y}{5}$$
+
+
+and also,
+
+$$\int dy \frac{\alpha}{\delta_p} = \int dy \frac{\alpha}{A } = \frac{\alpha}{A} y^{3/4} \frac{4}{3} =  \frac{\alpha}{A y^{1/4}} y  \frac{4}{3} = \frac{\alpha}{\delta_p} \frac{4y}{3} $$
+
+okay, so we will integrate from $y^*=0$ to $y^*=y$
+
+
+$$ \frac{d}{dy}  ( \frac{ v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) =  \frac{\alpha}{\delta_p}$$
+
+
+$$\frac{d}{dy} \left[  \frac{v_Y^2 (y) \delta_p q^2  }{2(2+q)(1+ q)} \right] = - \nu  \frac{ v_Y (y) q}{\delta_p} + g\beta  (T_s -T_\infty) \frac{\delta_p}{q}$$
+
+Integrating... with dummy variable $y^*$
+
+
+$$ \frac{d}{dy}  ( \frac{ v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) =  \frac{\alpha}{\delta_p}$$
+
+
+$$\frac{d}{dy} \left[  \frac{v_Y^2 (y) \delta_p q^2  }{2(2+q)(1+ q)} \right] = - \nu  \frac{ v_Y (y) q}{\delta_p} + g\beta  (T_s -T_\infty) \frac{\delta_p}{q}$$
+
+
+$$ \frac{d}{dy^*}  ( \frac{ v_Y (y^*) \delta_p}{(1 + q)(1+2q)}  ) =  \frac{\alpha}{\delta_p}$$
+
+
+$$\frac{d}{dy^*} \left[  \frac{v_Y^2 (y^*) \delta_p q^2  }{2(2+q)(1+ q)} \right] = - \nu  \frac{ v_Y (y^*) q}{\delta_p} + g\beta  (T_s -T_\infty) \frac{\delta_p}{q}$$
+
+
+
+$$ \int_0^y dy^* \  \frac{d}{dy^*}  ( \frac{ v_Y (y^*) \delta_p}{(1 + q)(1+2q)}  ) =  \int_0^y dy^* \ \frac{\alpha}{\delta_p}$$
+
+
+$$\int_0^y dy^* \ \frac{d}{dy^*} \left[  \frac{v_Y^2 (y^*) \delta_p q^2  }{2(2+q)(1+ q)} \right] = -\int_0^y dy^* \  \nu  \frac{ v_Y (y^*) q}{\delta_p} + \int_0^y dy^* \  g\beta  (T_s -T_\infty) \frac{\delta_p}{q}$$
+
+Some steps later... using the BC
+
+at y=0
+$$v_y(y)=0  \ \delta_p = 0$$
+
+$$   ( \frac{ v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) =  \int_0^y dy^* \ \frac{\alpha}{\delta_p}$$
+
+
+$$\left[  \frac{v_Y^2 (y) \delta_p q^2  }{2(2+q)(1+ q)} \right] = -\int_0^y dy^* \  \nu  \frac{ v_Y (y^*) q}{\delta_p} + \int_0^y dy^* \  g\beta  (T_s -T_\infty) \frac{\delta_p}{q}$$
+
+using what we derived,
+
+$$   ( \frac{ v_Y (y) \delta_p}{(1 + q)(1+2q)}  ) = \frac{4y}{3} \frac{\alpha}{\delta_p}$$
+
+
+$$\left[  \frac{v_Y^2 (y) \delta_p q^2  }{2(2+q)(1+ q)} \right] = -\frac{4y}{5} \nu  \frac{ v_Y (y) q}{\delta_p} + \frac{4y}{5}  g\beta  (T_s -T_\infty) \frac{\delta_p}{q}$$
+
+Problem, we have 3 unknowns, q, $\delta_p$ and $v_y(y)$, we only have 2 equations. Where is equation 3?
+
+
 %\section{solution procedure - similarity solution}
 %
 %Similarity variable

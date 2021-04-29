@@ -1,15 +1,15 @@
 [0] Config.pm:312> INFO - This is Biber 2.15
 [0] Config.pm:315> INFO - Logfile is 'convectionBL.blg'
-[55] biber:330> INFO - === Wed Apr 28, 2021, 13:19:13
+[56] biber:330> INFO - === Wed Apr 28, 2021, 18:44:41
 [66] Biber.pm:415> INFO - Reading 'convectionBL.bcf'
-[122] Biber.pm:952> INFO - Found 2 citekeys in bib section 0
-[134] Biber.pm:4334> INFO - Processing section 0
-[141] Biber.pm:4523> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[142] bibtex.pm:1682> INFO - LaTeX decoding ...
-[143] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
-[175] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[175] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[175] Biber.pm:4162> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[175] Biber.pm:4168> INFO - No sort tailoring available for locale 'en-US'
-[176] bbl.pm:651> INFO - Writing 'convectionBL.bbl' with encoding 'UTF-8'
-[178] bbl.pm:754> INFO - Output to convectionBL.bbl
+[128] Biber.pm:952> INFO - Found 2 citekeys in bib section 0
+[138] Biber.pm:4334> INFO - Processing section 0
+[146] Biber.pm:4523> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[146] bibtex.pm:1682> INFO - LaTeX decoding ...
+[148] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
+[179] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[179] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[179] Biber.pm:4162> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[180] Biber.pm:4168> INFO - No sort tailoring available for locale 'en-US'
+[181] bbl.pm:651> INFO - Writing 'convectionBL.bbl' with encoding 'UTF-8'
+[182] bbl.pm:754> INFO - Output to convectionBL.bbl

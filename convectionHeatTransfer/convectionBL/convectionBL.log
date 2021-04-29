@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.4.20)  28 APR 2021 13:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.4.20)  28 APR 2021 18:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -868,30 +868,250 @@ dx
  []
 
 [58]
-Overfull \hbox (48.15683pt too wide) in paragraph at lines 2150--2150
+Overfull \hbox (33.39012pt too wide) detected at line 2057
+[][] \OML/cmm/m/it/10.95 dx \OT1/cmr/m/n/10.95 ([](\OML/cmm/m/it/10.95 uv\OT1/c
+mr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.9
+5 ) + [][] \OML/cmm/m/it/10.95 dx v[]v \OMS/cmsy/m/n/10.95 ^^@ [][] \OML/cmm/m/
+it/10.95 dx ^^W\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 ) 
+= [][] \OML/cmm/m/it/10.95 dx ^^L\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \O
+MS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 T[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/
+10.95 g^^R
+ []
+
+
+Overfull \hbox (32.88316pt too wide) detected at line 2069
+[][] \OML/cmm/m/it/10.95 dx \OT1/cmr/m/n/10.95 ([](\OML/cmm/m/it/10.95 uv\OT1/c
+mr/m/n/10.95 ) + \OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.95 ) + [][] \OML/cmm/m/
+it/10.95 dx v[]v \OMS/cmsy/m/n/10.95 ^^@ [][] \OML/cmm/m/it/10.95 dx ^^W\OT1/cm
+r/m/n/10.95 ([]\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 ) = [][] \OML/cmm/m/it/1
+0.95 dx ^^L\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@ 
+\OML/cmm/m/it/10.95 T[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 g^^R
+ []
+
+
+Overfull \hbox (9.55774pt too wide) detected at line 2073
+[][] \OML/cmm/m/it/10.95 dx \OT1/cmr/m/n/10.95 ([](\OML/cmm/m/it/10.95 uv\OT1/c
+mr/m/n/10.95 )) + [][] \OML/cmm/m/it/10.95 dx \OT1/cmr/m/n/10.95 2\OML/cmm/m/it
+/10.95 v[]v \OMS/cmsy/m/n/10.95 ^^@ [][] \OML/cmm/m/it/10.95 dx ^^W\OT1/cmr/m/n
+/10.95 ([]\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 ) = [][] \OML/cmm/m/it/10.95 
+dx ^^L\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@ \OML/
+cmm/m/it/10.95 T[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 g^^R
+ []
+
+
+Overfull \hbox (3.1322pt too wide) detected at line 2075
+[][] \OML/cmm/m/it/10.95 dx \OT1/cmr/m/n/10.95 ([](\OML/cmm/m/it/10.95 uv\OT1/c
+mr/m/n/10.95 )) + [][] \OML/cmm/m/it/10.95 dx []v[] \OMS/cmsy/m/n/10.95 ^^@ [][
+] \OML/cmm/m/it/10.95 dx ^^W\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 v\OT1/cmr
+/m/n/10.95 ) = [][] \OML/cmm/m/it/10.95 dx ^^L\OT1/cmr/m/n/10.95 (\OML/cmm/m/it
+/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 T[]\OT1/cmr/m/n/10.95 )\
+OML/cmm/m/it/10.95 g^^R
+ []
+
+
+Overfull \hbox (96.22847pt too wide) detected at line 2087
+[] [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/
+it/10.95 x; y \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 b\OT1/cmr/m/n/10.95 (\OM
+L/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ))[]\OML/cmm/m/it/10.95 b\OT1/cmr/m/n/10.9
+5 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m
+/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; y \OT1/cmr/m/n/10.95 = \O
+ML/cmm/m/it/10.95 a\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 
+))[]\OML/cmm/m/it/10.95 a\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/
+10.95 ) + [][] []\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x
+; y\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dy
+ []
+
+[59]
+Overfull \hbox (93.24779pt too wide) detected at line 2091
+[] [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/
+it/10.95 y; x \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 b\OT1/cmr/m/n/10.95 (\OM
+L/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 ))[]\OML/cmm/m/it/10.95 b\OT1/cmr/m/n/10.9
+5 (\OML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m
+/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y; x \OT1/cmr/m/n/10.95 = \O
+ML/cmm/m/it/10.95 a\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 
+))[]\OML/cmm/m/it/10.95 a\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y\OT1/cmr/m/n/
+10.95 ) + [][] []\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y
+; x\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dx
+ []
+
+
+Overfull \hbox (47.75536pt too wide) detected at line 2099
+[] [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.95 (\OML/cmm/
+m/it/10.95 y; x \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 ^^N[]\OT1/cmr/m/n/10.9
+5 (\OML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 ))[]\OML/cmm/m/it/10.95 ^^N[]\OT1/cm
+r/m/n/10.95 (\OML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^@ 
+\OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y; x \OT1/cmr/m/
+n/10.95 = 0)[]0 + [][] []\OML/cmm/m/it/10.95 v[]dx
+ []
+
+[60] [61]
+Overfull \hbox (74.33855pt too wide) detected at line 2157
+[][] \OML/cmm/m/it/10.95 v[]dx \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 v[]\OT1
+/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 )[[][] \OML/cmm/m/it/10
+.95 dx  []\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@[]\OT1/cmr/m/n/10.95 ) \OM
+S/cmsy/m/n/10.95 ^^@ [][] \OML/cmm/m/it/10.95 dx \OT1/cmr/m/n/10.95 2 [](\OMS/c
+msy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ([] + [])) + [][] \OML
+/cmm/m/it/10.95 dx  []\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/
+10.95 x\OT1/cmr/m/n/10.95 ([] + [])]
+ []
+
+
+Overfull \hbox (96.40916pt too wide) detected at line 2168
+[][] \OML/cmm/m/it/10.95 v[]dx \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 v[]\OT1
+/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 )[[] [](\OMS/cmsy/m/n/1
+0.95 ^^@[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^@ [] []\OT1/cmr/m/n/10.95 
+(\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ([] + [])) + []
+ [](\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ([] + [])]\O
+MS/cmsy/m/n/10.95 j[]
+ []
+
+
+Overfull \hbox (96.40916pt too wide) detected at line 2170
+[][] \OML/cmm/m/it/10.95 v[]dx \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 v[]\OT1
+/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 )[[] [](\OMS/cmsy/m/n/1
+0.95 ^^@[]\OT1/cmr/m/n/10.95 ) + [] [](\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.
+95 x\OT1/cmr/m/n/10.95 ([] + [])) \OMS/cmsy/m/n/10.95 ^^@ [] []\OT1/cmr/m/n/10.
+95 (\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ([] + [])]\O
+MS/cmsy/m/n/10.95 j[]
+ []
+
+
+Overfull \hbox (0.68462pt too wide) in paragraph at lines 2173--2174
+[]\OT1/cmr/m/n/10.95 First eval-u-ate at $\OML/cmm/m/it/10.95 x \OT1/cmr/m/n/10
+.95 = \OML/cmm/m/it/10.95 X$ \OT1/cmr/m/n/10.95 where X is such that ve-loc-ity
+ will be at freestream
+ []
+
+
+Overfull \hbox (20.14977pt too wide) detected at line 2177
+\OT1/cmr/m/n/10.95 [[] [](\OMS/cmsy/m/n/10.95 ^^@[]\OT1/cmr/m/n/10.95 ) + [] []
+(\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 X\OT1/cmr/m/n/10.95 ([] + [])) \OMS
+/cmsy/m/n/10.95 ^^@ [] []\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/
+it/10.95 X\OT1/cmr/m/n/10.95 ([] + [])] \OMS/cmsy/m/n/10.95 ^^Y \OT1/cmr/m/n/10
+.95 0
+ []
+
+[62]
+Overfull \hbox (9.99324pt too wide) detected at line 2195
+\OT1/cmr/m/n/10.95 = [[] \OMS/cmsy/m/n/10.95 ^^@ [] \OT1/cmr/m/n/10.95 + []]
+ []
+
+[63]
+Overfull \hbox (96.40916pt too wide) detected at line 2218
+[][] \OML/cmm/m/it/10.95 v[]dx \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 v[]\OT1
+/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 )[[] [](\OMS/cmsy/m/n/1
+0.95 ^^@[]\OT1/cmr/m/n/10.95 ) + [] [](\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.
+95 x\OT1/cmr/m/n/10.95 ([] + [])) \OMS/cmsy/m/n/10.95 ^^@ [] []\OT1/cmr/m/n/10.
+95 (\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ([] + [])]\O
+MS/cmsy/m/n/10.95 j[]
+ []
+
+[64] [65]
+Overfull \hbox (11.08585pt too wide) detected at line 2294
+[][] \OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy
+/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dx 
+\OT1/cmr/m/n/10.95 = [][] \OML/cmm/m/it/10.95 dx \OT1/cmr/m/n/10.95 (\OML/cmm/m
+/it/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 T[]\OT1/cmr/m/n/10.95
+ )\OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y\OT1/cmr/m/n/
+10.95 )([](\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) \
+OMS/cmsy/m/n/10.95 ^^@ []\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/
+it/10.95 x[]\OT1/cmr/m/n/10.95 )
+ []
+
+
+Overfull \hbox (12.91081pt too wide) detected at line 2297
+[][] \OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy
+/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dx 
+\OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/
+m/it/10.95 T[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.95 (\O
+ML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 ) [][] \OML/cmm/m/it/10.95 dx \OT1/cmr/m/
+n/10.95 ([](\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) 
+\OMS/cmsy/m/n/10.95 ^^@ []\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m
+/it/10.95 x[]\OT1/cmr/m/n/10.95 )
+ []
+
+
+Overfull \hbox (106.88184pt too wide) detected at line 2299
+[][] \OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy
+/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dx 
+\OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/
+m/it/10.95 T[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.95 (\O
+ML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 )(\OMS/cmsy/m/n/10.95 ^^@[] []\OT1/cmr/m/
+n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) \OM
+S/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@[]\OT1/cmr/m/n/
+10.95 ) [](\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )\O
+MS/cmsy/m/n/10.95 j[]
+ []
+
+
+Overfull \hbox (98.36514pt too wide) detected at line 2301
+[][] \OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy
+/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dx 
+\OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/
+m/it/10.95 T[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.95 (\O
+ML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 )(\OMS/cmsy/m/n/10.95 ^^@[] []\OT1/cmr/m/
+n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) + (
+[]) [](\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )\OMS/c
+msy/m/n/10.95 j[]
+ []
+
+
+Overfull \hbox (98.36514pt too wide) detected at line 2307
+[][] \OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy
+/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dx 
+\OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/
+m/it/10.95 T[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.95 (\O
+ML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 )(\OMS/cmsy/m/n/10.95 ^^@[] []\OT1/cmr/m/
+n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) + (
+[]) [](\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )\OMS/c
+msy/m/n/10.95 j[]
+ []
+
+[66]
+Overfull \hbox (117.50822pt too wide) detected at line 2309
+[][] \OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy
+/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 dx 
+\OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 T[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/
+m/it/10.95 T[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.95 (\O
+ML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 )(\OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/10.
+95 1)(\OMS/cmsy/m/n/10.95 ^^@[] []\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\O
+ML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) + ([]) [](\OMS/cmsy/m/n/10.95 ^^@\OML
+/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 j[]
+ []
+
+[67] [68]
+Overfull \hbox (0.99551pt too wide) detected at line 2408
+[][] \OML/cmm/m/it/10.95 dy[] [] [] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^
+@ [][] \OML/cmm/m/it/10.95 dy[] ^^W[] \OT1/cmr/m/n/10.95 + [][] \OML/cmm/m/it/1
+0.95 dy[] g^^L\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[] \OMS/cmsy/m/n/10.95 ^
+^@ \OML/cmm/m/it/10.95 T[]\OT1/cmr/m/n/10.95 )[]
+ []
+
+[69]
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 2468--2468
 []\OT1/cmtt/m/n/10.95 http://web.mit.edu/fluids-modules/www/highspeed_flows/ver
 2/bl_Chap2.pdf[] 
  []
 
 
-Overfull \hbox (19.41339pt too wide) in paragraph at lines 2150--2150
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 2468--2468
 []\OT1/cmtt/m/n/10.95 https://community.dur.ac.uk/suzanne.fielding/teaching/BLT
 /sec3.pdf[] 
  []
 
 
-Overfull \hbox (117.14108pt too wide) in paragraph at lines 2150--2150
+Overfull \hbox (117.14108pt too wide) in paragraph at lines 2468--2468
 []\OT1/cmtt/m/n/10.95 https://nptel.ac.in/content/storage2/courses/112104118/le
 cture-29/29-3_momentum.htm[] 
  []
 
 
-Overfull \hbox (65.4029pt too wide) in paragraph at lines 2159--2159
+Overfull \hbox (65.4029pt too wide) in paragraph at lines 2477--2477
 []\OT1/cmtt/m/n/10.95 https://nptel.ac.in/content/storage2/courses/112101001/do
 wnloads/lec25.pdf[] 
  []
 
-[59] (./convectionBL.aux)
+[70] [71] (./convectionBL.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -903,10 +1123,10 @@ Package biblatex Warning: Please (re)run Biber on the file:
 Package logreq Info: Writing requests to 'convectionBL.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 12690 strings out of 479383
- 257326 string characters out of 5875830
- 1043457 words of memory out of 5000000
- 29678 multiletter control sequences out of 15000+600000
+ 12692 strings out of 479383
+ 257348 string characters out of 5875830
+ 1043467 words of memory out of 5000000
+ 29680 multiletter control sequences out of 15000+600000
  412378 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,6n,76p,745b,4805s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -926,10 +1146,10 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public
 sy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
 share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-di
 st/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on convectionBL.pdf (59 pages, 344842 bytes).
+Output written on convectionBL.pdf (71 pages, 374869 bytes).
 PDF statistics:
- 268 PDF objects out of 1000 (max. 8388607)
- 187 compressed objects within 2 object streams
+ 307 PDF objects out of 1000 (max. 8388607)
+ 213 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
